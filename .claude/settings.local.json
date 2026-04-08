@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xxd \"C:/HUR/teamAgents/idea/service-idea.md\")",
+      "Bash(python3 -c ':*)",
+      "Bash(python:*)",
+      "Bash(npm -v)",
+      "Bash(npx create-next-app@latest frontend --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(npm install:*)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d['version']\\)\")",
+      "Bash(node -e \"const p=require\\('./node_modules/next/package.json'\\); console.log\\(p.version\\)\")",
+      "Bash(npm run:*)",
+      "Bash(cat C:/HUR/teamAgents/mvp/backend/app/db/*.py)"
+    ]
+  }
+}

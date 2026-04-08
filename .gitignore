@@ -1,0 +1,69 @@
+##################################
+# 🔹 공통
+##################################
+.env
+.env.*
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+##################################
+# 🔹 Python
+##################################
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# 가상환경
+.venv/
+venv/
+env/
+ENV/
+
+# 패키지
+*.egg-info/
+dist/
+build/
+
+# 테스트 / 캐시
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+##################################
+# 🔹 FastAPI / Uvicorn
+##################################
+*.sqlite3
+
+##################################
+# 🔹 Next.js / Node.js
+##################################
+node_modules/
+.next/
+out/
+build/
+
+# Vercel
+.vercel/
+
+# 로그
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+##################################
+# 🔹 기타
+##################################
+coverage/
+.cache/

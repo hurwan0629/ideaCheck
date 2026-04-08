@@ -1,9 +1,29 @@
 import Link from "next/link";
+import { cookies } from "next/headers";
+import { createServerClient } from "@supabase/ssr";
 import ReportCard from "@/components/report/ReportCard";
+import { apiFetch } from "@/lib/api";
 
-// TODO: 실제 구현 시 서버에서 쿠키로 유저 인증 후 fetch
 async function getUserReports() {
-  return [] as any[];
+  const cookieStore = await cookies();
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return cookieStore.getAll();
+        },
+      },
+    }
+  );
+
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session) return [];
+
+  return apiFetch<any[]>("/user/reports", {
+    headers: { Authorization: `Bearer ${session.access_token}` },
+  });
 }
 
 export default async function DashboardPage() {

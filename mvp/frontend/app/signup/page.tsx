@@ -41,7 +41,7 @@ function SignupForm() {
           placeholder="이메일"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-indigo-500"
+          className="px-4 py-3 rounded-lg bg-gray-200 border border-gray-700 focus:outline-none focus:border-indigo-500"
           required
         />
         <input
@@ -49,7 +49,7 @@ function SignupForm() {
           placeholder="비밀번호 (8자 이상)"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="px-4 py-3 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-indigo-500"
+          className="px-4 py-3 rounded-lg bg-gray-200 border border-gray-700 focus:outline-none focus:border-indigo-500"
           minLength={8}
           required
         />

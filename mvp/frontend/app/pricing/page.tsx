@@ -15,7 +15,7 @@ const PLANS = [
     features: ["월 10회 리포트", "출처 포함 데이터", "TAM/SAM/SOM 추정", "PDF 다운로드"],
     cta: "Lite 시작",
     href: "/signup?plan=lite",
-    highlight: true,
+    highlight: false,
   },
   {
     name: "Pro",

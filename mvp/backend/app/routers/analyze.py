@@ -86,9 +86,12 @@ def _sse(event: str, data: str) -> str:
 
 
 def _extract_user_id(authorization: str | None) -> str | None:
-    """
-    Authorization 헤더에서 유저 ID를 추출한다.
-    현재는 미구현(None 반환).
-    TODO: Supabase JWT 토큰을 검증하고 user_id를 반환하도록 구현 필요.
-    """
-    return None
+    if not authorization or not authorization.startswith("Bearer "):
+        return None
+    token = authorization.removeprefix("Bearer ")
+    try:
+        from app.db.supabase import get_client
+        res = get_client().auth.get_user(token)
+        return res.user.id if res.user else None
+    except Exception:
+        return None

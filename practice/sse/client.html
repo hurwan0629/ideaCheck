@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>SSE 기초 실습</title>
+  <style>
+    body { font-family: monospace; max-width: 700px; margin: 40px auto; padding: 0 16px; }
+    pre  { background: #111; color: #0f0; padding: 16px; border-radius: 8px; min-height: 100px; white-space: pre-wrap; }
+    .log { background: #1a1a2e; color: #aaa; padding: 12px; border-radius: 8px; font-size: 13px; margin-top: 8px; }
+    button { margin: 4px; padding: 8px 16px; cursor: pointer; }
+    h3 { margin-top: 24px; }
+  </style>
+</head>
+<body>
+
+<h2>SSE 기초 실습</h2>
+<p>서버에서 오는 이벤트를 두 가지 방법으로 받아봅니다.</p>
+
+<!-- ========================================================
+  방법 1: EventSource API
+  · 브라우저 내장 API
+  · GET 요청만 가능 (POST 불가)
+  · 자동 재연결 지원
+  · 실제 프로젝트의 stream.ts는 이 방법을 쓰지 않음
+    → POST가 필요하기 때문에 fetch + ReadableStream 방식 사용
+======================================================== -->
+<h3>방법 1: EventSource (브라우저 내장)</h3>
+<button onclick="startEventSource()">EventSource 시작</button>
+<button onclick="stopEventSource()">연결 끊기</button>
+<pre id="output1">여기에 수신 내용이 표시됩니다...</pre>
+<div class="log" id="log1">로그: -</div>
+
+<!-- ========================================================
+  방법 2: fetch + ReadableStream
+  · POST 요청 가능 (실제 프로젝트에서 사용하는 방법)
+  · stream.ts의 readStream() 함수가 이 방식
+  · 자동 재연결 없음 (직접 구현해야 함)
+======================================================== -->
+<h3>방법 2: fetch + ReadableStream (stream.ts 방식)</h3>
+<button onclick="startFetchStream()">fetch 스트림 시작</button>
+<pre id="output2">여기에 수신 내용이 표시됩니다...</pre>
+<div class="log" id="log2">로그: -</div>
+
+<script>
+
+// ────────────────────────────────────────────────
+// 방법 1: EventSource
+// ────────────────────────────────────────────────
+let evtSource = null;
+
+function startEventSource() {
+  const out  = document.getElementById("output1");
+  const log  = document.getElementById("log1");
+  out.textContent = "";
+
+  // EventSource(url) : 해당 URL로 SSE 연결을 맺음
+  // 브라우저가 자동으로 "Accept: text/event-stream" 헤더를 붙여서 GET 요청
+  evtSource = new EventSource("http://localhost:3001/stream");
+
+  log.textContent = "로그: 연결 요청 보냄...";
+
+  // ── 커스텀 이벤트 리스너 ───────────────────────
+  // 서버에서 "event: status" 로 보낸 것을 여기서 수신
+  evtSource.addEventListener("status", (e) => {
+    out.textContent += `[STATUS] ${e.data}\n`;
+    log.textContent = `로그: status 이벤트 수신 → "${e.data}"`;
+  });
+
+  // 서버에서 "event: chunk" 로 보낸 조각을 이어붙임
+  evtSource.addEventListener("chunk", (e) => {
+    out.textContent += `[CHUNK] ${e.data}\n`;
+    log.textContent = `로그: chunk 수신 → "${e.data}"`;
+  });
+
+  // 서버에서 "event: done" 으로 완료 신호 수신
+  evtSource.addEventListener("done", (e) => {
+    const parsed = JSON.parse(e.data);           // JSON 파싱
+    out.textContent += `[DONE] report_id: ${parsed.report_id}\n`;
+    log.textContent = `로그: 완료! report_id = ${parsed.report_id}`;
+    evtSource.close(); // 연결 종료
+  });
+
+  // ── 기본 'message' 이벤트 ─────────────────────
+  // event: 필드가 없는 plain "data: ..." 이벤트가 여기 들어옴
+  evtSource.onmessage = (e) => {
+    out.textContent += `[MESSAGE] ${e.data}\n`;
+  };
+
+  // ── 에러 처리 ──────────────────────────────────
+  evtSource.onerror = (e) => {
+    log.textContent = "로그: 오류 발생 또는 서버 연결 종료 (자동 재연결 시도 중...)";
+    // readyState: 0=CONNECTING, 1=OPEN, 2=CLOSED
+    if (evtSource.readyState === EventSource.CLOSED) {
+      log.textContent = "로그: 연결 완전히 닫힘";
+    }
+  };
+}
+
+function stopEventSource() {
+  if (evtSource) {
+    evtSource.close(); // 명시적으로 연결 끊기
+    document.getElementById("log1").textContent = "로그: 수동으로 연결 끊음";
+  }
+}
+
+
+// ────────────────────────────────────────────────
+// 방법 2: fetch + ReadableStream
+// 실제 stream.ts의 readStream() 함수와 동일한 방식
+// ────────────────────────────────────────────────
+async function startFetchStream() {
+  const out = document.getElementById("output2");
+  const log = document.getElementById("log2");
+  out.textContent = "";
+  log.textContent = "로그: fetch 요청 전송...";
+
+  // ── [1] 일반 fetch 요청 (POST도 가능) ──────────
+  const res = await fetch("http://localhost:3001/stream");
+  //   실제 프로젝트에서는:
+  //   fetch(`${BASE}/analyze`, { method: "POST", body: JSON.stringify({...}) })
+
+  if (!res.body) {
+    log.textContent = "로그: 스트림 없음";
+    return;
+  }
+
+  // ── [2] ReadableStream Reader 획득 ─────────────
+  // res.body는 ReadableStream 객체
+  // getReader()로 읽기 핸들을 받아서 조각씩 읽음
+  const reader  = res.body.getReader();
+  const decoder = new TextDecoder(); // Uint8Array(바이트) → 문자열 변환
+  let   buffer  = "";               // 아직 완성 안 된 이벤트 임시 저장소
+
+  // ── [3] 읽기 루프 ──────────────────────────────
+  while (true) {
+    // read() : 다음 청크(바이트 덩어리)가 올 때까지 await
+    const { done, value } = await reader.read();
+
+    if (done) {
+      // 서버가 res.end()를 호출하면 여기로 빠짐
+      log.textContent = "로그: 스트림 종료";
+      break;
+    }
+
+    // { stream: true } : 멀티바이트 문자가 청크 경계에서 잘려도 다음과 합쳐서 처리
+    buffer += decoder.decode(value, { stream: true });
+
+    // ── [4] "\n\n" 기준으로 완성된 이벤트 분리 ──
+    // SSE 이벤트 하나 = "event: xxx\ndata: yyy\n\n"
+    // 마지막 \n\n 이후의 미완성 조각은 buffer에 남김
+    const events = buffer.split("\n\n");
+    buffer = events.pop() ?? ""; // 마지막은 미완성일 수 있어서 다시 버퍼에
+
+    for (const evt of events) {
+      if (!evt.trim()) continue; // 빈 이벤트 건너뜀
+
+      // ── [5] 이벤트 파싱 ───────────────────────
+      // "event: status" 줄에서 이벤트 이름 추출
+      const eventName = evt.match(/^event: (\w+)/m)?.[1];
+      // "data: ..." 줄에서 데이터 추출
+      const data      = evt.match(/^data: (.+)/m)?.[1];
+
+      if (!eventName || !data) continue;
+
+      log.textContent = `로그: "${eventName}" 이벤트 파싱됨`;
+
+      if (eventName === "status") {
+        out.textContent += `[STATUS] ${data}\n`;
+      }
+
+      if (eventName === "chunk") {
+        out.textContent += `[CHUNK] ${data}\n`;
+      }
+
+      if (eventName === "done") {
+        try {
+          const parsed = JSON.parse(data);
+          out.textContent += `[DONE] report_id: ${parsed.report_id}\n`;
+          log.textContent = `로그: 완료! report_id = ${parsed.report_id}`;
+        } catch (e) {
+          console.error("done 파싱 실패:", e);
+        }
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>

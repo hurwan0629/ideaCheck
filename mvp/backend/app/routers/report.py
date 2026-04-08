@@ -8,6 +8,7 @@
 
 from fastapi import APIRouter, HTTPException, Header
 from app.services import report as report_svc
+from app.db.supabase import get_client
 
 router = APIRouter()
 
@@ -47,5 +48,11 @@ async def delete_report(
 
 
 def _extract_user_id(authorization: str | None) -> str | None:
-    """TODO: JWT 검증 후 user_id 반환"""
-    return None
+    if not authorization or not authorization.startswith("Bearer "):
+        return None
+    token = authorization.removeprefix("Bearer ")
+    try:
+        res = get_client().auth.get_user(token)
+        return res.user.id if res.user else None
+    except Exception:
+        return None

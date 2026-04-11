@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>요즘 트렌드 — SYM</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #2563eb; --primary-dark: #1d4ed8;
+      --dark: #0f172a; --nav-bg: #1e293b;
+      --text: #334155; --text-light: #64748b;
+      --bg: #f8fafc; --card-bg: #ffffff;
+      --border: #e2e8f0; --accent: #06b6d4;
+    }
+    body { font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); }
+    nav {
+      background: var(--nav-bg); padding: 0 40px; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .logo { color: #fff; font-size: 20px; font-weight: 800; text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .nav-center { display: flex; gap: 8px; }
+    .nav-center a { color: #94a3b8; text-decoration: none; padding: 6px 14px; border-radius: 6px; font-size: 14px; }
+    .nav-center a:hover, .nav-center a.active { color: #fff; background: rgba(255,255,255,0.08); }
+    .nav-right { display: flex; gap: 8px; align-items: center; }
+    .nav-right a { color: #94a3b8; text-decoration: none; font-size: 14px; padding: 6px 14px; border-radius: 6px; }
+    .btn-login { background: var(--primary) !important; color: #fff !important; border-radius: 8px !important; }
+
+    .hero-bar {
+      background: linear-gradient(120deg, #1e293b, #1e3a5f);
+      padding: 40px;
+      color: #fff;
+    }
+    .hero-bar h1 { font-size: 28px; font-weight: 800; margin-bottom: 6px; }
+    .hero-bar p { color: #94a3b8; font-size: 14px; }
+    .updated { color: var(--accent); font-size: 12px; font-weight: 600; margin-top: 8px; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 40px; }
+
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 7px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      background: #fff;
+      color: var(--text-light);
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .filter-btn:hover { border-color: var(--primary); color: var(--primary); }
+    .filter-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    .trend-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+    .trend-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+    .trend-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.1); transform: translateY(-3px); }
+
+    .trend-img {
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    }
+    .img-food { background: linear-gradient(135deg, #fff7ed, #fed7aa); }
+    .img-tech { background: linear-gradient(135deg, #eff6ff, #bfdbfe); }
+    .img-life { background: linear-gradient(135deg, #f0fdf4, #bbf7d0); }
+    .img-fashion { background: linear-gradient(135deg, #fdf4ff, #e9d5ff); }
+    .img-health { background: linear-gradient(135deg, #f0fdfa, #99f6e4); }
+
+    .trend-body { padding: 18px; }
+    .trend-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .trend-cat {
+      font-size: 11px; font-weight: 700;
+      padding: 3px 10px; border-radius: 20px;
+      background: #eff6ff; color: var(--primary);
+    }
+    .trend-rank { font-size: 12px; color: var(--text-light); font-weight: 600; }
+    .trend-title { font-size: 16px; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
+    .trend-desc { font-size: 13px; color: var(--text-light); line-height: 1.55; margin-bottom: 12px; }
+    .trend-footer { display: flex; justify-content: space-between; align-items: center; }
+    .trend-up {
+      display: flex; align-items: center; gap: 4px;
+      font-size: 13px; font-weight: 700;
+    }
+    .up-green { color: #10b981; }
+    .up-blue { color: var(--primary); }
+    .trend-tags { display: flex; gap: 4px; }
+    .t-tag {
+      background: #f1f5f9; color: var(--text-light);
+      font-size: 11px; padding: 2px 8px; border-radius: 4px;
+    }
+
+    /* HOT card - full width */
+    .trend-card.hot { grid-column: 1 / -1; display: grid; grid-template-columns: 280px 1fr; }
+    .trend-card.hot .trend-img { height: 100%; min-height: 160px; font-size: 80px; }
+    .trend-card.hot .trend-body { padding: 24px; }
+    .trend-card.hot .trend-title { font-size: 20px; }
+    .trend-card.hot .trend-desc { font-size: 14px; }
+    .hot-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      background: #fef2f2; color: #ef4444;
+      font-size: 11px; font-weight: 800;
+      padding: 3px 10px; border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    footer { background: var(--nav-bg); color: #64748b; text-align: center; padding: 30px; font-size: 13px; margin-top: 60px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">S<span>Y</span>M</a>
+  <div class="nav-center">
+    <a href="trend.html" class="active">요즘 트렌드</a>
+    <a href="market-share.html">시장 점유율</a>
+    <a href="popular-keywords.html">인기 검색어</a>
+  </div>
+  <div class="nav-right">
+    <a href="mypage.html">마이페이지</a>
+    <a href="pricing.html">요금제</a>
+    <a href="login.html" class="btn-login">로그인</a>
+  </div>
+</nav>
+
+<div class="hero-bar">
+  <h1>요즘 트렌드 🔥</h1>
+  <p>지금 뜨고 있는 아이템과 키워드를 모아봤어요</p>
+  <div class="updated">↑ 2026년 4월 12일 오전 9:00 업데이트</div>
+</div>
+
+<div class="container">
+  <div class="filter-bar">
+    <button class="filter-btn active">전체</button>
+    <button class="filter-btn">🍽️ 식음료</button>
+    <button class="filter-btn">💻 IT/테크</button>
+    <button class="filter-btn">🌿 라이프스타일</button>
+    <button class="filter-btn">👗 패션/뷰티</button>
+    <button class="filter-btn">🏃 헬스/피트니스</button>
+  </div>
+
+  <div class="trend-grid">
+
+    <!-- HOT -->
+    <div class="trend-card hot">
+      <div class="trend-img img-food">🧈</div>
+      <div class="trend-body">
+        <div class="hot-badge">🔥 이번 주 1위</div>
+        <div class="trend-meta">
+          <span class="trend-cat">식음료</span>
+          <span class="trend-rank">#1 HOT</span>
+        </div>
+        <div class="trend-title">버터 떡 열풍 — 전통+디저트의 만남</div>
+        <div class="trend-desc">버터를 품은 쫄깃한 떡이 MZ세대 사이에서 폭발적인 인기를 끌고 있습니다. 카페와 전통 떡집의 경계를 허문 신개념 디저트로, 인스타그램 게시물 수가 한 달 만에 3배 이상 증가했습니다.</div>
+        <div class="trend-footer">
+          <div class="trend-up up-green">📈 +342% (검색량 기준)</div>
+          <div class="trend-tags">
+            <span class="t-tag">인스타감성</span>
+            <span class="t-tag">디저트</span>
+            <span class="t-tag">MZ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trend-card">
+      <div class="trend-img img-life">🧊</div>
+      <div class="trend-body">
+        <div class="trend-meta"><span class="trend-cat">라이프스타일</span><span class="trend-rank">#2</span></div>
+        <div class="trend-title">미니 보냉백</div>
+        <div class="trend-desc">손바닥만 한 보냉백이 편의점 음료와 함께 필수품으로 자리 잡았어요. 갓생살기 문화와 맞물려 점심 도시락 휴대가 늘어난 것도 원인.</div>
+        <div class="trend-footer">
+          <div class="trend-up up-green">📈 +178%</div>
+          <div class="trend-tags"><span class="t-tag">실용성</span><span class="t-tag">환경</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trend-card">
+      <div class="trend-img img-tech">🤖</div>
+      <div class="trend-body">
+        <div class="trend-meta"><span class="trend-cat">IT/테크</span><span class="trend-rank">#3</span></div>
+        <div class="trend-title">AI 영상 편집 툴</div>
+        <div class="trend-desc">유튜브·릴스 운영자들 사이에서 AI 자동 편집 도구 수요 폭발. 1인 크리에이터도 전문가급 영상을 10분 만에 완성.</div>
+        <div class="trend-footer">
+          <div class="trend-up up-blue">📈 +156%</div>
+          <div class="trend-tags"><span class="t-tag">크리에이터</span><span class="t-tag">AI</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trend-card">
+      <div class="trend-img img-food">🥗</div>
+      <div class="trend-body">
+        <div class="trend-meta"><span class="trend-cat">식음료</span><span class="trend-rank">#4</span></div>
+        <div class="trend-title">고단백 편의식</div>
+        <div class="trend-desc">헬스 열풍과 함께 편의점 고단백 도시락, 닭가슴살 세트 매출이 전년 대비 2배 이상 성장. 운동과 식단 병행 문화 확산.</div>
+        <div class="trend-footer">
+          <div class="trend-up up-green">📈 +134%</div>
+          <div class="trend-tags"><span class="t-tag">헬스</span><span class="t-tag">편의점</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trend-card">
+      <div class="trend-img img-fashion">💅</div>
+      <div class="trend-body">
+        <div class="trend-meta"><span class="trend-cat">뷰티</span><span class="trend-rank">#5</span></div>
+        <div class="trend-title">무광 네일 아트</div>
+        <div class="trend-desc">기존 유광 네일에서 매트한 무광 텍스처로 트렌드 전환. 젤 네일 홈케어 키트와 함께 수요 급증 중.</div>
+        <div class="trend-footer">
+          <div class="trend-up up-green">📈 +121%</div>
+          <div class="trend-tags"><span class="t-tag">뷰티</span><span class="t-tag">홈케어</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trend-card">
+      <div class="trend-img img-health">🧘</div>
+      <div class="trend-body">
+        <div class="trend-meta"><span class="trend-cat">헬스/피트니스</span><span class="trend-rank">#6</span></div>
+        <div class="trend-title">필라테스 숏폼</div>
+        <div class="trend-desc">10분 이내 필라테스 루틴 영상이 유튜브·릴스에서 폭발적으로 성장. 홈 운동기구 판매량도 덩달아 급증.</div>
+        <div class="trend-footer">
+          <div class="trend-up up-green">📈 +115%</div>
+          <div class="trend-tags"><span class="t-tag">홈트</span><span class="t-tag">숏폼</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trend-card">
+      <div class="trend-img img-tech">🔋</div>
+      <div class="trend-body">
+        <div class="trend-meta"><span class="trend-cat">IT/테크</span><span class="trend-rank">#7</span></div>
+        <div class="trend-title">소형 보조배터리</div>
+        <div class="trend-desc">립스틱 크기의 초소형 고속충전 보조배터리. 스마트폰 의존도가 높아지며 항상 휴대하는 필수품으로 부상.</div>
+        <div class="trend-footer">
+          <div class="trend-up up-blue">📈 +97%</div>
+          <div class="trend-tags"><span class="t-tag">가전</span><span class="t-tag">휴대용</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trend-card">
+      <div class="trend-img img-food">☕</div>
+      <div class="trend-body">
+        <div class="trend-meta"><span class="trend-cat">식음료</span><span class="trend-rank">#8</span></div>
+        <div class="trend-title">두유 라떼</div>
+        <div class="trend-desc">비건과 유당불내증 인구 증가로 두유 기반 음료 수요 폭발. 카페들이 앞다퉈 두유 옵션을 기본으로 추가 중.</div>
+        <div class="trend-footer">
+          <div class="trend-up up-green">📈 +89%</div>
+          <div class="trend-tags"><span class="t-tag">비건</span><span class="t-tag">카페</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>© 2026 Search Your Market. All rights reserved.</footer>
+
+<script>
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

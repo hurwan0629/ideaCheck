@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>아이디어 구상 — SYM</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --dark: #0f172a;
+      --nav-bg: #1e293b;
+      --text: #334155;
+      --text-light: #64748b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --accent: #06b6d4;
+    }
+    body { font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); }
+    nav {
+      background: var(--nav-bg); padding: 0 40px; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .logo { color: #fff; font-size: 20px; font-weight: 800; text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .nav-center { display: flex; gap: 8px; }
+    .nav-center a { color: #94a3b8; text-decoration: none; padding: 6px 14px; border-radius: 6px; font-size: 14px; transition: all 0.2s; }
+    .nav-center a:hover { color: #fff; background: rgba(255,255,255,0.08); }
+    .nav-right { display: flex; gap: 8px; align-items: center; }
+    .nav-right a { color: #94a3b8; text-decoration: none; font-size: 14px; padding: 6px 14px; border-radius: 6px; }
+    .btn-login { background: var(--primary) !important; color: #fff !important; border-radius: 8px !important; }
+
+    .container { max-width: 720px; margin: 0 auto; padding: 60px 40px; }
+    .step-bar {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 48px;
+    }
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+    .step.active { color: var(--primary); }
+    .step.done { color: #10b981; }
+    .step-num {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700;
+    }
+    .step.active .step-num { border-color: var(--primary); background: var(--primary); color: #fff; }
+    .step.done .step-num { border-color: #10b981; background: #10b981; color: #fff; }
+    .step-line { flex: 1; height: 2px; background: var(--border); margin: 0 12px; }
+    .step-line.done { background: #10b981; }
+
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    .page-title { font-size: 28px; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
+    .page-sub { color: var(--text-light); font-size: 15px; margin-bottom: 32px; }
+
+    .q-label { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 16px; }
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .option {
+      background: var(--card-bg);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .option:hover { border-color: #93c5fd; background: #eff6ff; }
+    .option.selected { border-color: var(--primary); background: #eff6ff; }
+    .option .opt-icon { font-size: 22px; }
+    .option .opt-text { font-size: 14px; font-weight: 600; color: var(--dark); }
+    .option .opt-desc { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+
+    .options-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+    .scale-options {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .scale-btn {
+      flex: 1;
+      padding: 12px 8px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-light);
+      background: #fff;
+      transition: all 0.2s;
+    }
+    .scale-btn:hover { border-color: #93c5fd; color: var(--primary); }
+    .scale-btn.selected { border-color: var(--primary); color: var(--primary); background: #eff6ff; }
+    .scale-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-light); margin-top: -20px; margin-bottom: 28px; }
+
+    .btn-group { display: flex; gap: 12px; justify-content: flex-end; margin-top: 8px; }
+    .btn-secondary {
+      padding: 12px 24px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      background: #fff;
+      color: var(--text);
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover { background: var(--bg); }
+    .btn-primary {
+      padding: 12px 28px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--primary-dark); }
+
+    /* Result */
+    .result-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .idea-card {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .idea-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(37,99,235,0.1); transform: translateY(-2px); }
+    .idea-card.picked { border-color: var(--primary); background: #eff6ff; }
+    .idea-tag {
+      display: inline-block;
+      background: #eff6ff;
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .idea-card h3 { font-size: 15px; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
+    .idea-card p { font-size: 13px; color: var(--text-light); line-height: 1.55; }
+    .idea-card .idea-score {
+      display: flex; align-items: center; gap: 6px;
+      margin-top: 12px; font-size: 12px; color: #10b981; font-weight: 700;
+    }
+    .analyze-link {
+      display: block;
+      margin-top: 28px;
+      text-align: center;
+      padding: 14px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+    .analyze-link:hover { background: var(--primary-dark); }
+
+    footer { background: var(--nav-bg); color: #64748b; text-align: center; padding: 30px; font-size: 13px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">S<span>Y</span>M</a>
+  <div class="nav-center">
+    <a href="trend.html">요즘 트렌드</a>
+    <a href="market-share.html">시장 점유율</a>
+    <a href="popular-keywords.html">인기 검색어</a>
+  </div>
+  <div class="nav-right">
+    <a href="mypage.html">마이페이지</a>
+    <a href="pricing.html">요금제</a>
+    <a href="login.html" class="btn-login">로그인</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="step-bar">
+    <div class="step active" id="step1"><div class="step-num">1</div> 관심 분야</div>
+    <div class="step-line" id="line1"></div>
+    <div class="step" id="step2"><div class="step-num">2</div> 선호 방식</div>
+    <div class="step-line" id="line2"></div>
+    <div class="step" id="step3"><div class="step-num">3</div> 여건 확인</div>
+    <div class="step-line" id="line3"></div>
+    <div class="step" id="step4"><div class="step-num">4</div> 아이디어 추천</div>
+  </div>
+
+  <!-- Step 1 -->
+  <div class="panel active" id="panel1">
+    <h1 class="page-title">어떤 분야에 관심 있으세요?</h1>
+    <p class="page-sub">관심 있는 분야를 모두 선택해주세요 (복수 선택 가능)</p>
+
+    <div class="q-label">관심 산업 분야</div>
+    <div class="options options-3">
+      <div class="option" onclick="toggle(this)"><span class="opt-icon">🍽️</span><div><div class="opt-text">식음료</div></div></div>
+      <div class="option" onclick="toggle(this)"><span class="opt-icon">💻</span><div><div class="opt-text">IT / 소프트웨어</div></div></div>
+      <div class="option" onclick="toggle(this)"><span class="opt-icon">🛍️</span><div><div class="opt-text">커머스 / 리테일</div></div></div>
+      <div class="option" onclick="toggle(this)"><span class="opt-icon">🏃</span><div><div class="opt-text">헬스 / 피트니스</div></div></div>
+      <div class="option" onclick="toggle(this)"><span class="opt-icon">📚</span><div><div class="opt-text">교육 / 에듀테크</div></div></div>
+      <div class="option" onclick="toggle(this)"><span class="opt-icon">🌿</span><div><div class="opt-text">환경 / 지속가능성</div></div></div>
+      <div class="option" onclick="toggle(this)"><span class="opt-icon">🎨</span><div><div class="opt-text">콘텐츠 / 크리에이터</div></div></div>
+      <div class="option" onclick="toggle(this)"><span class="opt-icon">🏠</span><div><div class="opt-text">부동산 / 생활</div></div></div>
+      <div class="option" onclick="toggle(this)"><span class="opt-icon">💊</span><div><div class="opt-text">헬스케어 / 바이오</div></div></div>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn-primary" onclick="goStep(2)">다음 →</button>
+    </div>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="panel" id="panel2">
+    <h1 class="page-title">어떤 방식의 사업을 원하세요?</h1>
+    <p class="page-sub">선호하는 비즈니스 형태를 선택해주세요</p>
+
+    <div class="q-label">사업 형태</div>
+    <div class="options">
+      <div class="option" onclick="selectOne(this, 'type')">
+        <span class="opt-icon">📱</span>
+        <div><div class="opt-text">앱 / 플랫폼</div><div class="opt-desc">소프트웨어 기반 디지털 서비스</div></div>
+      </div>
+      <div class="option" onclick="selectOne(this, 'type')">
+        <span class="opt-icon">🏪</span>
+        <div><div class="opt-text">오프라인 매장</div><div class="opt-desc">실물 공간 기반 비즈니스</div></div>
+      </div>
+      <div class="option" onclick="selectOne(this, 'type')">
+        <span class="opt-icon">📦</span>
+        <div><div class="opt-text">제품 판매</div><div class="opt-desc">물리적 상품 제조 및 판매</div></div>
+      </div>
+      <div class="option" onclick="selectOne(this, 'type')">
+        <span class="opt-icon">🤝</span>
+        <div><div class="opt-text">B2B 서비스</div><div class="opt-desc">기업 대상 솔루션/서비스</div></div>
+      </div>
+    </div>
+
+    <div class="q-label">고객층</div>
+    <div class="options">
+      <div class="option" onclick="selectOne(this, 'cust')"><span class="opt-icon">👤</span><div><div class="opt-text">개인 소비자 (B2C)</div></div></div>
+      <div class="option" onclick="selectOne(this, 'cust')"><span class="opt-icon">🏢</span><div><div class="opt-text">기업 고객 (B2B)</div></div></div>
+      <div class="option" onclick="selectOne(this, 'cust')"><span class="opt-icon">🏛️</span><div><div class="opt-text">공공기관 (B2G)</div></div></div>
+      <div class="option" onclick="selectOne(this, 'cust')"><span class="opt-icon">🔄</span><div><div class="opt-text">혼합</div></div></div>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn-secondary" onclick="goStep(1)">← 이전</button>
+      <button class="btn-primary" onclick="goStep(3)">다음 →</button>
+    </div>
+  </div>
+
+  <!-- Step 3 -->
+  <div class="panel" id="panel3">
+    <h1 class="page-title">현재 여건을 알려주세요</h1>
+    <p class="page-sub">상황에 맞는 아이디어를 추천해드립니다</p>
+
+    <div class="q-label">예상 초기 자본금</div>
+    <div class="scale-options" id="capital">
+      <div class="scale-btn" onclick="selectScale(this, 'capital')">500만원 미만</div>
+      <div class="scale-btn" onclick="selectScale(this, 'capital')">500~2천만원</div>
+      <div class="scale-btn" onclick="selectScale(this, 'capital')">2천~5천만원</div>
+      <div class="scale-btn" onclick="selectScale(this, 'capital')">5천만원 이상</div>
+    </div>
+
+    <div class="q-label">함께할 팀원</div>
+    <div class="scale-options" id="team">
+      <div class="scale-btn" onclick="selectScale(this, 'team')">혼자</div>
+      <div class="scale-btn" onclick="selectScale(this, 'team')">2~3명</div>
+      <div class="scale-btn" onclick="selectScale(this, 'team')">4~6명</div>
+      <div class="scale-btn" onclick="selectScale(this, 'team')">7명 이상</div>
+    </div>
+
+    <div class="q-label">기술/전문성 보유 여부</div>
+    <div class="options">
+      <div class="option" onclick="selectOne(this, 'skill')"><span class="opt-icon">💪</span><div><div class="opt-text">개발 가능</div><div class="opt-desc">직접 코딩 또는 팀원 보유</div></div></div>
+      <div class="option" onclick="selectOne(this, 'skill')"><span class="opt-icon">🎯</span><div><div class="opt-text">특정 분야 전문가</div><div class="opt-desc">업계 경력 또는 자격증</div></div></div>
+      <div class="option" onclick="selectOne(this, 'skill')"><span class="opt-icon">🌱</span><div><div class="opt-text">특별한 전문성 없음</div><div class="opt-desc">아이디어와 열정만 있음</div></div></div>
+      <div class="option" onclick="selectOne(this, 'skill')"><span class="opt-icon">🤖</span><div><div class="opt-text">AI/노코드 활용</div><div class="opt-desc">기술 없이 도구로 해결</div></div></div>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn-secondary" onclick="goStep(2)">← 이전</button>
+      <button class="btn-primary" onclick="goStep(4)">아이디어 추천받기 ✨</button>
+    </div>
+  </div>
+
+  <!-- Step 4: Results -->
+  <div class="panel" id="panel4">
+    <h1 class="page-title">맞춤 아이디어 추천 결과</h1>
+    <p class="page-sub">선택하신 관심사와 여건을 바탕으로 4가지 아이디어를 추천해드립니다</p>
+
+    <div class="result-grid">
+      <div class="idea-card" onclick="toggleIdea(this)">
+        <div class="idea-tag">IT / 구독</div>
+        <h3>AI 반찬 구독 서비스</h3>
+        <p>식단 선호도를 분석해 매주 맞춤 반찬을 배달해주는 구독형 서비스. 1인 가구 급증 트렌드와 맞물려 성장 가능성 높음.</p>
+        <div class="idea-score">📈 시장 적합도 92%</div>
+      </div>
+      <div class="idea-card" onclick="toggleIdea(this)">
+        <div class="idea-tag">헬스 / 플랫폼</div>
+        <h3>동네 운동 모임 매칭 앱</h3>
+        <p>관심사 기반으로 같은 동네 운동 파트너를 연결해주는 플랫폼. 초기 자본 최소화, 커뮤니티 성장에 강점.</p>
+        <div class="idea-score">📈 시장 적합도 87%</div>
+      </div>
+      <div class="idea-card" onclick="toggleIdea(this)">
+        <div class="idea-tag">교육 / B2B</div>
+        <h3>소상공인 SNS 마케팅 SaaS</h3>
+        <p>마케팅이 어려운 소상공인을 위한 AI 기반 콘텐츠 생성 및 스케줄링 도구. 월 구독 모델로 안정적인 수익 구조.</p>
+        <div class="idea-score">📈 시장 적합도 84%</div>
+      </div>
+      <div class="idea-card" onclick="toggleIdea(this)">
+        <div class="idea-tag">환경 / 커머스</div>
+        <h3>중고 아동복 거래 플랫폼</h3>
+        <p>빠르게 옷이 작아지는 아이들 특성을 활용한 친환경 중고 거래 커뮤니티. 부모 커뮤니티와 연동 가능.</p>
+        <div class="idea-score">📈 시장 적합도 79%</div>
+      </div>
+    </div>
+
+    <a href="analyze-idea.html" class="analyze-link">선택한 아이디어 분석하러 가기 →</a>
+
+    <div style="text-align:center; margin-top: 16px;">
+      <button class="btn-secondary" onclick="goStep(1)" style="font-size:13px; padding: 9px 20px;">다시 처음부터</button>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 Search Your Market. All rights reserved.</footer>
+
+<script>
+  function toggle(el) { el.classList.toggle('selected'); }
+  function selectOne(el, group) {
+    el.closest('.options').querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+  }
+  function selectScale(el, group) {
+    el.closest('.scale-options').querySelectorAll('.scale-btn').forEach(b => b.classList.remove('selected'));
+    el.classList.add('selected');
+  }
+  function toggleIdea(el) { el.classList.toggle('picked'); }
+  function goStep(n) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel' + n).classList.add('active');
+    for (let i = 1; i <= 4; i++) {
+      const step = document.getElementById('step' + i);
+      step.classList.remove('active', 'done');
+      if (i < n) step.classList.add('done');
+      else if (i === n) step.classList.add('active');
+      if (i < 4) {
+        const line = document.getElementById('line' + i);
+        line.classList.toggle('done', i < n);
+      }
+    }
+    window.scrollTo(0, 0);
+  }
+</script>
+</body>
+</html>

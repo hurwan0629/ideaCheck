@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>인기 검색어 — SYM</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #2563eb; --dark: #0f172a; --nav-bg: #1e293b;
+      --text: #334155; --text-light: #64748b;
+      --bg: #f8fafc; --card-bg: #fff; --border: #e2e8f0; --accent: #06b6d4;
+    }
+    body { font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); }
+    nav {
+      background: var(--nav-bg); padding: 0 40px; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .logo { color: #fff; font-size: 20px; font-weight: 800; text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .nav-center { display: flex; gap: 8px; }
+    .nav-center a { color: #94a3b8; text-decoration: none; padding: 6px 14px; border-radius: 6px; font-size: 14px; }
+    .nav-center a:hover, .nav-center a.active { color: #fff; background: rgba(255,255,255,0.08); }
+    .nav-right { display: flex; gap: 8px; align-items: center; }
+    .nav-right a { color: #94a3b8; text-decoration: none; font-size: 14px; padding: 6px 14px; border-radius: 6px; }
+    .btn-login { background: var(--primary) !important; color: #fff !important; border-radius: 8px !important; }
+
+    .hero-bar {
+      background: linear-gradient(120deg, #1e293b, #1e3a5f);
+      padding: 40px; color: #fff;
+    }
+    .hero-bar h1 { font-size: 28px; font-weight: 800; margin-bottom: 6px; }
+    .hero-bar p { color: #94a3b8; font-size: 14px; }
+    .updated { color: var(--accent); font-size: 12px; font-weight: 600; margin-top: 8px; }
+    .notice {
+      display: inline-block;
+      background: rgba(245,158,11,0.15);
+      border: 1px solid rgba(245,158,11,0.3);
+      color: #fbbf24;
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 6px;
+      margin-top: 12px;
+    }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 40px; }
+
+    .layout { display: grid; grid-template-columns: 1fr 320px; gap: 24px; }
+
+    /* Tag cloud */
+    .cloud-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+    .cloud-card h2 { font-size: 16px; font-weight: 800; color: var(--dark); margin-bottom: 20px; }
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 10px; }
+    .cloud-tag {
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1.5px solid transparent;
+    }
+    .cloud-tag:hover { transform: scale(1.05); }
+    .sz-1 { font-size: 22px; background: #eff6ff; color: #1d4ed8; }
+    .sz-2 { font-size: 18px; background: #ecfdf5; color: #059669; }
+    .sz-3 { font-size: 15px; background: #fefce8; color: #ca8a04; }
+    .sz-4 { font-size: 13px; background: #fdf4ff; color: #7c3aed; }
+    .sz-5 { font-size: 12px; background: #f1f5f9; color: var(--text-light); }
+
+    /* Ranked list */
+    .rank-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .rank-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .rank-header h2 { font-size: 15px; font-weight: 800; color: var(--dark); }
+    .rank-period { font-size: 12px; color: var(--text-light); }
+    .rank-item {
+      display: flex;
+      align-items: center;
+      padding: 13px 24px;
+      border-bottom: 1px solid var(--border);
+      gap: 14px;
+      transition: background 0.15s;
+      cursor: default;
+    }
+    .rank-item:last-child { border-bottom: none; }
+    .rank-item:hover { background: #f8fafc; }
+    .rank-num {
+      width: 24px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .rank-1 { color: #ef4444; }
+    .rank-2 { color: #f59e0b; }
+    .rank-3 { color: #2563eb; }
+    .rank-other { color: #94a3b8; }
+    .rank-keyword { flex: 1; font-size: 14px; font-weight: 600; color: var(--dark); }
+    .rank-change {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+    .chg-up { background: #ecfdf5; color: #059669; }
+    .chg-down { background: #fef2f2; color: #dc2626; }
+    .chg-new { background: #eff6ff; color: #2563eb; }
+    .chg-same { background: #f1f5f9; color: #94a3b8; }
+
+    /* Categories section */
+    .cat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .cat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .cat-title {
+      font-size: 13px; font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 12px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .cat-keywords { display: flex; flex-direction: column; gap: 6px; }
+    .cat-kw {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+    .cat-kw .kw-name { color: var(--dark); font-weight: 500; }
+    .cat-kw .kw-bar { flex: 1; height: 5px; background: #f1f5f9; border-radius: 99px; margin: 0 10px; overflow: hidden; }
+    .cat-kw .kw-fill { height: 100%; border-radius: 99px; }
+    .cat-kw .kw-pct { color: var(--text-light); font-size: 11px; width: 28px; text-align: right; }
+
+    footer { background: var(--nav-bg); color: #64748b; text-align: center; padding: 30px; font-size: 13px; margin-top: 60px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">S<span>Y</span>M</a>
+  <div class="nav-center">
+    <a href="trend.html">요즘 트렌드</a>
+    <a href="market-share.html">시장 점유율</a>
+    <a href="popular-keywords.html" class="active">인기 검색어</a>
+  </div>
+  <div class="nav-right">
+    <a href="mypage.html">마이페이지</a>
+    <a href="pricing.html">요금제</a>
+    <a href="login.html" class="btn-login">로그인</a>
+  </div>
+</nav>
+
+<div class="hero-bar">
+  <h1>인기 검색어 🔍</h1>
+  <p>사람들이 어떤 사업 아이디어를 많이 찾아보는지 대략적으로 확인하세요</p>
+  <div class="updated">↑ 2026년 4월 12일 실시간 업데이트</div>
+  <div class="notice">⚠️ 구체적인 수치는 개인정보 보호를 위해 표시하지 않습니다</div>
+</div>
+
+<div class="container">
+  <div class="layout">
+    <div>
+      <!-- Tag cloud -->
+      <div class="cloud-card">
+        <h2>🏷️ 이번 주 검색 키워드 클라우드</h2>
+        <div class="tag-cloud">
+          <span class="cloud-tag sz-1">AI 서비스</span>
+          <span class="cloud-tag sz-2">1인 가구</span>
+          <span class="cloud-tag sz-1">구독 모델</span>
+          <span class="cloud-tag sz-3">배달앱</span>
+          <span class="cloud-tag sz-2">건강식</span>
+          <span class="cloud-tag sz-4">반려동물</span>
+          <span class="cloud-tag sz-3">친환경</span>
+          <span class="cloud-tag sz-2">노코드</span>
+          <span class="cloud-tag sz-4">중고거래</span>
+          <span class="cloud-tag sz-1">SaaS</span>
+          <span class="cloud-tag sz-3">홈트레이닝</span>
+          <span class="cloud-tag sz-4">시니어</span>
+          <span class="cloud-tag sz-2">에듀테크</span>
+          <span class="cloud-tag sz-5">세컨드브레인</span>
+          <span class="cloud-tag sz-3">뷰티테크</span>
+          <span class="cloud-tag sz-4">로컬 커머스</span>
+          <span class="cloud-tag sz-2">밀키트</span>
+          <span class="cloud-tag sz-5">B2B 솔루션</span>
+          <span class="cloud-tag sz-3">공유경제</span>
+          <span class="cloud-tag sz-4">전동킥보드</span>
+          <span class="cloud-tag sz-5">크리에이터 경제</span>
+          <span class="cloud-tag sz-3">원격근무</span>
+          <span class="cloud-tag sz-2">핀테크</span>
+          <span class="cloud-tag sz-4">스마트홈</span>
+        </div>
+      </div>
+
+      <!-- Category breakdown -->
+      <div class="cloud-card">
+        <h2>📁 카테고리별 인기 키워드</h2>
+        <div class="cat-grid">
+          <div class="cat-card">
+            <div class="cat-title">💻 IT / 테크</div>
+            <div class="cat-keywords">
+              <div class="cat-kw"><span class="kw-name">AI 서비스</span><div class="kw-bar"><div class="kw-fill" style="width:90%;background:#2563eb"></div></div><span class="kw-pct">매우 높음</span></div>
+              <div class="cat-kw"><span class="kw-name">SaaS</span><div class="kw-bar"><div class="kw-fill" style="width:70%;background:#2563eb"></div></div><span class="kw-pct">높음</span></div>
+              <div class="cat-kw"><span class="kw-name">노코드</span><div class="kw-bar"><div class="kw-fill" style="width:55%;background:#2563eb"></div></div><span class="kw-pct">중간</span></div>
+              <div class="cat-kw"><span class="kw-name">스마트홈</span><div class="kw-bar"><div class="kw-fill" style="width:40%;background:#2563eb"></div></div><span class="kw-pct">보통</span></div>
+            </div>
+          </div>
+          <div class="cat-card">
+            <div class="cat-title">🍽️ 식음료</div>
+            <div class="cat-keywords">
+              <div class="cat-kw"><span class="kw-name">구독 배달</span><div class="kw-bar"><div class="kw-fill" style="width:85%;background:#10b981"></div></div><span class="kw-pct">매우 높음</span></div>
+              <div class="cat-kw"><span class="kw-name">건강식</span><div class="kw-bar"><div class="kw-fill" style="width:72%;background:#10b981"></div></div><span class="kw-pct">높음</span></div>
+              <div class="cat-kw"><span class="kw-name">밀키트</span><div class="kw-bar"><div class="kw-fill" style="width:60%;background:#10b981"></div></div><span class="kw-pct">중간</span></div>
+              <div class="cat-kw"><span class="kw-name">비건</span><div class="kw-bar"><div class="kw-fill" style="width:35%;background:#10b981"></div></div><span class="kw-pct">보통</span></div>
+            </div>
+          </div>
+          <div class="cat-card">
+            <div class="cat-title">🏃 헬스 / 라이프</div>
+            <div class="cat-keywords">
+              <div class="cat-kw"><span class="kw-name">홈트레이닝</span><div class="kw-bar"><div class="kw-fill" style="width:78%;background:#f59e0b"></div></div><span class="kw-pct">높음</span></div>
+              <div class="cat-kw"><span class="kw-name">반려동물</span><div class="kw-bar"><div class="kw-fill" style="width:65%;background:#f59e0b"></div></div><span class="kw-pct">높음</span></div>
+              <div class="cat-kw"><span class="kw-name">시니어케어</span><div class="kw-bar"><div class="kw-fill" style="width:50%;background:#f59e0b"></div></div><span class="kw-pct">중간</span></div>
+              <div class="cat-kw"><span class="kw-name">웰니스</span><div class="kw-bar"><div class="kw-fill" style="width:42%;background:#f59e0b"></div></div><span class="kw-pct">보통</span></div>
+            </div>
+          </div>
+          <div class="cat-card">
+            <div class="cat-title">📚 교육 / 커리어</div>
+            <div class="cat-keywords">
+              <div class="cat-kw"><span class="kw-name">에듀테크</span><div class="kw-bar"><div class="kw-fill" style="width:68%;background:#8b5cf6"></div></div><span class="kw-pct">높음</span></div>
+              <div class="cat-kw"><span class="kw-name">원격학습</span><div class="kw-bar"><div class="kw-fill" style="width:55%;background:#8b5cf6"></div></div><span class="kw-pct">중간</span></div>
+              <div class="cat-kw"><span class="kw-name">AI 튜터</span><div class="kw-bar"><div class="kw-fill" style="width:80%;background:#8b5cf6"></div></div><span class="kw-pct">높음</span></div>
+              <div class="cat-kw"><span class="kw-name">코딩교육</span><div class="kw-bar"><div class="kw-fill" style="width:44%;background:#8b5cf6"></div></div><span class="kw-pct">보통</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar: Ranked list -->
+    <div>
+      <div class="rank-card">
+        <div class="rank-header">
+          <h2>🏆 실시간 인기 주제</h2>
+          <span class="rank-period">최근 7일</span>
+        </div>
+        <div class="rank-item"><div class="rank-num rank-1">1</div><div class="rank-keyword">AI 기반 서비스</div><span class="rank-change chg-up">▲ 상승</span></div>
+        <div class="rank-item"><div class="rank-num rank-2">2</div><div class="rank-keyword">1인 가구 타겟</div><span class="rank-change chg-same">— 유지</span></div>
+        <div class="rank-item"><div class="rank-num rank-3">3</div><div class="rank-keyword">구독 서비스</div><span class="rank-change chg-up">▲ 상승</span></div>
+        <div class="rank-item"><div class="rank-num rank-other">4</div><div class="rank-keyword">친환경 비즈니스</div><span class="rank-change chg-new">NEW</span></div>
+        <div class="rank-item"><div class="rank-num rank-other">5</div><div class="rank-keyword">반려동물 서비스</div><span class="rank-change chg-up">▲ 상승</span></div>
+        <div class="rank-item"><div class="rank-num rank-other">6</div><div class="rank-keyword">시니어 케어</div><span class="rank-change chg-up">▲ 상승</span></div>
+        <div class="rank-item"><div class="rank-num rank-other">7</div><div class="rank-keyword">소상공인 솔루션</div><span class="rank-change chg-same">— 유지</span></div>
+        <div class="rank-item"><div class="rank-num rank-other">8</div><div class="rank-keyword">에듀테크</div><span class="rank-change chg-down">▼ 하락</span></div>
+        <div class="rank-item"><div class="rank-num rank-other">9</div><div class="rank-keyword">핀테크</div><span class="rank-change chg-same">— 유지</span></div>
+        <div class="rank-item"><div class="rank-num rank-other">10</div><div class="rank-keyword">크리에이터 경제</div><span class="rank-change chg-new">NEW</span></div>
+      </div>
+
+      <div style="margin-top: 16px; padding: 16px; background: #fff; border: 1px solid var(--border); border-radius: 14px; font-size: 12px; color: var(--text-light); line-height: 1.6;">
+        <strong style="color:var(--dark); display:block; margin-bottom:6px;">📌 안내</strong>
+        개인 식별이 가능한 구체적인 수치는 공개하지 않습니다. 표시된 데이터는 상대적 인기도만 나타냅니다.
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 Search Your Market. All rights reserved.</footer>
+</body>
+</html>

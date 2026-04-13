@@ -1,6 +1,6 @@
 from datetime import date, datetime, timezone
 
-from sqlalchemy import BigInteger, String, Text, Date, DateTime, Numeric
+from sqlalchemy import BigInteger, String, Text, Date, DateTime, Numeric, Sequence
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db import Base
@@ -22,7 +22,7 @@ Table TRENDS {
 class Trend(Base):
   __tablename__ = "TRENDS"
 
-  trend_id: Mapped[int] = mapped_column("TREND_ID", BigInteger, primary_key=True)
+  trend_id: Mapped[int] = mapped_column("TREND_ID", BigInteger, Sequence("trends_trend_id_seq"), primary_key=True)
   topic: Mapped[str] = mapped_column("TOPIC", String(255), nullable=False)
   trend_date: Mapped[date] = mapped_column("TREND_DATE", Date, nullable=False)
   trend_score: Mapped[float | None] = mapped_column("TREND_SCORE", Numeric(10, 2), nullable=True)

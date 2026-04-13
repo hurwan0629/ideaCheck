@@ -1,9 +1,9 @@
 from datetime import datetime, timezone
 from typing import Any
 
-from sqlalchemy import BigInteger, DateTime, ForeignKey
+from sqlalchemy import BigInteger, DateTime, ForeignKey, Sequence
 from sqlalchemy.dialects.postgresql import JSONB
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db import Base
 
@@ -29,8 +29,10 @@ Table IDEA_ANALYSES {
 class IdeaAnalysis(Base):
   __tablename__ = "IDEA_ANALYSES"
 
-  analysis_id: Mapped[int] = mapped_column("ANALYSIS_ID", BigInteger, primary_key=True)
+  analysis_id: Mapped[int] = mapped_column("ANALYSIS_ID", BigInteger, Sequence("idea_analyses_analysis_id_seq"), primary_key=True)
   idea_id: Mapped[int] = mapped_column("IDEA_ID", BigInteger, ForeignKey("USER_IDEAS.IDEA_ID"), nullable=False)
   result_summary: Mapped[dict[str, Any] | None] = mapped_column("RESULT_SUMMARY", JSONB, nullable=True)
   result_detail: Mapped[dict[str, Any] | None] = mapped_column("RESULT_DETAIL", JSONB, nullable=True)
   created_at: Mapped[datetime] = mapped_column("CREATED_AT", DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), nullable=False)
+
+  user_idea: Mapped["UserIdea"] = relationship("UserIdea", back_populates="idea_analysis")

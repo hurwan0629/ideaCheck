@@ -1,8 +1,8 @@
 from enum import Enum
 from datetime import datetime, timezone
 from typing import Any
-from sqlalchemy import Enum as SqlEnum, BigInteger, String, Text, DateTime, ForeignKey
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy import Enum as SqlEnum, BigInteger, String, Text, DateTime, ForeignKey, Sequence
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.dialects.postgresql import JSONB
 
 from app.db import Base
@@ -27,10 +27,13 @@ class IdeaStatus(str, Enum):
 class UserIdea(Base):
   __tablename__ = "USER_IDEAS"
 
-  idea_id: Mapped[int] = mapped_column("IDEA_ID", BigInteger, primary_key=True)
+  idea_id: Mapped[int] = mapped_column("IDEA_ID", BigInteger, Sequence("user_ideas_idea_id_seq"), primary_key=True)
   user_id: Mapped[int] = mapped_column("USER_ID", BigInteger, ForeignKey("USERS.USER_ID"), nullable=False)
   title: Mapped[str] = mapped_column("TITLE", String(255), nullable=False)
   content: Mapped[dict[str, Any]] = mapped_column("CONTENT", JSONB, nullable=False)
   status: Mapped[IdeaStatus] = mapped_column("STATUS", SqlEnum(IdeaStatus), nullable=False, default=IdeaStatus.DRAFT)
   created_at: Mapped[datetime] = mapped_column("CREATED_AT", DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), nullable=False)
   updated_at: Mapped[datetime] = mapped_column("UPDATED_AT", DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc), nullable=False)
+
+  user: Mapped["User"] = relationship("User", back_populates="user_ideas")
+  idea_analysis: Mapped["IdeaAnalysis"] = relationship("IdeaAnalysis", back_populates="user_idea", uselist=False)

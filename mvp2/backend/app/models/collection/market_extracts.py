@@ -1,8 +1,8 @@
 from datetime import datetime, timezone
 from typing import Any
 from sqlalchemy.dialects.postgresql import JSONB
-from sqlalchemy import BigInteger, String, Text, DateTime, ForeignKey
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy import BigInteger, String, Text, DateTime, ForeignKey, Sequence
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db import Base
 
@@ -20,9 +20,11 @@ Table MARKET_EXTRACTS {
 class MarketExtract(Base):
   __tablename__ = "MARKET_EXTRACTS"
 
-  extract_id: Mapped[int] = mapped_column("EXTRACT_ID", BigInteger, primary_key=True)
+  extract_id: Mapped[int] = mapped_column("EXTRACT_ID", BigInteger, Sequence("market_extracts_extract_id_seq"), primary_key=True)
   raw_source_id: Mapped[int] = mapped_column("RAW_SOURCE_ID", BigInteger, ForeignKey("MARKET_RAW_SOURCES.RAW_SOURCE_ID"), nullable=False)
   topic: Mapped[str] = mapped_column("TOPIC", String(255), nullable=False)
   summary: Mapped[dict[str, Any] | None] = mapped_column("SUMMARY", JSONB, nullable=True)
   extracted_data: Mapped[str | None] = mapped_column("EXTRACTED_DATA", Text, nullable=True)
   created_at: Mapped[datetime] = mapped_column("CREATED_AT", DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), nullable=False)
+
+  market_raw_source: Mapped["MarketRawSource"] = relationship("MarketRawSource", back_populates="market_extracts")

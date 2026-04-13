@@ -67,7 +67,7 @@ COMPETITOR_POLICIES → 시점별 정책/포지셔닝 변화 — 자주 바뀜
 tables.md에는 `ANALYSIS_TYPE varchar`가 있는데 ORM(idea_analyses.py)에서 빠졌다. 이게 없으면 "시장분석인지 경쟁사분석인지"를 구분할 방법이 없다. IDEA_COMPETITOR_COMPARISONS를 IDEA_ANALYSES와 합치려면 이 컬럼이 더 중요해진다.
 
 **IDEA_COMPETITOR_COMPARISONS 합칠지 말지:**
-- 합치는 게 맞다고 본다. `ANALYSIS_TYPE = "competitor_comparison"` 하나로 처리하면 API도 단순해지고, 프론트에서 카드 형태로 렌더링할 때도 RESULT_DETAIL JSONB 안에 `{competitors: [{name, strengths, weaknesses}]}` 구조로 넣으면 충분하다.
+- 합치는 게 맞다고 본다. `ANALYSIS_TYPE = "competitor_comparison"` 하나로 처리하면 API도 단순해지고, 프론트에서 카드 형태로 렌더링할 때도 RESULT_RAW JSONB 안에 `{competitors: [{name, strengths, weaknesses}]}` 구조로 넣으면 충분하다.
 - 단, 합칠 경우 IDEA_COMPETITOR_COMPARISONS의 `COMPETITOR_ID` FK가 사라진다. 나중에 "특정 경쟁사가 몇 번 비교됐는지" 쿼리가 필요하다면 분리 유지.
 
 ---
@@ -338,7 +338,7 @@ Table IDEA_ANALYSES {
   IDEA_ID        bigint [ref: > USER_IDEAS.IDEA_ID]
   // ANALYSIS_TYPE 제거
   RESULT_SUMMARY jsonb  // {"direction": "...", "differentiation": [...], "matched_competitors": [100, 101, 102]}
-  RESULT_DETAIL  jsonb  // AI 분석 전문
+  RESULT_RAW  jsonb  // AI 분석 전문
   CREATED_AT     datetime
 }
 ```

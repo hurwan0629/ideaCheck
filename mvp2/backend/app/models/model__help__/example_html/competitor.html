@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>경쟁사 관련 데이터 포맷</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f5f6fa; color: #2d2d2d; }
+    header { background: #1e2a3a; color: white; padding: 24px 40px; display: flex; align-items: center; gap: 16px; }
+    header a { color: #9aa5b4; text-decoration: none; font-size: 0.85rem; }
+    header a:hover { color: white; }
+    header h1 { font-size: 1.2rem; font-weight: 600; }
+    .container { max-width: 960px; margin: 40px auto; padding: 0 24px; display: flex; flex-direction: column; gap: 32px; }
+
+    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: #9aa5b4;
+                     text-transform: uppercase; margin-bottom: 12px; }
+    .card { background: white; border-radius: 12px; padding: 28px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    .card h2 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+    .card .subtitle { font-size: 0.8rem; color: #6b7280; margin-bottom: 20px; }
+    .divider { border: none; border-top: 1px solid #f0f0f0; margin: 20px 0; }
+
+    /* COMPETITORS */
+    .competitor-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+    .competitor-logo { width: 52px; height: 52px; border-radius: 10px; background: #e8f0fe;
+                       display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+    .competitor-meta h3 { font-size: 1.1rem; font-weight: 600; }
+    .competitor-meta .badge { display: inline-block; font-size: 0.72rem; background: #eef2ff; color: #4f7cff;
+                               padding: 2px 10px; border-radius: 20px; margin-top: 4px; }
+    .field { margin-bottom: 14px; }
+    .field label { font-size: 0.72rem; font-weight: 600; color: #9aa5b4; display: block; margin-bottom: 4px; letter-spacing: 0.05em; }
+    .field p { font-size: 0.88rem; line-height: 1.6; color: #374151; }
+    .field a { font-size: 0.88rem; color: #4f7cff; }
+
+    /* COMPETITOR_FEATURES */
+    .feature-list { display: flex; flex-direction: column; gap: 12px; }
+    .feature-item { background: #f9fafb; border-radius: 8px; padding: 14px 16px; }
+    .feature-item .name { font-size: 0.88rem; font-weight: 600; margin-bottom: 4px; }
+    .feature-item .desc { font-size: 0.82rem; color: #6b7280; line-height: 1.5; }
+
+    /* COMPETITOR_POLICIES */
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .timeline-item { display: flex; gap: 16px; }
+    .timeline-line { display: flex; flex-direction: column; align-items: center; }
+    .timeline-dot { width: 10px; height: 10px; border-radius: 50%; background: #4f7cff; margin-top: 5px; flex-shrink: 0; }
+    .timeline-connector { width: 2px; background: #e5e7eb; flex: 1; margin: 4px 0; }
+    .timeline-item:last-child .timeline-connector { display: none; }
+    .timeline-content { padding-bottom: 24px; flex: 1; }
+    .timeline-content .date { font-size: 0.75rem; color: #9aa5b4; margin-bottom: 8px; }
+    .policy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .policy-cell { background: #f9fafb; border-radius: 8px; padding: 12px; }
+    .policy-cell .key { font-size: 0.7rem; color: #9aa5b4; font-weight: 600; margin-bottom: 6px; }
+    .policy-cell .val { font-size: 0.82rem; color: #374151; line-height: 1.5; }
+
+    /* COMPETITOR_ANALYSES */
+    .analysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .swot-box { border-radius: 8px; padding: 16px; }
+    .swot-box.strength { background: #f0fdf4; border-left: 3px solid #22c55e; }
+    .swot-box.weakness { background: #fff7ed; border-left: 3px solid #f97316; }
+    .swot-box h4 { font-size: 0.75rem; font-weight: 700; color: #6b7280; margin-bottom: 10px; letter-spacing: 0.05em; }
+    .swot-box ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .swot-box ul li { font-size: 0.82rem; color: #374151; display: flex; gap: 6px; }
+    .swot-box ul li::before { content: '•'; color: #9aa5b4; }
+    .char-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .char-item { background: #f9fafb; border-radius: 8px; padding: 14px; text-align: center; }
+    .char-item .key { font-size: 0.7rem; color: #9aa5b4; margin-bottom: 6px; font-weight: 600; }
+    .char-item .val { font-size: 0.88rem; font-weight: 600; color: #1e2a3a; }
+    .keyword-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .keyword-tag { font-size: 0.75rem; background: #eef2ff; color: #4f7cff; padding: 3px 10px; border-radius: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← 목록</a>
+    <h1>🏢 경쟁사 관련 데이터 포맷</h1>
+  </header>
+
+  <div class="container">
+
+    <!-- COMPETITORS -->
+    <div>
+      <div class="section-label">COMPETITORS — 경쟁사 기본 정보 (크롤링)</div>
+      <div class="card">
+        <div class="competitor-header">
+          <div class="competitor-logo">🏦</div>
+          <div class="competitor-meta">
+            <h3>토스비즈니스</h3>
+            <span class="badge">핀테크</span>
+          </div>
+        </div>
+        <div class="field">
+          <label>DESCRIPTION</label>
+          <p>중소기업 및 스타트업을 위한 법인 계좌·카드·세금 관리 올인원 금융 플랫폼.</p>
+        </div>
+        <div class="field">
+          <label>TARGET_CUSTOMER</label>
+          <p>직원 50인 이하 스타트업, 1인 사업자, 프리랜서. 기존 은행 서비스의 복잡함을 피하고 싶은 소규모 사업자.</p>
+        </div>
+        <div class="field">
+          <label>WEBSITE</label>
+          <a href="#">https://business.toss.im</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPETITOR_FEATURES -->
+    <div>
+      <div class="section-label">COMPETITOR_FEATURES — 주요 기능 (크롤링)</div>
+      <div class="card">
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="name">법인카드 통합 관리</div>
+            <div class="desc">임직원 카드 발급 및 사용 내역 실시간 조회. 한도 설정 및 용도별 분류 자동화.</div>
+          </div>
+          <div class="feature-item">
+            <div class="name">세금 신고 자동화</div>
+            <div class="desc">부가세·종합소득세 신고 자료를 자동으로 집계. 세무사 연동 서비스 제공.</div>
+          </div>
+          <div class="feature-item">
+            <div class="name">급여 이체</div>
+            <div class="desc">직원 급여를 일괄 이체. 4대보험 공제 내역 자동 계산 및 명세서 발송.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPETITOR_POLICIES -->
+    <div>
+      <div class="section-label">COMPETITOR_POLICIES — 시점별 정책 (크롤링) · POLICY_DATA (jsonb)</div>
+      <div class="card">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-line">
+              <div class="timeline-dot"></div>
+              <div class="timeline-connector"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="date">POLICY_DATE: 2025-01-10</div>
+              <div class="policy-grid">
+                <div class="policy-cell">
+                  <div class="key">price.tier</div>
+                  <div class="val">freemium</div>
+                </div>
+                <div class="policy-cell">
+                  <div class="key">price.base_price</div>
+                  <div class="val">무료 (거래 수수료 0.1%)</div>
+                </div>
+                <div class="policy-cell">
+                  <div class="key">positioning</div>
+                  <div class="val">중소기업 타겟 올인원 금융</div>
+                </div>
+                <div class="policy-cell" style="grid-column: span 3;">
+                  <div class="key">strategy</div>
+                  <div class="val">무료 진입 후 세무·급여 유료 부가서비스로 전환 유도</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-line">
+              <div class="timeline-dot" style="background:#9aa5b4;"></div>
+              <div class="timeline-connector"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="date">POLICY_DATE: 2024-07-01</div>
+              <div class="policy-grid">
+                <div class="policy-cell">
+                  <div class="key">price.tier</div>
+                  <div class="val">freemium</div>
+                </div>
+                <div class="policy-cell">
+                  <div class="key">price.base_price</div>
+                  <div class="val">무료</div>
+                </div>
+                <div class="policy-cell">
+                  <div class="key">positioning</div>
+                  <div class="val">스타트업 전용 법인 계좌</div>
+                </div>
+                <div class="policy-cell" style="grid-column: span 3;">
+                  <div class="key">strategy</div>
+                  <div class="val">법인 개설 간소화로 초기 스타트업 선점</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPETITOR_ANALYSES -->
+    <div>
+      <div class="section-label">COMPETITOR_ANALYSES — AI 종합 분석 · STRENGTH / WEAKNESS / CHARACTERISTIC (jsonb)</div>
+      <div class="card">
+        <div class="card subtitle" style="padding: 0 0 16px 0; box-shadow: none; border-radius: 0;">
+          <span style="font-size:0.8rem; color:#6b7280;">ANALYSIS_DATE: 2025-03-01 기준</span>
+        </div>
+        <div class="analysis-grid">
+          <div class="swot-box strength">
+            <h4>STRENGTH</h4>
+            <ul>
+              <li>가격 경쟁력 (무료 진입)</li>
+              <li>모바일 우선 UX</li>
+              <li>빠른 법인 계좌 개설</li>
+            </ul>
+          </div>
+          <div class="swot-box weakness">
+            <h4>WEAKNESS</h4>
+            <ul>
+              <li>대기업 거래처 신뢰도 낮음</li>
+              <li>오프라인 지점 없음</li>
+              <li>외화 송금 기능 미흡</li>
+            </ul>
+          </div>
+        </div>
+        <hr class="divider">
+        <div class="char-grid">
+          <div class="char-item">
+            <div class="key">market_share</div>
+            <div class="val">중위권</div>
+          </div>
+          <div class="char-item">
+            <div class="key">growth</div>
+            <div class="val">성장중</div>
+          </div>
+          <div class="char-item">
+            <div class="key">keywords</div>
+            <div class="keyword-list" style="justify-content: center;">
+              <span class="keyword-tag">핀테크</span>
+              <span class="keyword-tag">B2B</span>
+              <span class="keyword-tag">SaaS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

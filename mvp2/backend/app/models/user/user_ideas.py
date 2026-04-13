@@ -24,6 +24,7 @@ class IdeaStatus(str, Enum):
   ACTIVE = "ACTIVE"
   ARCHIVED = "ARCHIVED"
 
+# 사용자가 분석 요청한 아이디어
 class UserIdea(Base):
   __tablename__ = "USER_IDEAS"
 

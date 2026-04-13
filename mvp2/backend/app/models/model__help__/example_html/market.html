@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>시장 분포 관련 데이터 포맷</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f5f6fa; color: #2d2d2d; }
+    header { background: #1e2a3a; color: white; padding: 24px 40px; display: flex; align-items: center; gap: 16px; }
+    header a { color: #9aa5b4; text-decoration: none; font-size: 0.85rem; }
+    header a:hover { color: white; }
+    header h1 { font-size: 1.2rem; font-weight: 600; }
+    .container { max-width: 960px; margin: 40px auto; padding: 0 24px; display: flex; flex-direction: column; gap: 32px; }
+    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: #9aa5b4;
+                     text-transform: uppercase; margin-bottom: 12px; }
+    .card { background: white; border-radius: 12px; padding: 28px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    .divider { border: none; border-top: 1px solid #f0f0f0; margin: 20px 0; }
+    .field { margin-bottom: 16px; }
+    .field label { font-size: 0.72rem; font-weight: 600; color: #9aa5b4; display: block;
+                   margin-bottom: 6px; letter-spacing: 0.05em; }
+
+    /* RAW SOURCE */
+    .source-meta { display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
+    .badge { display: inline-block; font-size: 0.72rem; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
+    .badge.news { background: #fef3c7; color: #d97706; }
+    .badge.blog { background: #ede9fe; color: #7c3aed; }
+    .badge.report { background: #dbeafe; color: #1d4ed8; }
+    .source-name { font-size: 1rem; font-weight: 600; }
+    .source-url { font-size: 0.8rem; color: #4f7cff; }
+    .raw-content-box { background: #f9fafb; border-radius: 8px; padding: 16px;
+                        font-size: 0.83rem; line-height: 1.75; color: #374151;
+                        max-height: 200px; overflow-y: auto; border-left: 3px solid #e5e7eb; }
+    .collected-at { font-size: 0.75rem; color: #9aa5b4; margin-top: 12px; }
+
+    /* MARKET_EXTRACTS */
+    .extract-source { font-size: 0.8rem; color: #6b7280; margin-bottom: 16px; }
+    .extract-source span { color: #4f7cff; font-weight: 500; }
+    .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+    .summary-cell { background: #f9fafb; border-radius: 8px; padding: 14px; }
+    .summary-cell .key { font-size: 0.7rem; color: #9aa5b4; font-weight: 600; margin-bottom: 6px; }
+    .summary-cell .val { font-size: 0.85rem; color: #374151; line-height: 1.5; }
+    .keyword-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .keyword-tag { font-size: 0.75rem; background: #eef2ff; color: #4f7cff; padding: 3px 10px; border-radius: 20px; }
+    .sentiment-pos { color: #22c55e; font-weight: 600; }
+    .sentiment-neg { color: #ef4444; font-weight: 600; }
+    .sentiment-neu { color: #9aa5b4; font-weight: 600; }
+    .extracted-box { background: #f0f9ff; border-left: 3px solid #38bdf8; border-radius: 8px;
+                      padding: 16px; font-size: 0.83rem; line-height: 1.75; color: #374151; }
+
+    /* 두 번째 raw source 예시 */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← 목록</a>
+    <h1>📊 시장 분포 관련 데이터 포맷</h1>
+  </header>
+
+  <div class="container">
+
+    <!-- MARKET_RAW_SOURCES -->
+    <div>
+      <div class="section-label">MARKET_RAW_SOURCES — 수집 원문 (크롤링 / API) · RAW_CONTENT (text)</div>
+      <div class="two-col">
+
+        <div class="card">
+          <div class="source-meta">
+            <span class="badge news">NEWS</span>
+            <div>
+              <div class="source-name">테크크런치 코리아</div>
+              <div class="source-url">https://kr.techcrunch.com/2025/03/12/b2b-saas-trend</div>
+            </div>
+          </div>
+          <div class="field">
+            <label>RAW_CONTENT</label>
+            <div class="raw-content-box">
+              2025년 국내 B2B SaaS 시장은 전년 대비 38% 성장하며 역대 최고 투자액을 기록했다.
+              특히 중소기업 타겟의 올인원 솔루션 수요가 급격히 증가했으며, 단순 클라우드 전환을
+              넘어 AI 기반 자동화 기능을 내장한 제품에 투자가 집중됐다. 토스비즈니스, 채널코퍼레이션
+              등 국내 플레이어들이 동남아 시장으로 진출하며 글로벌 확장도 가속화되고 있다.
+              벤처캐피털 관계자들은 "2026년까지 이 흐름이 이어질 것"이라며 버티컬 SaaS에 주목하라고 조언했다.
+            </div>
+          </div>
+          <div class="collected-at">COLLECTED_AT: 2025-03-12 09:14:22</div>
+        </div>
+
+        <div class="card">
+          <div class="source-meta">
+            <span class="badge report">REPORT</span>
+            <div>
+              <div class="source-name">KPMG 한국 디지털 리포트 2025</div>
+              <div class="source-url">https://kpmg.com/kr/2025-digital-report.pdf</div>
+            </div>
+          </div>
+          <div class="field">
+            <label>RAW_CONTENT</label>
+            <div class="raw-content-box">
+              국내 디지털 전환 예산의 62%가 SaaS 도입에 투입되고 있으며, 기존 레거시 시스템
+              대비 운영 비용이 평균 29% 절감되는 것으로 나타났다. 특히 HR·회계·CRM 분야에서
+              통합형 솔루션에 대한 수요가 높았으며, 구독 기반 요금제를 선호하는 기업 비중이
+              74%로 집계됐다. 보안 및 컴플라이언스 이슈로 인해 퍼블릭 클라우드보다 하이브리드
+              방식을 선택하는 중견기업도 증가 추세다.
+            </div>
+          </div>
+          <div class="collected-at">COLLECTED_AT: 2025-03-10 15:30:00</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MARKET_EXTRACTS -->
+    <div>
+      <div class="section-label">MARKET_EXTRACTS — AI 추출 결과 · SUMMARY (jsonb) + EXTRACTED_DATA (text)</div>
+
+      <div class="card">
+        <div class="extract-source">
+          RAW_SOURCE_ID: <span>테크크런치 코리아 (2025-03-12)</span> 에서 추출 · TOPIC: B2B SaaS 시장 성장
+        </div>
+
+        <div class="field">
+          <label>SUMMARY (jsonb)</label>
+          <div class="summary-grid">
+            <div class="summary-cell">
+              <div class="key">insight</div>
+              <div class="val">국내 B2B SaaS 시장 38% 성장, AI 자동화 내장 제품에 투자 집중</div>
+            </div>
+            <div class="summary-cell">
+              <div class="key">sentiment</div>
+              <div class="val"><span class="sentiment-pos">positive</span></div>
+            </div>
+            <div class="summary-cell" style="grid-column: span 2;">
+              <div class="key">keywords</div>
+              <div class="keyword-list">
+                <span class="keyword-tag">B2B SaaS</span>
+                <span class="keyword-tag">AI 자동화</span>
+                <span class="keyword-tag">중소기업</span>
+                <span class="keyword-tag">동남아 진출</span>
+                <span class="keyword-tag">버티컬 SaaS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="field" style="margin-bottom:0;">
+          <label>EXTRACTED_DATA (text)</label>
+          <div class="extracted-box">
+            2025년 B2B SaaS 시장은 전년 대비 38% 성장. AI 기반 자동화 기능 내장 제품에 투자 집중.
+            토스비즈니스·채널코퍼레이션 등 주요 플레이어의 동남아 확장 가속화.
+            벤처캐피털은 2026년까지 버티컬 SaaS에 주목할 것을 권고.
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 16px;">
+        <div class="extract-source">
+          RAW_SOURCE_ID: <span>KPMG 한국 디지털 리포트 2025</span> 에서 추출 · TOPIC: 기업 SaaS 도입 현황
+        </div>
+
+        <div class="field">
+          <label>SUMMARY (jsonb)</label>
+          <div class="summary-grid">
+            <div class="summary-cell">
+              <div class="key">insight</div>
+              <div class="val">디지털 전환 예산의 62%가 SaaS 투입, 운영비 29% 절감 효과</div>
+            </div>
+            <div class="summary-cell">
+              <div class="key">sentiment</div>
+              <div class="val"><span class="sentiment-pos">positive</span></div>
+            </div>
+            <div class="summary-cell" style="grid-column: span 2;">
+              <div class="key">keywords</div>
+              <div class="keyword-list">
+                <span class="keyword-tag">디지털 전환</span>
+                <span class="keyword-tag">구독 요금제</span>
+                <span class="keyword-tag">HR·회계·CRM</span>
+                <span class="keyword-tag">하이브리드 클라우드</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="field" style="margin-bottom:0;">
+          <label>EXTRACTED_DATA (text)</label>
+          <div class="extracted-box">
+            디지털 전환 예산 62%가 SaaS 도입에 투입, 운영 비용 평균 29% 절감.
+            HR·회계·CRM 분야 통합 솔루션 수요 높음. 구독 요금제 선호 기업 74%.
+            중견기업은 보안 이슈로 하이브리드 클라우드 선택 증가.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

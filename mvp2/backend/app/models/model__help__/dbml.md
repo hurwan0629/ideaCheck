@@ -86,16 +86,17 @@ Table USER_SUBSCRIPTIONS {
   USER_ID         bigint              [not null]
   PLAN_ID         bigint              [not null]
   STATUS          subscription_status [not null, default: 'ACTIVE']
+  PRICE_AT_PURCHASE decimal(10,2)     [not null]
   STARTED_AT      timestamptz         [not null]
   ENDED_AT        timestamptz
-  CREATED_AT      timestamptz         [not null]
+  CANCELED_AT     timestamptz
 }
 
 Table IDEA_ANALYSES {
   ANALYSIS_ID    bigint      [pk]
   IDEA_ID        bigint      [not null, unique]
   RESULT_SUMMARY jsonb
-  RESULT_DETAIL  jsonb
+  RESULT_RAW     text
   CREATED_AT     timestamptz [not null]
 
   Note: '아이디어 1개당 행 1개. AI가 생성하는 분석 데이터.'

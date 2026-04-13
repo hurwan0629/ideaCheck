@@ -64,7 +64,7 @@ models/
 | ANALYSIS_ID | bigint | PK | |
 | IDEA_ID | bigint | NOT NULL, FK → USER_IDEAS.IDEA_ID | |
 | RESULT_SUMMARY | jsonb | nullable | 방향성, 차별화 포인트, 매칭 경쟁사 ID 리스트 |
-| RESULT_DETAIL | jsonb | nullable | AI 분석 전문 |
+| RESULT_RAW | text | nullable | AI 분석 원문 |
 | CREATED_AT | timestamptz | NOT NULL, DEFAULT now() | |
 
 > 아이디어 1개당 행 1개. 경쟁사 비교는 COMPETITOR_ANALYSIS 참조.
@@ -92,9 +92,10 @@ models/
 | USER_ID | bigint | NOT NULL, FK → USERS.USER_ID | |
 | PLAN_ID | bigint | NOT NULL, FK → PLANS.PLAN_ID | |
 | STATUS | enum | NOT NULL, DEFAULT 'ACTIVE' | ACTIVE / CANCELED / EXPIRED / PAUSED |
-| STARTED_AT | timestamptz | NOT NULL | |
-| ENDED_AT | timestamptz | nullable | 무료 플랜 또는 진행 중이면 NULL |
-| CREATED_AT | timestamptz | NOT NULL, DEFAULT now() | |
+| PRICE_AT_PURCHASE | decimal(10,2) | NOT NULL | 구독 시점의 가격 |
+| STARTED_AT | timestamptz | NOT NULL, DEFAULT now() | 구독 시작일시 (= 생성일시) |
+| ENDED_AT | timestamptz | nullable | 청구 주기 기준 예정 종료일시 |
+| CANCELED_AT | timestamptz | nullable | 중간 해지 일시 (null이면 해지 안 함) |
 
 ---
 

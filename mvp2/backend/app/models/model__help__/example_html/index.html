@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>데이터 포맷 레퍼런스</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f5f6fa; color: #2d2d2d; }
+    header { background: #1e2a3a; color: white; padding: 40px; }
+    header h1 { font-size: 1.6rem; font-weight: 600; }
+    header p { margin-top: 8px; color: #9aa5b4; font-size: 0.9rem; }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 40px; max-width: 900px; margin: auto; }
+    .card { background: white; border-radius: 12px; padding: 32px; text-decoration: none; color: inherit;
+            border: 2px solid transparent; transition: border-color 0.2s, box-shadow 0.2s; }
+    .card:hover { border-color: #4f7cff; box-shadow: 0 4px 20px rgba(79,124,255,0.15); }
+    .card .icon { font-size: 2rem; margin-bottom: 16px; }
+    .card h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+    .card p { font-size: 0.85rem; color: #6b7280; line-height: 1.6; }
+    .tag { display: inline-block; margin-top: 12px; font-size: 0.75rem; background: #eef2ff; color: #4f7cff;
+           padding: 3px 10px; border-radius: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>데이터 포맷 레퍼런스</h1>
+    <p>JSON / TEXT 컬럼의 실제 데이터 형태를 시각적으로 확인하기 위한 레퍼런스 페이지입니다.</p>
+  </header>
+
+  <div class="grid">
+    <a class="card" href="competitor.html">
+      <div class="icon">🏢</div>
+      <h2>경쟁사 관련</h2>
+      <p>COMPETITORS, COMPETITOR_FEATURES, COMPETITOR_POLICIES, COMPETITOR_ANALYSES 테이블의 데이터 형태</p>
+      <span class="tag">크롤링 + AI 분석</span>
+    </a>
+
+    <a class="card" href="market.html">
+      <div class="icon">📊</div>
+      <h2>시장 분포 관련</h2>
+      <p>MARKET_RAW_SOURCES, MARKET_EXTRACTS 테이블의 데이터 형태. 수집 원문과 AI 추출 결과 포함</p>
+      <span class="tag">크롤링 + AI 추출</span>
+    </a>
+
+    <a class="card" href="trends.html">
+      <div class="icon">📈</div>
+      <h2>트렌드 관련</h2>
+      <p>TRENDS 테이블의 데이터 형태. Google Trends / 네이버 DataLab API 응답 기반</p>
+      <span class="tag">API</span>
+    </a>
+
+    <a class="card" href="idea_analysis.html">
+      <div class="icon">💡</div>
+      <h2>사용자 아이디어 분석 관련</h2>
+      <p>USER_IDEAS 제출 폼과 IDEA_ANALYSES 분석 결과 카드. UX 구조 확인용</p>
+      <span class="tag">사용자 입력 + AI 생성</span>
+    </a>
+  </div>
+</body>
+</html>

@@ -6,13 +6,13 @@ from app.models.user.user import User
 from app.models.user.auth_accounts import AuthAccount
 from app.models.user.user_ideas import UserIdea
 from app.models.user.user_subscriptions import UserSubscription
-from app.models.user.idea_analyses import IdeaAnalysis
+from mvp2.backend.app.models.user.idea_analyses import IdeaAnalysis
 from app.models.user.idea_notes import IdeaNote
 from app.models.service.plans import Plan
 from app.models.collection.competitors import Competitor
 from app.models.collection.competitor_features import CompetitorFeature
 from app.models.collection.competitor_policies import CompetitorPolicy
-from app.models.collection.competitor_analysis import CompetitorAnalysis
+from mvp2.backend.app.models.collection.competitor_analyses import CompetitorAnalysis
 from app.models.collection.market_raw_sources import MarketRawSource
 from app.models.collection.market_extracts import MarketExtract
 from app.models.collection.trends import Trend

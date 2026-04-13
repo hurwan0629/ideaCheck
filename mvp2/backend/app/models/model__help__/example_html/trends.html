@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>트렌드 관련 데이터 포맷</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f5f6fa; color: #2d2d2d; }
+    header { background: #1e2a3a; color: white; padding: 24px 40px; display: flex; align-items: center; gap: 16px; }
+    header a { color: #9aa5b4; text-decoration: none; font-size: 0.85rem; }
+    header a:hover { color: white; }
+    header h1 { font-size: 1.2rem; font-weight: 600; }
+    .container { max-width: 960px; margin: 40px auto; padding: 0 24px; display: flex; flex-direction: column; gap: 32px; }
+    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: #9aa5b4;
+                     text-transform: uppercase; margin-bottom: 12px; }
+    .card { background: white; border-radius: 12px; padding: 28px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    .divider { border: none; border-top: 1px solid #f0f0f0; margin: 20px 0; }
+    .field label { font-size: 0.72rem; font-weight: 600; color: #9aa5b4; display: block;
+                   margin-bottom: 6px; letter-spacing: 0.05em; }
+
+    /* 트렌드 리스트 */
+    .trend-list { display: flex; flex-direction: column; gap: 16px; }
+    .trend-row { display: grid; grid-template-columns: 2fr 1fr 1fr 3fr; gap: 16px; align-items: center;
+                 padding: 16px; border-radius: 10px; background: #f9fafb; }
+    .trend-row.header { background: none; padding: 0 16px 8px; border-bottom: 2px solid #e5e7eb; }
+    .trend-row.header span { font-size: 0.7rem; font-weight: 700; color: #9aa5b4; letter-spacing: 0.05em; text-transform: uppercase; }
+    .topic-name { font-size: 0.9rem; font-weight: 600; }
+    .trend-date { font-size: 0.8rem; color: #6b7280; }
+    .source-badge { display: inline-block; font-size: 0.72rem; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
+    .source-badge.google { background: #fef3c7; color: #d97706; }
+    .source-badge.naver { background: #dcfce7; color: #16a34a; }
+    .score-bar-wrap { display: flex; align-items: center; gap: 10px; }
+    .score-bar { flex: 1; height: 6px; background: #e5e7eb; border-radius: 99px; overflow: hidden; }
+    .score-bar-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, #4f7cff, #7c3aed); }
+    .score-val { font-size: 0.82rem; font-weight: 600; color: #374151; white-space: nowrap; }
+
+    /* 트렌드 상세 카드 */
+    .trend-detail { margin-top: 24px; border-top: 2px solid #f0f0f0; padding-top: 24px; }
+    .trend-detail-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+    .trend-detail-header h3 { font-size: 1.05rem; font-weight: 600; }
+    .trend-detail-header .meta { font-size: 0.78rem; color: #9aa5b4; text-align: right; }
+    .summary-box { background: #f0f9ff; border-left: 3px solid #38bdf8; border-radius: 8px;
+                   padding: 16px; font-size: 0.85rem; line-height: 1.75; color: #374151; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← 목록</a>
+    <h1>📈 트렌드 관련 데이터 포맷</h1>
+  </header>
+
+  <div class="container">
+
+    <div>
+      <div class="section-label">TRENDS — 트렌드 목록 · TREND_SCORE (decimal) + SUMMARY (text)</div>
+      <div class="card">
+
+        <!-- 헤더 행 -->
+        <div class="trend-row header">
+          <span>TOPIC</span>
+          <span>TREND_DATE</span>
+          <span>SOURCE</span>
+          <span>TREND_SCORE</span>
+        </div>
+
+        <!-- 데이터 행들 -->
+        <div class="trend-list">
+          <div class="trend-row">
+            <div class="topic-name">B2B SaaS</div>
+            <div class="trend-date">2025-03-10</div>
+            <span class="source-badge google">Google Trends</span>
+            <div class="score-bar-wrap">
+              <div class="score-bar"><div class="score-bar-fill" style="width:88%;"></div></div>
+              <span class="score-val">88.00</span>
+            </div>
+          </div>
+          <div class="trend-row">
+            <div class="topic-name">AI 자동화</div>
+            <div class="trend-date">2025-03-10</div>
+            <span class="source-badge google">Google Trends</span>
+            <div class="score-bar-wrap">
+              <div class="score-bar"><div class="score-bar-fill" style="width:95%;"></div></div>
+              <span class="score-val">95.00</span>
+            </div>
+          </div>
+          <div class="trend-row">
+            <div class="topic-name">법인카드 관리</div>
+            <div class="trend-date">2025-03-10</div>
+            <span class="source-badge naver">네이버 DataLab</span>
+            <div class="score-bar-wrap">
+              <div class="score-bar"><div class="score-bar-fill" style="width:62%;"></div></div>
+              <span class="score-val">62.00</span>
+            </div>
+          </div>
+          <div class="trend-row">
+            <div class="topic-name">스타트업 투자</div>
+            <div class="trend-date">2025-03-10</div>
+            <span class="source-badge naver">네이버 DataLab</span>
+            <div class="score-bar-wrap">
+              <div class="score-bar"><div class="score-bar-fill" style="width:74%;"></div></div>
+              <span class="score-val">74.00</span>
+            </div>
+          </div>
+          <div class="trend-row">
+            <div class="topic-name">버티컬 SaaS</div>
+            <div class="trend-date">2025-03-10</div>
+            <span class="source-badge google">Google Trends</span>
+            <div class="score-bar-wrap">
+              <div class="score-bar"><div class="score-bar-fill" style="width:51%;"></div></div>
+              <span class="score-val">51.00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 상세 펼침 예시 -->
+        <div class="trend-detail">
+          <div class="trend-detail-header">
+            <h3>AI 자동화</h3>
+            <div class="meta">
+              TREND_DATE: 2025-03-10<br>
+              SOURCE: Google Trends
+            </div>
+          </div>
+          <div class="field" style="margin-bottom:0;">
+            <label>SUMMARY</label>
+            <div class="summary-box">
+              GPT 기반 업무 자동화 솔루션에 대한 국내 관심이 급격히 상승. 특히 반복적인 문서 작업,
+              이메일 응답, 데이터 정리 분야에서 도입 사례가 늘고 있음. 중소기업 대상 노코드·로우코드
+              자동화 툴의 검색량이 전월 대비 42% 증가. 제조·물류보다 서비스업종에서 수요가 높게 나타남.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

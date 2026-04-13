@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>사용자 아이디어 분석</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #f5f6fa; color: #2d2d2d; }
+    header { background: #1e2a3a; color: white; padding: 24px 40px; display: flex; align-items: center; gap: 16px; }
+    header a { color: #9aa5b4; text-decoration: none; font-size: 0.85rem; }
+    header a:hover { color: white; }
+    header h1 { font-size: 1.2rem; font-weight: 600; }
+    .container { max-width: 960px; margin: 40px auto; padding: 0 24px; display: flex; flex-direction: column; gap: 40px; }
+    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: #9aa5b4;
+                     text-transform: uppercase; margin-bottom: 12px; }
+    .card { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+    .divider { border: none; border-top: 1px solid #f0f0f0; margin: 24px 0; }
+
+    /* ── 제출 폼 (USER_IDEAS) ── */
+    .form-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 4px; }
+    .form-sub { font-size: 0.83rem; color: #6b7280; margin-bottom: 28px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { font-size: 0.78rem; font-weight: 600; color: #374151; display: block; margin-bottom: 6px; }
+    .form-group input[type="text"] {
+      width: 100%; padding: 10px 14px; border: 1.5px solid #e5e7eb; border-radius: 8px;
+      font-size: 0.88rem; color: #2d2d2d; outline: none; transition: border-color 0.15s;
+    }
+    .form-group input[type="text"]:focus { border-color: #4f7cff; }
+    .form-group textarea {
+      width: 100%; padding: 12px 14px; border: 1.5px solid #e5e7eb; border-radius: 8px;
+      font-size: 0.88rem; color: #2d2d2d; resize: vertical; min-height: 130px;
+      line-height: 1.6; outline: none; transition: border-color 0.15s; font-family: inherit;
+    }
+    .form-group textarea:focus { border-color: #4f7cff; }
+    .form-group .hint { font-size: 0.75rem; color: #9aa5b4; margin-top: 5px; }
+    .tag-input-wrap { display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+                      border: 1.5px solid #e5e7eb; border-radius: 8px; padding: 8px 12px; }
+    .tag-chip { background: #eef2ff; color: #4f7cff; font-size: 0.78rem; padding: 4px 12px;
+                border-radius: 20px; display: flex; align-items: center; gap: 6px; }
+    .tag-chip .remove { cursor: pointer; color: #9aa5b4; font-size: 0.9rem; line-height: 1; }
+    .tag-input-fake { border: none; outline: none; font-size: 0.85rem; color: #374151;
+                      background: transparent; min-width: 80px; }
+    .submit-btn { display: inline-flex; align-items: center; gap: 8px; background: #4f7cff; color: white;
+                  font-size: 0.9rem; font-weight: 600; padding: 12px 28px; border-radius: 8px;
+                  border: none; cursor: pointer; margin-top: 8px; }
+    .submit-btn:hover { background: #3a63d4; }
+
+    /* CONTENT jsonb 미리보기 */
+    .json-preview { background: #1e2a3a; border-radius: 8px; padding: 16px; font-family: 'Courier New', monospace;
+                    font-size: 0.8rem; color: #a8d8ff; line-height: 1.7; margin-top: 16px; }
+    .json-key { color: #ffd580; }
+    .json-str { color: #a8d8ff; }
+    .json-label { font-size: 0.7rem; color: #9aa5b4; margin-bottom: 6px; font-family: 'Segoe UI', sans-serif;
+                  font-weight: 600; letter-spacing: 0.05em; }
+
+    /* ── 분석 결과 (IDEA_ANALYSES) ── */
+    .result-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; }
+    .result-header .idea-ref { font-size: 0.8rem; color: #6b7280; }
+    .result-header .idea-title { font-size: 1.1rem; font-weight: 600; margin-top: 4px; }
+    .result-header .created { font-size: 0.75rem; color: #9aa5b4; }
+
+    .direction-box { background: #f0f9ff; border-left: 4px solid #38bdf8; border-radius: 8px;
+                     padding: 16px 20px; margin-bottom: 20px; }
+    .direction-box .key { font-size: 0.7rem; color: #0ea5e9; font-weight: 700; letter-spacing: 0.05em;
+                          margin-bottom: 6px; }
+    .direction-box .val { font-size: 0.95rem; font-weight: 600; color: #0c4a6e; }
+
+    .diff-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+    .diff-item { display: flex; gap: 10px; align-items: flex-start; background: #f9fafb;
+                 border-radius: 8px; padding: 12px 14px; }
+    .diff-item .icon { color: #4f7cff; font-size: 1rem; margin-top: 1px; }
+    .diff-item .text { font-size: 0.86rem; color: #374151; line-height: 1.5; }
+
+    .competitor-matches { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+    .competitor-match-row { display: flex; align-items: center; gap: 12px; background: #f9fafb;
+                             border-radius: 8px; padding: 12px 14px; }
+    .competitor-match-row .logo { width: 34px; height: 34px; border-radius: 8px; background: #e8f0fe;
+                                   display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+    .competitor-match-row .name { font-size: 0.88rem; font-weight: 600; }
+    .competitor-match-row .category { font-size: 0.75rem; color: #6b7280; }
+    .competitor-match-row .id-badge { margin-left: auto; font-size: 0.72rem; color: #9aa5b4; }
+
+    .raw-section .raw-label { font-size: 0.7rem; font-weight: 700; color: #9aa5b4; letter-spacing: 0.05em;
+                               margin-bottom: 8px; }
+    .raw-box { background: #f9fafb; border-left: 3px solid #e5e7eb; border-radius: 8px; padding: 16px;
+               font-size: 0.83rem; line-height: 1.8; color: #374151; max-height: 260px; overflow-y: auto; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← 목록</a>
+    <h1>💡 사용자 아이디어 분석 관련 데이터 포맷</h1>
+  </header>
+
+  <div class="container">
+
+    <!-- USER_IDEAS 제출 폼 -->
+    <div>
+      <div class="section-label">USER_IDEAS — 아이디어 제출 폼 · CONTENT (jsonb)</div>
+      <div class="card">
+        <div class="form-title">아이디어를 입력해주세요</div>
+        <div class="form-sub">분석을 원하는 사업 아이디어를 자유롭게 작성해주세요. 구체적일수록 더 정확한 분석이 가능합니다.</div>
+
+        <div class="form-group">
+          <label>아이디어 제목 <span style="color:#4f7cff;">*</span></label>
+          <input type="text" value="중소기업 대상 AI 자동화 회계 SaaS" />
+        </div>
+
+        <div class="form-group">
+          <label>아이디어 내용 <span style="color:#4f7cff;">*</span></label>
+          <textarea>중소기업 경영진이 비용 지출, 세금 신고, 급여 이체를 하나의 플랫폼에서 AI로 자동화할 수 있도록 돕는 SaaS 서비스입니다. 기존 ERP보다 훨씬 가볍고, 월 구독 방식으로 초기 비용 없이 시작 가능합니다.</textarea>
+          <div class="hint">최대 2000자까지 입력할 수 있습니다.</div>
+        </div>
+
+        <div class="form-group">
+          <label>태그 (카테고리)</label>
+          <div class="tag-input-wrap">
+            <span class="tag-chip">핀테크 <span class="remove">×</span></span>
+            <span class="tag-chip">B2B <span class="remove">×</span></span>
+            <span class="tag-chip">AI 자동화 <span class="remove">×</span></span>
+            <input class="tag-input-fake" type="text" placeholder="태그 추가..." />
+          </div>
+          <div class="hint">Enter로 태그를 추가하세요.</div>
+        </div>
+
+        <button class="submit-btn">분석 요청하기 →</button>
+
+        <hr class="divider">
+
+        <div class="json-label">CONTENT (jsonb) — 실제 저장 형태</div>
+        <div class="json-preview">
+{<br>
+&nbsp;&nbsp;<span class="json-key">"text"</span>: <span class="json-str">"중소기업 경영진이 비용 지출, 세금 신고, 급여 이체를 하나의 플랫폼에서 AI로 자동화할 수 있도록 돕는 SaaS 서비스입니다..."</span>,<br>
+&nbsp;&nbsp;<span class="json-key">"tags"</span>: [<span class="json-str">"핀테크"</span>, <span class="json-str">"B2B"</span>, <span class="json-str">"AI 자동화"</span>]<br>
+}
+        </div>
+      </div>
+    </div>
+
+    <!-- IDEA_ANALYSES 결과 카드 -->
+    <div>
+      <div class="section-label">IDEA_ANALYSES — 분석 결과 카드 · RESULT_SUMMARY (jsonb) + RESULT_RAW (text)</div>
+      <div class="card">
+
+        <div class="result-header">
+          <div>
+            <div class="idea-ref">USER_IDEAS.IDEA_ID: #1042</div>
+            <div class="idea-title">중소기업 대상 AI 자동화 회계 SaaS</div>
+          </div>
+          <div class="created">CREATED_AT<br>2025-03-12 11:24:38</div>
+        </div>
+
+        <!-- RESULT_SUMMARY.direction -->
+        <div class="direction-box">
+          <div class="key">사업 방향성</div>
+          <div class="val">중소기업 재무 자동화 SaaS — 가격 경쟁력과 모바일 우선 UX로 기존 ERP 대체 포지셔닝</div>
+        </div>
+
+        <!-- RESULT_SUMMARY.differentiation -->
+        <div class="section-label" style="margin-top: 4px;">차별화 포인트</div>
+        <div class="diff-list">
+          <div class="diff-item">
+            <span class="icon">✦</span>
+            <span class="text">AI 기반 세금 신고 자동화 — 별도 세무사 없이 운영 가능</span>
+          </div>
+          <div class="diff-item">
+            <span class="icon">✦</span>
+            <span class="text">월 구독형 저가 진입 전략으로 초기 비용 장벽 제거</span>
+          </div>
+          <div class="diff-item">
+            <span class="icon">✦</span>
+            <span class="text">모바일 우선 UX — 경영진이 이동 중에도 실시간 확인 가능</span>
+          </div>
+        </div>
+
+        <!-- RESULT_SUMMARY.matched_competitors -->
+        <div class="section-label">매칭된 경쟁사 (COMPETITOR_ANALYSES 참조)</div>
+        <div class="competitor-matches">
+          <div class="competitor-match-row">
+            <div class="logo">🏦</div>
+            <div>
+              <div class="name">토스비즈니스</div>
+              <div class="category">핀테크 · 중소기업 금융</div>
+            </div>
+            <div class="id-badge">ID: 100</div>
+          </div>
+          <div class="competitor-match-row">
+            <div class="logo">📋</div>
+            <div>
+              <div class="name">더존비즈온</div>
+              <div class="category">ERP · 회계 소프트웨어</div>
+            </div>
+            <div class="id-badge">ID: 101</div>
+          </div>
+          <div class="competitor-match-row">
+            <div class="logo">💼</div>
+            <div>
+              <div class="name">웹케시</div>
+              <div class="category">B2B 금융 자동화</div>
+            </div>
+            <div class="id-badge">ID: 102</div>
+          </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- RESULT_RAW -->
+        <div class="raw-section">
+          <div class="raw-label">RESULT_RAW — AI 분석 원문 (text)</div>
+          <div class="raw-box">
+            본 아이디어는 중소기업의 재무 운영 자동화를 목표로 하는 B2B SaaS 서비스로,
+            현재 시장에서 빠르게 성장 중인 세그먼트를 정확히 겨냥하고 있습니다.
+
+            [시장 현황]
+            국내 중소기업(50인 이하)의 약 73%는 여전히 수동 회계 처리 또는 외주 세무사에 의존하고 있으며,
+            평균 월 30~80만원의 비용이 발생합니다. SaaS 도입률은 꾸준히 증가 중이나 재무 분야는
+            ERP 대비 여전히 낮은 수준입니다.
+
+            [경쟁 구도]
+            직접 경쟁사인 토스비즈니스는 법인 계좌·카드 중심이며 세금 자동화는 아직 부가서비스 수준입니다.
+            더존비즈온은 기능은 강하지만 초기 도입 비용이 높고 UI가 복잡해 소규모 사업자에겐 장벽이 됩니다.
+            웹케시는 중견기업 이상 타겟으로 소규모 사업자 대응이 미흡합니다.
+
+            [차별화 가능성]
+            AI 기반 자동화와 모바일 중심 설계는 현재 경쟁사 대비 뚜렷한 공백입니다.
+            구독형 저가 모델로 진입 장벽을 낮추면 충분한 시장 선점 가능성이 있습니다.
+
+            [리스크]
+            세무·회계 도메인의 규제 복잡성, 개인정보 보호법 준수 비용이 주요 리스크입니다.
+            초기 신뢰 구축을 위해 공인 세무사 제휴 또는 인증 취득이 권장됩니다.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

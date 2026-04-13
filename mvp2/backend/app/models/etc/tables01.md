@@ -34,9 +34,10 @@ Table USER_SUBSCRIPTIONS {
   USER_ID bigint [ref: > USERS.USER_ID] // 회원 FK
   PLAN_ID bigint [ref: > PLANS.PLAN_ID] // 요금제 FK
   STATUS varchar // 구독 상태
-  STARTED_AT datetime // 구독 시작일시
-  ENDED_AT datetime // 구독 종료일시
-  CREATED_AT datetime // 생성일시
+  PRICE_AT_PURCHASE decimal // 구독 시점의 가격
+  STARTED_AT datetime // 구독 시작일시 (= 생성일시)
+  ENDED_AT datetime // 청구 주기 기준 예정 종료일시
+  CANCELED_AT datetime // 중간 해지 일시 (null이면 해지 안 함)
 }
 
 Table USER_IDEAS {
@@ -54,7 +55,7 @@ Table IDEA_ANALYSES {
   IDEA_ID bigint [ref: > USER_IDEAS.IDEA_ID] // 아이디어 FK
   ANALYSIS_TYPE varchar // 시장분석, 경쟁사분석 등
   RESULT_SUMMARY text // 분석 요약
-  RESULT_DETAIL text // 분석 상세
+  RESULT_RAW text // AI 분석 원문
   CREATED_AT datetime // 생성일시
 }
 

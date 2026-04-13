@@ -5,7 +5,7 @@ from .config import settings
 
 DATABASE_URL=settings.DATABASE_URL
 
-# database connection
+# database connection 만들기
 engine = create_engine(
   DATABASE_URL
 )

@@ -1,6 +1,7 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from pathlib import Path
 
-print("config.Settings 실행됨")
+BASE_DIR = Path(__file__).resolve().parent.parent  # backend 폴더
 
 class Settings(BaseSettings):
   DATABASE_URL: str
@@ -9,7 +10,7 @@ class Settings(BaseSettings):
 
   # .env 파일 읽기
   model_config = SettingsConfigDict(
-    env_file=".env",
+    env_file=BASE_DIR / ".env",
     env_file_encoding="utf-8"
   )
 

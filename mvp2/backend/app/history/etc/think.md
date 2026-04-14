@@ -1,7 +1,5 @@
 # 2026-04-13 02:03:38 - 지금 orm 모델 만들어두긴 했는데 이상한 부분이 보였던거같아서 점검 한번 하려함
 
-
-
 AUTH_ACCOUNTS - 문제 없어보임. USERS과 1:N 형태로 관계를 맺어 여러 로그인 방식으로 하나의 계정에 접속 가능하게 되어있음
 
 COMPETITOR_FEATURES - 약간 이상한게 competitor_features말고 COMPETITOR_POLICIES와 COMPETITORS과 겹치는 부분이 존재하는거같음. 아마 설계할 때에는 안변하는 것들과 트렌드나 바뀔 수 있는 부분을 나눠서 설계했던거같은데 뭔가 오류가 난 느낌

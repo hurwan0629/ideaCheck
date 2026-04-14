@@ -1,7 +1,8 @@
 from enum import Enum
 from datetime import datetime, timezone
 from typing import Any
-from sqlalchemy import Enum as SqlEnum, BigInteger, String, Text, DateTime, ForeignKey, Sequence
+
+from sqlalchemy import Enum as SqlEnum, BigInteger, String, DateTime, ForeignKey, Sequence
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.dialects.postgresql import JSONB
 
@@ -9,13 +10,13 @@ from app.db import Base
 
 """
 Table USER_IDEAS {
-  IDEA_ID bigint [pk] // 사용자 원본 아이디어 PK
-  USER_ID bigint [ref: > USERS.USER_ID] // 회원 FK
-  TITLE varchar // 아이디어 제목
-  CONTENT text // 아이디어 원문
-  STATUS varchar // 아이디어 상태
-  CREATED_AT datetime // 생성일시
-  UPDATED_AT datetime // 수정일시
+  IDEA_ID    bigint      [pk]
+  USER_ID    bigint      [ref: > USERS.USER_ID]
+  TITLE      varchar(255) [not null]   // 아이디어 제목 (필수)
+  CONTENT    jsonb        [not null]   // 린 캔버스 형태 상세 내용
+  STATUS     idea_status  [not null, default: 'DRAFT']
+  CREATED_AT timestamptz  [not null]
+  UPDATED_AT timestamptz  [not null]
 }
 """
 
@@ -24,7 +25,21 @@ class IdeaStatus(str, Enum):
   ACTIVE = "ACTIVE"
   ARCHIVED = "ARCHIVED"
 
-# 사용자가 분석 요청한 아이디어
+# 사용자가 분석 요청한 아이디어.
+# 린 캔버스 형태로 단계적으로 수집 (Step 1: title + core_idea 필수, 나머지 optional).
+# 미입력 항목은 null로 저장, UI에서는 "고민중"으로 표시.
+# 분석 시 AI가 null 항목에 대해 제안/보완 질문 제공.
+#
+# CONTENT 구조:
+# {
+#   "core_idea": "소상공인이 스마트폰으로 세금 신고를 쉽게 할 수 있는 앱",  // 필수
+#   "target_customer": "자영업자, 소상공인",                                  // null 허용 = "고민중"
+#   "business_model": "구독형 SaaS, 월 9,900원",                             // null 허용
+#   "differentiation": "기존 프로그램 대비 모바일 중심, UI 단순화",           // null 허용
+#   "problem_solved": "세무사 없이 혼자 신고하면 실수가 잦고 시간이 많이 걸림", // null 허용
+#   "why_use_us": "국세청 연동 + AI 자동 계산으로 10분 안에 신고 완료",       // null 허용
+#   "tags": ["세무", "소상공인", "B2B", "모바일"]
+# }
 class UserIdea(Base):
   __tablename__ = "USER_IDEAS"
 

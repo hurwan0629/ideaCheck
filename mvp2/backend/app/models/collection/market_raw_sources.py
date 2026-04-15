@@ -6,20 +6,6 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db import Base
 
-"""
-Table MARKET_RAW_SOURCES {
-  RAW_SOURCE_ID bigint      [pk]
-  SOURCE_NAME   varchar(255) [not null]  // 출처명
-  SOURCE_URL    text                     // 원본 링크
-  SOURCE_TYPE   source_type  [not null]  // 뉴스, 블로그, 리포트 등 (수집 매체 분류)
-  CONTENT_TYPE  content_type [not null]  // 수집 내용 성격 분류
-  RAW_CONTENT   text                     // 수집 원문
-  COLLECTED_AT  timestamptz  [not null]
-}
-"""
-
-# SOURCE_TYPE: 수집 매체 분류 (어디서 가져왔는가)
-# 정제 단계에서 신뢰도 가중치를 다르게 주거나 특정 매체만 필터링할 때 사용
 class SourceType(str, Enum):
   NEWS = "NEWS"
   BLOG = "BLOG"
@@ -27,10 +13,6 @@ class SourceType(str, Enum):
   COMMUNITY = "COMMUNITY"
   ETC = "ETC"
 
-# CONTENT_TYPE: 수집 내용 성격 분류 (무슨 내용인가)
-# PAIN_POINT:    사회 문제, 일상 불편함, 미해결 니즈를 다루는 기사/글
-# MARKET_DATA:   시장 규모, 성장률 등 수치 중심 정보
-# STARTUP_STORY: 특정 문제를 겨냥한 스타트업 사례 및 성공/실패 스토리
 class ContentType(str, Enum):
   PAIN_POINT = "PAIN_POINT"
   MARKET_DATA = "MARKET_DATA"

@@ -8,18 +8,6 @@ from sqlalchemy.dialects.postgresql import JSONB
 
 from app.db import Base
 
-"""
-Table USER_IDEAS {
-  IDEA_ID    bigint      [pk]
-  USER_ID    bigint      [ref: > USERS.USER_ID]
-  TITLE      varchar(255) [not null]   // 아이디어 제목 (필수)
-  CONTENT    jsonb        [not null]   // 린 캔버스 형태 상세 내용
-  STATUS     idea_status  [not null, default: 'DRAFT']
-  CREATED_AT timestamptz  [not null]
-  UPDATED_AT timestamptz  [not null]
-}
-"""
-
 class IdeaStatus(str, Enum):
   DRAFT = "DRAFT"
   ACTIVE = "ACTIVE"

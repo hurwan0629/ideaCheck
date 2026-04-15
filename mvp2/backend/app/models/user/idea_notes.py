@@ -7,17 +7,6 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db import Base
 
-"""
-Table IDEA_NOTES {
-  NOTE_ID bigint [pk] // 아이디어 노트 PK
-  USER_ID bigint [ref: > USERS.USER_ID] // 회원 FK
-  TITLE varchar // 노트 제목
-  CONTENT json // 노트 내용
-  CREATED_AT datetime // 생성일시
-  UPDATED_AT datetime // 수정일시
-}
-"""
-
 class IdeaNote(Base):
   __tablename__ = "IDEA_NOTES"
 

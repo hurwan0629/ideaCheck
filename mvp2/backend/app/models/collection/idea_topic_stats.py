@@ -5,16 +5,6 @@ from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db import Base
 
-"""
-Table DAILY_TOP_SEARCHES {
-  TOP_SEARCH_ID bigint [pk] // 일별 인기 검색어 PK
-  SEARCH_DATE date // 집계일
-  TOPIC varchar // 검색 주제
-  SEARCH_COUNT bigint // 검색 횟수
-  CREATED_AT datetime // 생성일시
-}
-"""
-
 class IdeaTopicStats(Base):
   __tablename__ = "IDEA_TOPIC_STATS"
 

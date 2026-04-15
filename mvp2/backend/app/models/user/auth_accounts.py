@@ -6,18 +6,6 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db import Base
 
-"""
-Table AUTH_ACCOUNTS {
-  AUTH_ID bigint [pk] // 인증방식 PK
-  USER_ID bigint [ref: > USERS.USER_ID] // 회원 FK
-  PROVIDER varchar // local, google, kakao, naver
-  PROVIDER_USER_ID varchar // 소셜 제공자 고유 ID
-  LOGIN_ID varchar // 일반 로그인 아이디
-  PASSWORD_HASH varchar // 일반 로그인 비밀번호 해시
-  CREATED_AT datetime // 생성일시
-}
-"""
-
 class AuthProvider(str, Enum):
   LOCAL= "LOCAL"
   GOOGLE= "GOOGLE"

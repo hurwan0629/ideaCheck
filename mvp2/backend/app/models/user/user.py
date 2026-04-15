@@ -5,18 +5,6 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db import Base
 
-"""
-Table USERS {
-  USER_ID bigint [pk] // 회원 PK
-  USER_NAME varchar // 회원 이름 또는 닉네임
-  USER_EMAIL varchar // 대표 이메일
-  USER_BIRTH_DATE date // 생년월일
-  USER_STATUS varchar // 회원 상태
-  USER_CREATED_AT datetime // 생성일시
-  USER_UPDATED_AT datetime // 수정일시
-}
-"""
-
 class UserStatus(str, Enum):
   ACTIVE = "ACTIVE"
   INACTIVE = "INACTIVE"

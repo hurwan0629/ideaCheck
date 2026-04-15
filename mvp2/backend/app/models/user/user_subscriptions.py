@@ -6,20 +6,6 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db import Base
 
-"""
-Table USER_SUBSCRIPTIONS {
-  SUBSCRIPTION_ID bigint [pk] // 회원 구독 PK
-  USER_ID bigint [ref: > USERS.USER_ID] // 회원 FK
-  PLAN_ID bigint [ref: > PLANS.PLAN_ID] // 요금제 FK
-  STATUS varchar // 구독 상태
-  PRICE_AT_PURCHASE decimal // 구독 시점의 가격
-  STARTED_AT datetime // 구독 시작일시 (= 생성일시)
-  ENDED_AT datetime // 청구 주기 기준 예정 종료일시
-  CANCELED_AT datetime // 중간 해지 일시 (해지 안 했으면 null)
-}
-"""
-
-# 구독 상태
 class SubscriptionStatus(str, Enum):
   ACTIVE = "ACTIVE"
   CANCELED = "CANCELED"

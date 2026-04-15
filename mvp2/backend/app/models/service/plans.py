@@ -6,18 +6,6 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db import Base
 
-"""
-Table PLANS {
-  PLAN_ID bigint [pk] // 요금제 PK
-  PLAN_NAME varchar // 요금제명
-  DESCRIPTION text // 요금제 설명
-  PRICE decimal // 가격
-  BILLING_CYCLE varchar // monthly, yearly 등
-  CREATED_AT datetime // 생성일시
-}
-"""
-
-# 구독 상태
 class BillingCycle(str, Enum):
   NONE = "NONE"
   MONTHLY = "MONTHLY"

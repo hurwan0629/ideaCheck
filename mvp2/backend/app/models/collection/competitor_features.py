@@ -7,26 +7,6 @@ from sqlalchemy.dialects.postgresql import JSONB
 
 from app.db import Base
 
-"""
-Table COMPETITOR_FEATURES {
-  FEATURE_ID    bigint       [pk]
-  COMPETITOR_ID bigint       [ref: > COMPETITORS.COMPETITOR_ID]
-  CATEGORY_ID   bigint       [ref: > FEATURE_CATEGORIES.CATEGORY_ID]  // 기능 카테고리 FK
-  FEATURE_NAME  varchar(255) [not null]                                // 기능명
-  FEATURE_DESC  jsonb                                                  // 기능 상세
-  CREATED_AT    timestamptz  [not null]
-}
-"""
-
-# 경쟁사의 주요 기능 정보를 저장.
-# CATEGORY_ID: FEATURE_CATEGORIES 테이블에서 관리. is_active = true 인 카테고리만 신규 수집 시 사용.
-# 변경 시 UPDATE 없이 새 행 추가 (이력 보존).
-#
-# FEATURE_DESC 구조 예시:
-# {
-#   "description": "세금 신고서를 자동으로 작성하고 제출합니다",
-#   "detail": "국세청 API 연동, 부가세/소득세 지원"
-# }
 class CompetitorFeature(Base):
   __tablename__ = "COMPETITOR_FEATURES"
 

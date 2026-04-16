@@ -10,7 +10,9 @@
       "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d['version']\\)\")",
       "Bash(node -e \"const p=require\\('./node_modules/next/package.json'\\); console.log\\(p.version\\)\")",
       "Bash(npm run:*)",
-      "Bash(cat C:/HUR/teamAgents/mvp/backend/app/db/*.py)"
+      "Bash(cat C:/HUR/teamAgents/mvp/backend/app/db/*.py)",
+      "Bash(mkdir -p /c/HUR/SearchYourMarket/mvp2/backend/app/collector/jobs)",
+      "Bash(rm /c/HUR/SearchYourMarket/mvp2/backend/app/collector/collector_plan.md)"
     ]
   }
 }

@@ -54,13 +54,6 @@ Enum source_type {
   ETC
 }
 
-Enum content_type {
-  PAIN_POINT    [note: '사회 문제 / 일상 불편함 / 미해결 니즈']
-  MARKET_DATA   [note: '시장 규모, 성장률 수치']
-  STARTUP_STORY [note: '문제 해결 스타트업 사례']
-  ETC
-}
-
 Enum extract_type {
   PAIN_POINT   [note: '창업자가 문제를 발견하는 용도']
   MARKET_SIZE  [note: '시장 크기 파악용']
@@ -207,11 +200,14 @@ Table POLICY_TYPES {
   POLICY_TYPE_ID bigint       [pk]
   NAME           varchar(100) [not null, unique, note: '예: 가격 정책, 현지화, 세대 겨냥, 채널 전략']
   DESCRIPTION    text
+  POLICY_PROPS   jsonb        [note: '이 유형의 POLICY_DATA가 가져야 할 필드 목록. 크롤러/AI가 POLICY_DATA 채울 때 참조.
+예: ["tier", "base_price", "enterprise_contact"]
+→ COMPETITOR_POLICIES.POLICY_DATA는 이 목록의 key만 사용해야 함.']
   IS_ACTIVE      boolean      [not null, default: true]
   DEPRECATED_AT  timestamptz  [note: 'IS_ACTIVE = false 로 바꾼 시점. 하드 DELETE 절대 금지']
   CREATED_AT     timestamptz  [not null]
 
-  Note: '크롤러/AI가 COMPETITOR_POLICIES 채울 때 참조. deprecated된 유형도 이력 분석 가능하게 보존.'
+  Note: '크롤러/AI가 COMPETITOR_POLICIES 채울 때 참조. POLICY_PROPS로 POLICY_DATA 구조를 강제. deprecated된 유형도 이력 분석 가능하게 보존.'
 }
 
 Table COMPETITORS {
@@ -275,25 +271,26 @@ Table COMPETITOR_POLICIES {
   COMPETITOR_ID  bigint [not null]
   POLICY_TYPE_ID bigint [note: 'POLICY_TYPES FK. IS_ACTIVE=true 유형만 신규 수집 시 사용']
   POLICY_DATE    date   [not null, note: '기업이 해당 정책을 발표/적용한 날짜']
-  POLICY_DATA    jsonb  [note: '유형별로 구조 다름.
-가격 정책: {"tier": "freemium", "base_price": "월 9,900원", "enterprise": "문의"}
-현지화:   {"target_region": "동남아", "language": ["ko", "en", "vi"]}
-세대 겨냥: {"target_generation": "MZ", "channel": "인스타그램", "message": "..."}']
+  POLICY_DATA    jsonb  [note: 'POLICY_TYPES.POLICY_PROPS에 정의된 필드 목록을 key로 사용.
+크롤러/AI가 해당 policy_type의 policy_props를 읽고 그 구조에 맞게 채움.
+예) 가격 정책(policy_props=["tier","base_price","enterprise_contact"]): {"tier": "freemium", "base_price": "월 9,900원", "enterprise_contact": null}
+예) 현지화(policy_props=["region","launch_date","localized_features"]): {"region": "동남아", "launch_date": "2024-03", "localized_features": ["베트남어 지원"]}
+확인 불가한 필드는 null로 채움.']
   CREATED_AT     timestamptz [not null, note: '수집일시. POLICY_DATE와 다름']
 
   Note: '시기마다 바뀌는 정책/포지셔닝 이력. UPDATE 없이 새 행 추가(이력 보존).'
 }
 
 Table MARKET_RAW_SOURCES {
-  RAW_SOURCE_ID bigint       [pk]
-  SOURCE_NAME   varchar(255) [not null, note: '출처명. 예: 네이버뉴스, 매일경제']
+  RAW_SOURCE_ID bigint      [pk]
+  TITLE         varchar(500) [not null, note: '기사 제목']
   SOURCE_URL    text         [note: '원본 링크']
-  SOURCE_TYPE   source_type  [not null, note: '수집 매체 분류 (어디서 가져왔는가)']
-  CONTENT_TYPE  content_type [not null, note: '수집 내용 성격 분류 (무슨 내용인가)']
+  SOURCE_TYPE   source_type  [not null, note: '수집 매체 분류 (NEWS/BLOG/REPORT/COMMUNITY/ETC)']
   RAW_CONTENT   text         [note: '수집 원문 전체. 재처리 가능하도록 보존']
+  PUBLISHED_AT  timestamptz  [note: '기사 발행일. 크롤러가 제공하는 경우 저장']
   COLLECTED_AT  timestamptz  [not null]
 
-  Note: '크롤링/API 수집 원본 저장소. 원본은 절대 삭제하지 않음.'
+  Note: '크롤링/API 수집 원본 저장소. 원본은 절대 삭제하지 않음. 내용 분류(content_type)는 AI 분석 후 MARKET_EXTRACTS.EXTRACT_TYPE에 저장.'
 }
 
 Table MARKET_EXTRACTS {
@@ -302,11 +299,10 @@ Table MARKET_EXTRACTS {
   EXTRACT_TYPE   extract_type [not null]
   TOPIC          varchar(255) [not null, note: '추출 주제. 예: 세무 자동화, 소상공인 재고 관리']
   PAIN_AREA      varchar(100) [note: '불편함 영역. 예: 세무, 물류, 고용. PAIN_POINT 타입 시 주로 사용']
-  SUMMARY        jsonb        [note: '유형별 구조 다름.
+  EXTRACTED_DATA jsonb        [note: 'AI가 반환한 JSON 그대로 저장. 유형별 구조 다름.
 PAIN_POINT:   {"insight": "중소기업 사장 67%가 세무 혼자 처리, 월 8시간 소요", "keywords": ["세무", "중소기업"], "sentiment": "negative"}
 MARKET_SIZE:  {"size": "약 3조원", "growth_rate": "연 15%", "source": "한국IDC 2024", "keywords": ["세무SaaS", "B2B"]}
 STARTUP_CASE: {"company": "ㅇㅇ스타트업", "problem_targeted": "소상공인 재고 관리", "outcome": "Series A 50억", "keywords": ["재고", "B2B SaaS"]}']
-  EXTRACTED_DATA text         [note: 'AI가 추출한 본문 발췌. SUMMARY 생성 실패 시 fallback용']
   CREATED_AT     timestamptz  [not null]
 }
 

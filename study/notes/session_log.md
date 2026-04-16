@@ -27,6 +27,30 @@
 
 ---
 
+## 2026-04-15 | SQLAlchemy 세션 관리 + FastAPI DI + pgvector
+
+**다룬 내용**
+- SQLAlchemy Engine / Session / SessionLocal 구조 (Spring DataSource/EntityManager 비교)
+- 트랜잭션 관리 (commit/rollback/close 순서, finally 이유)
+- FastAPI Depends 의존성 주입 — Spring DI와의 차이, yield 사용 이유
+- get_db() 패턴 전체 흐름 (Depends + SessionLocal 결합)
+- collector에서 Depends 없이 세션 직접 관리하는 방식
+- 실제 쿼리 패턴 (SELECT/INSERT/UPDATE/flush)
+- pgvector: 컬럼 선언, 임베딩 저장, cosine distance 검색, RAG 흐름
+
+**새로 이해한 것**
+- FastAPI Depends는 컨테이너가 없고, 요청마다 함수를 직접 실행하는 방식
+- yield Depends = Spring AOP의 @Transactional처럼 전후 코드 분리
+- collector는 get_db() 안의 로직(SessionLocal + try/finally)을 직접 재현하면 됨
+- 단계마다 세션을 따로 여는 이유 — 뉴스/정책/트렌드 실패 전파 방지
+- db.flush() — commit 전에 id 확보할 때 (외래키 연결에 필요)
+- pgvector cosine_distance() — 텍스트 유사도에 적합한 이유 (방향만 비교)
+
+**아직 불명확한 것**
+- asyncpg / AsyncSession (async 전환 시 실제 코드, 현 프로젝트는 sync라 일단 보류)
+
+---
+
 ## 2026-04-15 | 세션 시스템 구성
 
 **다룬 내용**

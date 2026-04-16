@@ -48,13 +48,6 @@ Enum source_type {
   ETC
 }
 
-Enum content_type {
-  PAIN_POINT     // 사회 문제, 일상 불편함
-  MARKET_DATA    // 시장 규모, 성장률 수치
-  STARTUP_STORY  // 문제를 겨냥한 스타트업 사례
-  ETC
-}
-
 Enum extract_type {
   PAIN_POINT    // 불편함/문제 추출
   MARKET_SIZE   // 시장 규모/성장률 추출
@@ -171,11 +164,12 @@ Table POLICY_TYPES {
   POLICY_TYPE_ID bigint       [pk]
   NAME           varchar(100) [not null, unique]
   DESCRIPTION    text
+  POLICY_PROPS   jsonb        [note: '이 유형의 POLICY_DATA가 가져야 할 필드 목록. 예: ["tier", "base_price", "enterprise_contact"]. 크롤러/AI가 POLICY_DATA 채울 때 참조.']
   IS_ACTIVE      boolean      [not null, default: true, note: 'false = 신규 수집 중단. 절대 하드 DELETE 안 함.']
   DEPRECATED_AT  timestamptz  [note: 'IS_ACTIVE = false 로 바꾼 시점']
   CREATED_AT     timestamptz  [not null]
 
-  Note: '크롤러/AI가 COMPETITOR_POLICIES 채울 때 참조. 관리자 대시보드에서 추가/비활성화.'
+  Note: '크롤러/AI가 COMPETITOR_POLICIES 채울 때 참조. POLICY_PROPS로 POLICY_DATA 구조를 강제. 관리자 대시보드에서 추가/비활성화.'
 }
 
 // ==========================================
@@ -209,7 +203,7 @@ Table COMPETITOR_POLICIES {
   COMPETITOR_ID  bigint [not null]
   POLICY_TYPE_ID bigint [note: 'POLICY_TYPES FK. null 허용 (미분류 정책)']
   POLICY_DATE    date   [not null, note: '기업 발표일']
-  POLICY_DATA    jsonb  [note: '유형별 자유형. 예) 가격: {tier, base_price} / 현지화: {target_region, language}']
+  POLICY_DATA    jsonb  [note: 'POLICY_TYPES.POLICY_PROPS에 정의된 필드 목록을 key로 사용. 크롤러/AI가 policy_props 읽고 그 구조에 맞게 채움. 확인 불가한 필드는 null.']
   CREATED_AT     timestamptz [not null, note: '수집일']
 
   Note: '변경 시 새 행 추가 (이력 보존). POLICY_TYPE_ID는 is_active=true 유형만 신규 수집 시 사용.'
@@ -233,12 +227,14 @@ Table COMPETITOR_ANALYSES {
 
 Table MARKET_RAW_SOURCES {
   RAW_SOURCE_ID bigint       [pk]
-  SOURCE_NAME   varchar(255) [not null]
+  TITLE         varchar(500) [not null, note: '기사 제목']
   SOURCE_URL    text
   SOURCE_TYPE   source_type  [not null, note: '수집 매체 (NEWS/BLOG/REPORT/COMMUNITY/ETC)']
-  CONTENT_TYPE  content_type [not null, note: '수집 내용 성격 (PAIN_POINT/MARKET_DATA/STARTUP_STORY/ETC)']
   RAW_CONTENT   text
+  PUBLISHED_AT  timestamptz  [note: '기사 발행일. 크롤러가 제공하는 경우 저장']
   COLLECTED_AT  timestamptz  [not null]
+
+  Note: '내용 분류는 AI 분석 후 MARKET_EXTRACTS.EXTRACT_TYPE에 저장.'
 }
 
 Table MARKET_EXTRACTS {
@@ -247,8 +243,7 @@ Table MARKET_EXTRACTS {
   EXTRACT_TYPE   extract_type [not null]
   TOPIC          varchar(255) [not null]
   PAIN_AREA      varchar(100) [note: '불편함/문제 영역. EXTRACT_TYPE=PAIN_POINT 일 때 주로 사용. 예: 세무, 물류, 고용']
-  SUMMARY        jsonb        [note: 'PAIN_POINT: {insight, keywords, sentiment} / STARTUP_CASE: {company, problem_targeted, outcome, keywords}']
-  EXTRACTED_DATA text
+  EXTRACTED_DATA jsonb        [note: 'AI 반환 JSON 그대로 저장. PAIN_POINT: {insight, keywords, sentiment} / MARKET_SIZE: {size, growth_rate, source, keywords} / STARTUP_CASE: {company, problem_targeted, outcome, keywords}']
   CREATED_AT     timestamptz  [not null]
 }
 

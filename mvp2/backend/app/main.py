@@ -4,6 +4,7 @@ from contextlib import asynccontextmanager
 
 from app.db import Base, engine
 from .config import settings
+from app.collector.scheduler import scheduler, setup_scheduler
 
 from app.models.user.user import User
 from app.models.user.auth_accounts import AuthAccount
@@ -26,10 +27,12 @@ from app.models.collection.policy_types import PolicyType
 @asynccontextmanager
 async def lifespan(app: FastAPI):
   Base.metadata.create_all(engine)
+  setup_scheduler()
+  scheduler.start()
   try:
     yield
   finally:
-    pass
+    scheduler.shutdown()
 
 app = FastAPI(lifespan=lifespan)
 

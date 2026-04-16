@@ -11,19 +11,23 @@
 ## 프로젝트 구조
 
 ```
-ideaCheck/                     ← 루트 (모든 시도 포함)
+SearchYourMarket/              ← 루트
+  study/                       ← 공부 전용
+    notes/                     ← 개념 공부 노트 (FastAPI, asyncio 등)
+      session_log.md           ← 공부 세션 로그
+    practice/                  ← 모르는 개념 직접 써보기
   mvp/                         ← 1차 바이브코딩 시도 (복잡해져서 중단)
   mvp2/                        ← 현재 진행 중
     backend/
       app/                     ← FastAPI 앱 코드
-      study/                   ← 개념 공부 노트 (FastAPI, asyncio 등)
-        session_log.md         ← 공부 세션 로그
       my_level.md              ← 현재 기술 수준 현황판
       work.md                  ← 설계 대화 로그 전체 (날것)
   devlog/                      ← 포트폴리오용 개발일지
     overview.md                ← 전체 여정 요약
     YYYY-MM-DD.md              ← 날짜별 결정 + 고민 기록
+  idea/                        ← 프로젝트 설계 및 기능
   prototype/                   ← UI 프로토타입 HTML
+  trash/                       ← 폐기한 아이디어/파일
 ```
 
 ---
@@ -49,7 +53,7 @@ ideaCheck/                     ← 루트 (모든 시도 포함)
 ## 세션 종료 시
 
 ### 공부 내용이 있었다면
-`mvp2/backend/study/session_log.md`에 로그 추가:
+`study/notes/session_log.md`에 로그 추가:
 ```
 ## YYYY-MM-DD | 주제
 - 다룬 내용 요약

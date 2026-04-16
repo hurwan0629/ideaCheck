@@ -1,4 +1,5 @@
 import anthropic
+from anthropic.types import TextBlock
 import json
 
 from sqlalchemy.orm import Session
@@ -10,7 +11,7 @@ from app.models.collection.market_extracts import MarketExtract, ExtractType
 claude = anthropic.Anthropic()
 
 
-def process_market_news(raw_news: list[dict]) -> None:
+def process_market_news(db: Session, raw_news: list[dict]) -> None:
     """
     news_crawler에서 받은 뉴스 목록 처리:
     1. MARKET_RAW_SOURCES에 원본 저장
@@ -33,6 +34,7 @@ def _save_raw_source(db: Session, article: dict) -> int:
         raw_content=article.get("content"),
         published_at=article.get("published_at"),
     )
+    # db 1차 캐시에 추가 → raw_source_id 채워짐
     db.add(record)
     db.flush()  # INSERT 실행 → raw_source_id 채워짐 (commit은 아님)
     return record.raw_source_id
@@ -71,7 +73,10 @@ def _extract_with_ai(title: str, content: str) -> dict | None:
         messages=[{"role": "user", "content": prompt}],
     )
     try:
-        return json.loads(response.content[0].text)
+        block = response.content[0]
+        if not isinstance(block, TextBlock):
+            return None
+        return json.loads(block.text)
     except json.JSONDecodeError:
         return None
 

@@ -5,7 +5,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent  # backend 폴더
 
 class Settings(BaseSettings):
   DATABASE_URL: str
-
+  NAVER_CLIENT_ID: str
+  NAVER_CLIENT_SECRET: str
 
 
   # .env 파일 읽기

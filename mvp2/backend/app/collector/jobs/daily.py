@@ -21,7 +21,7 @@ def daily_job():
       detect_policy_changes(db, raw_news)
 
     # api를 통해 트렌드 지수 가져오기
-    crawl_trends()
+    crawl_trends(db)
 
     # 뉴스들 분석 완료 후 최근 정책이 자주 바뀐 뉴스들 올라오는 큐를 통해 경쟁사들 재분석
-    consume_reanalysis_queue()
+    consume_reanalysis_queue(db)

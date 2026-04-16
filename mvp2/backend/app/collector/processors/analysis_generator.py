@@ -1,44 +1,58 @@
 import anthropic
+from anthropic.types import TextBlock
+from sqlalchemy.orm import Session
 import json
+from app.db import get_session
+from app.models.collection.competitors import Competitor
+from app.models.collection.competitor_features import CompetitorFeature
+from app.models.collection.competitor_policies import CompetitorPolicy
 
 claude = anthropic.Anthropic()
 
 EMBEDDING_DIM = 1536
 
 
+
 def generate_analyses_for_all() -> None:
     """전 경쟁사 종합 분석. 분기 quarterly_job에서 호출."""
-    # TODO: DB에서 SELECT * FROM COMPETITORS
-    competitor_ids = [1, 2, 3]
-    for competitor_id in competitor_ids:
-        generate_analysis_for_one(competitor_id)
+    with get_session() as db:
+      competitor_ids = db.query(Competitor.competitor_id).all()
+      for (competitor_id,) in competitor_ids:
+          generate_analysis_for_one(db, competitor_id)
 
 
-def generate_analysis_for_one(competitor_id: int) -> None:
+def generate_analysis_for_one(db: Session, competitor_id: int) -> None:
     """
     경쟁사 1개 분석 생성.
     재분석 큐(consume_reanalysis_queue)에서도 단건으로 호출됨.
     """
-    context = _gather_competitor_context(competitor_id)
+    context = _gather_competitor_context(db, competitor_id)
     analysis = _generate_with_ai(context)
     if not analysis:
         return
 
-    _save_analysis(competitor_id, analysis)
+    _save_analysis(db, competitor_id, analysis)
 
     embedding_text = _build_embedding_text(context, analysis)
     embedding_vector = _create_embedding(embedding_text)
-    _save_embedding(competitor_id, embedding_vector)
+    _save_embedding(db, competitor_id, embedding_vector)
 
 
-def _gather_competitor_context(competitor_id: int) -> dict:
-    # TODO: DB에서 COMPETITORS + COMPETITOR_FEATURES + 최근 COMPETITOR_POLICIES 조회
+def _gather_competitor_context(db: Session, competitor_id: int) -> dict:
+    # COMPETITORS 정보
+    competitor = db.query(Competitor).filter(Competitor.competitor_id == competitor_id).first()
+    if not competitor:
+        return {}
+    # COMPETITOR_FEATURES
+    competitor_features = db.query(CompetitorFeature).filter(CompetitorFeature.competitor_id == competitor_id).all()
+    # COMPETITOR_POLICIES — 가장 최근 1건
+    latest_policy = db.query(CompetitorPolicy).filter(CompetitorPolicy.competitor_id == competitor_id).order_by(CompetitorPolicy.policy_date.desc()).first()
     return {
-        "name": "토스",
-        "description": "금융 슈퍼앱",
-        "target_customer": "MZ세대 개인",
-        "features": ["간편 송금", "투자", "보험"],
-        "recent_policies": ["프리미엄 구독 도입", "동남아 진출"],
+        "name": competitor.name,
+        "description": competitor.description,
+        "target_customer": competitor.target_customer,
+        "features": [f.feature_name for f in competitor_features],
+        "recent_policies": list(latest_policy.policy_data.keys()) if latest_policy and latest_policy.policy_data else [],
     }
 
 
@@ -77,7 +91,10 @@ def _generate_with_ai(context: dict) -> dict | None:
         messages=[{"role": "user", "content": prompt}],
     )
     try:
-        return json.loads(response.content[0].text)
+      block = response.content[0]
+      if not isinstance(block, TextBlock):
+          return None
+      return json.loads(block.text)
     except json.JSONDecodeError:
         return None
 
@@ -102,11 +119,11 @@ def _create_embedding(text: str) -> list[float]:
     return [0.0] * EMBEDDING_DIM
 
 
-def _save_analysis(competitor_id: int, analysis: dict) -> None:
+def _save_analysis(db: Session, competitor_id: int, analysis: dict) -> None:
     # TODO: DB INSERT (UPDATE 없이 새 행 — 이력 보존)
     pass
 
 
-def _save_embedding(competitor_id: int, vector: list[float]) -> None:
+def _save_embedding(db: Session, competitor_id: int, vector: list[float]) -> None:
     # TODO: DB upsert (pgvector 컬럼에 저장)
     pass

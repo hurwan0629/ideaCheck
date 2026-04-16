@@ -1,5 +1,5 @@
 import anthropic
-import hashlib
+from anthropic.types import TextBlock
 import json
 
 from datetime import date, datetime, timedelta, timezone
@@ -22,8 +22,10 @@ def detect_policy_changes(db: Session, raw_news: list[dict]) -> None:
     """
     # TODO: DB에서 COMPETITORS, POLICY_TYPES(is_active=true) 조회
     # policy_types에 policy_props 포함 — Claude가 POLICY_DATA 필드를 이 목록에 맞게 채움
-    # [{"competitor_id": 1, "name": "토스"}]
     competitors = db.query(Competitor).all()
+    """
+    [{"competitor_id": 1, "name": "토스"}]
+    """
     policy_types = db.query(PolicyType).filter(PolicyType.is_active == True).all()
     """
     [
@@ -47,6 +49,7 @@ def detect_policy_changes(db: Session, raw_news: list[dict]) -> None:
         if not detected:
             continue
 
+        # competitor_id의 정책이 policy_type_idㄹ 변경되었다.
         competitor_id = detected["competitor_id"]
         policy_type_id = detected["policy_type_id"]
         policy_data = detected["policy_data"]
@@ -98,7 +101,10 @@ def _detect_policy_in_article(
         max_tokens=512,
         messages=[{"role": "user", "content": prompt}],
     )
-    text = response.content[0].text.strip()
+    block = response.content[0]
+    if not isinstance(block, TextBlock):
+        return None
+    text = block.text.strip()
     if text == "null":
         return None
 
@@ -122,15 +128,15 @@ def _detect_policy_in_article(
 
 
 def _is_changed(db: Session, competitor_id: int, policy_type_id: int, new_policy_data: dict) -> bool:
-    # TODO: DB에서 직전 POLICY_DATA 해시와 비교
-    row = db.query(CompetitorPolicy.policy_data).filter(CompetitorPolicy.competitor_id==competitor_id).order_by(CompetitorPolicy.policy_date.desc()).limit(1).first()
-    
-    if row is None:
-        return True
-
-    old_hash = hashlib.md5(json.dumps(row.policy_data, sort_keys=True).encode()).hexdigest()
-    new_hash = hashlib.md5(json.dumps(new_policy_data, sort_keys=True).encode()).hexdigest()
-    return old_hash!=new_hash
+    # 7일 이내에 동일 경쟁사 + 동일 정책 타입 레코드가 있으면 중복으로 간주
+    # TODO: 추후 AI 기반 의미론적 비교로 교체
+    since = date.today() - timedelta(days=7)
+    exists = db.query(CompetitorPolicy).filter(
+        CompetitorPolicy.competitor_id == competitor_id,
+        CompetitorPolicy.policy_type_id == policy_type_id,
+        CompetitorPolicy.policy_date >= since,
+    ).first()
+    return exists is None
 
 
 def _save_policy(

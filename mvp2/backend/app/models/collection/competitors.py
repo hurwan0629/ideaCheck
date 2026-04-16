@@ -10,7 +10,7 @@ class Competitor(Base):
 
   competitor_id: Mapped[int] = mapped_column("COMPETITOR_ID", BigInteger, Sequence("competitors_competitor_id_seq"), primary_key=True)
   name: Mapped[str] = mapped_column("NAME", String(255), nullable=False)
-  type: Mapped[str] = mapped_column("TYPE", String(50), nullable=False)
+  type: Mapped[str] = mapped_column("TYPE", String(50), nullable=False) # 카테고리
   description: Mapped[str | None] = mapped_column("DESCRIPTION", Text, nullable=True)
   target_customer: Mapped[str | None] = mapped_column("TARGET_CUSTOMER", Text, nullable=True)
   website: Mapped[str | None] = mapped_column("WEBSITE", String(255), nullable=True)

@@ -4,6 +4,24 @@
 
 ---
 
+## 2026-04-16 | competitor_crawler 설계 및 구현
+
+**다룬 내용**
+- httpx.Client vs 브라우저 차이 (User-Agent, TLS fingerprint, 봇 차단 단계)
+- JS 필요 여부 자동 감지 방법 (SPA 패턴 heuristic vs AI 판단 비교)
+- 크롤링 데이터 AI 추출 설계 (HTML 전체 vs body 텍스트만, 한 번 호출로 통합)
+- SQLAlchemy 변경 감지(dirty tracking) — 필드만 바꾸면 commit 시 자동 UPDATE
+
+**새로 이해한 것**
+- httpx는 TLS fingerprint도 Python 고유값이라 User-Agent 속여도 강한 봇 차단은 뚫기 어려움
+- Playwright headless도 `navigator.webdriver` 플래그로 감지 가능 → `--disable-blink-features=AutomationControlled` 로 숨김
+- AI type 추출 시 고정 카테고리를 프롬프트에 명시하지 않으면 매번 다른 값이 나옴
+
+**아직 불명확한 것**
+- Cloudflare Enterprise 수준 차단 시 현실적인 대안 (공식 API 외엔 사실상 없음)
+
+---
+
 ## 2026-04-14 | asyncio + APScheduler + collector 라이브러리
 
 **다룬 내용**
@@ -48,6 +66,26 @@
 
 **아직 불명확한 것**
 - asyncpg / AsyncSession (async 전환 시 실제 코드, 현 프로젝트는 sync라 일단 보류)
+
+---
+
+## 2026-04-16 | 환경 세팅 & 서버 첫 실행
+
+**다룬 내용**
+- pydantic-settings로 .env 읽기 (BaseSettings, alias, env_file)
+- 네이버 검색 API 구조 (검색 권한 하나로 뉴스/블로그 등 전부 커버)
+- Playwright 설치 구조 (pip + playwright install 두 단계 필요한 이유)
+- venv 경로 하드코딩 문제 (폴더 이름 바꾸면 재생성 필요)
+- `get_session()` contextmanager — 예외 시 rollback 동작 확인 (crawl_trends 버그로 실제 체험)
+
+**새로 이해한 것**
+- pydantic-settings는 FastAPI 없이 단독 사용 가능한 독립 라이브러리
+- Python 변수명에 하이픈 불가 → Field(alias=) 로 우회
+- Playwright는 Python 바인딩 + Node.js 서버 + 브라우저 프로세스 3계층 구조
+- `with get_session()` 안에서 예외 나면 그 안의 모든 저장이 rollback됨 → 트랜잭션 범위 설계 중요
+
+**아직 불명확한 것**
+- Google Trends pytrends 한국 IP 차단 해결 방법
 
 ---
 

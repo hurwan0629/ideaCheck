@@ -1,75 +1,132 @@
-import httpx
+import json
+
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
+from sqlalchemy.orm import Session
+
+from app.clients import browser_client, gpt
+from app.models.collection.competitor_features import CompetitorFeature
+from app.models.collection.competitors import Competitor
+
+# 경쟁사 서비스 유형 카테고리 (type 컬럼 값 후보)
+# AI가 자유 텍스트로 쓰면 매번 달라지므로 고정 목록을 프롬프트에 명시
+COMPETITOR_TYPES = ["핀테크", "이커머스", "SaaS", "헬스케어", "에듀테크", "물류", "기타"]
+
+_AI_SYSTEM_PROMPT = f"""
+웹사이트 텍스트를 분석해서 아래 JSON 형식으로만 응답해. 다른 텍스트는 절대 포함하지 마.
+{{
+    "description": "서비스 한 줄 설명 (50자 이내)",
+    "target_customer": "주요 타겟 고객층 (예: 20-30대 직장인, 중소기업 대표)",
+    "type": "서비스 유형. 반드시 다음 중 하나로만 답해: {', '.join(COMPETITOR_TYPES)}",
+    "features": [
+        {{"name": "기능명", "description": "기능 설명 (30자 이내)"}}
+    ]
+}}
+"""
 
 
-def crawl_competitors() -> None:
+def crawl_competitors(db: Session) -> None:
     """
     DB에 등록된 전 경쟁사 공식 사이트 크롤링 → COMPETITORS, COMPETITOR_FEATURES 갱신.
     분기 1회 quarterly_job에서 호출.
 
-    needs_js 기준으로 크롤링 방식 분기:
-      False → httpx + BeautifulSoup (정적 HTML, 빠름)
-      True  → Playwright sync API (JS 렌더링 필요한 동적 사이트)
+    흐름:
+      1. httpx(정적)로 먼저 시도
+      2. JS 렌더링이 필요한 사이트로 판단되면 Playwright로 재시도
+      3. BeautifulSoup으로 파싱한 결과를 AI에게 넘겨 구조화된 데이터 추출
     """
-    # TODO: DB에서 SELECT * FROM COMPETITORS
-    competitors = [
-        {"competitor_id": 1, "name": "토스", "website": "https://toss.im", "needs_js": False},
-        {"competitor_id": 2, "name": "카카오페이", "website": "https://kakaopay.com", "needs_js": True},
-    ]
+    competitors = db.query(Competitor).all()
 
     for competitor in competitors:
-        if competitor["needs_js"]:
-            data = _crawl_with_playwright(competitor["website"])
-        else:
-            data = _crawl_with_httpx(competitor["website"])
-        _update_competitor(competitor["competitor_id"], data)
+        soup = _fetch_with_httpx(competitor.website)
+
+        if _needs_js(soup):
+            soup = _fetch_with_playwright(competitor.website)
+
+        data = _extract_with_ai(soup)
+        _update_competitor(db, competitor.competitor_id, data)
 
 
-def _crawl_with_httpx(url: str) -> dict:
-    with httpx.Client(timeout=15.0) as client:
-        response = client.get(url)
-        soup = BeautifulSoup(response.text, "html.parser")
-        return {
-            "description": _extract_text(soup, "meta[name='description']", attr="content"),
-            "features": _extract_features(soup),
-        }
+def _fetch_with_httpx(url: str) -> BeautifulSoup:
+    response = browser_client.get(url)
+    return BeautifulSoup(response.text, "html.parser")
 
 
-def _crawl_with_playwright(url: str) -> dict:
-    # sync_playwright: Playwright의 동기 API. async 없이 그대로 사용 가능.
+def _fetch_with_playwright(url: str) -> BeautifulSoup:
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        # AutomationControlled 비활성화: headless 브라우저임을 감지하는 navigator.webdriver 플래그 숨김
+        browser = p.chromium.launch(
+            headless=True,
+            args=["--disable-blink-features=AutomationControlled"],
+        )
         page = browser.new_page()
+        # Playwright도 브라우저와 동일한 User-Agent 사용
+        page.set_extra_http_headers({
+            "User-Agent": browser_client.headers["User-Agent"],
+            "Accept-Language": browser_client.headers["Accept-Language"],
+        })
         page.goto(url)
         page.wait_for_load_state("networkidle")
         html = page.content()
         browser.close()
-    soup = BeautifulSoup(html, "html.parser")
+    return BeautifulSoup(html, "html.parser")
+
+
+def _needs_js(soup: BeautifulSoup) -> bool:
+    # SPA 루트 엘리먼트 (React/Vue/Angular 공통 패턴)
+    if soup.select_one("#root, #app, #__next, [data-reactroot]"):
+        return True
+
+    # noscript에 경고 문구가 있으면 JS 없이는 동작 안 함
+    noscript = soup.find("noscript")
+    if noscript and len(noscript.get_text(strip=True)) > 20:
+        return True
+
+    # body 텍스트가 거의 없으면 JS가 콘텐츠를 채우는 구조
+    body_text = soup.body.get_text(strip=True) if soup.body else ""
+    if len(body_text) < 200:
+        return True
+
+    return False
+
+
+def _extract_with_ai(soup: BeautifulSoup) -> dict:
+    # HTML 태그 제거하고 텍스트만 추출 → 토큰 절약
+    body_text = soup.body.get_text(separator="\n", strip=True) if soup.body else ""
+
+    response = gpt.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {"role": "system", "content": _AI_SYSTEM_PROMPT},
+            {"role": "user", "content": body_text[:8000]},
+        ],
+        response_format={"type": "json_object"},
+    )
+
+    result = json.loads(response.choices[0].message.content)
     return {
-        "description": _extract_text(soup, "meta[name='description']", attr="content"),
-        "features": _extract_features(soup),
+        "description": result.get("description", ""),
+        "target_customer": result.get("target_customer", ""),
+        "type": result.get("type", "기타"),
+        "features": result.get("features", []),
     }
 
 
-def _extract_text(soup: BeautifulSoup, selector: str, attr: str | None = None) -> str:
-    tag = soup.select_one(selector)
-    if not tag:
-        return ""
-    return tag.get(attr, "") if attr else tag.get_text(strip=True)
+def _update_competitor(db: Session, competitor_id: int, data: dict) -> None:
+    # Competitor 기본 정보 갱신
+    competitor = db.query(Competitor).filter(Competitor.competitor_id == competitor_id).one()
+    competitor.description = data["description"]
+    competitor.target_customer = data["target_customer"]
+    competitor.type = data["type"]
 
+    # 기존 features 전부 삭제 후 새로 insert
+    # 분기 1회 전체 갱신이라 upsert 없이 delete → insert가 단순함
+    db.query(CompetitorFeature).filter(CompetitorFeature.competitor_id == competitor_id).delete()
+    for feature in data["features"]:
+        db.add(CompetitorFeature(
+            competitor_id=competitor_id,
+            feature_name=feature["name"],
+            feature_desc={"description": feature["description"]},
+        ))
 
-def _extract_features(soup: BeautifulSoup) -> list[dict]:
-    # TODO: 경쟁사별 실제 selector 적용
-    features = []
-    for item in soup.select(".feature-item"):
-        features.append({
-            "name": _extract_text(item, ".feature-title"),
-            "description": _extract_text(item, ".feature-desc"),
-        })
-    return features
-
-
-def _update_competitor(competitor_id: int, data: dict) -> None:
-    # TODO: DB 세션 열어서 변경 감지 후 저장
-    pass
+    db.commit()

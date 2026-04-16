@@ -2,7 +2,7 @@ from datetime import datetime, timezone
 from typing import Any
 
 from sqlalchemy.dialects.postgresql import JSONB
-from sqlalchemy import BigInteger, String, DateTime, Sequence
+from sqlalchemy import BigInteger, String, DateTime, Sequence, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.db import Base

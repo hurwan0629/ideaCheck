@@ -19,3 +19,4 @@ class CompetitorFeature(Base):
 
   competitor: Mapped["Competitor"] = relationship("Competitor", back_populates="competitor_features")
   feature_category: Mapped["FeatureCategory"] = relationship("FeatureCategory", back_populates="competitor_features")
+  

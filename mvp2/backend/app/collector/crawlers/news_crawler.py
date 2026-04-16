@@ -1,6 +1,7 @@
 import hashlib
 import httpx
 from bs4 import BeautifulSoup
+from app.config import settings
 
 # DB에서 읽어올 감시 키워드 (임시 하드코딩)
 COMPETITOR_KEYWORDS = [
@@ -29,17 +30,20 @@ def crawl_news() -> list[dict]:
 
 def _search_news(client: httpx.Client, keyword: str) -> list[dict]:
     articles = []
-
-    # TODO: 네이버 뉴스 검색 API 실제 호출
-    # response = client.get(
-    #     "https://openapi.naver.com/v1/search/news.json",
-    #     params={"query": keyword, "display": 10, "sort": "date"},
-    #     headers={"X-Naver-Client-Id": "...", "X-Naver-Client-Secret": "..."},
-    # )
-    # items = response.json()["items"]
-    items = [
-        {"title": f"{keyword} 관련 기사", "link": f"https://example.com/{keyword}", "pubDate": "2024-03-01"},
-    ]
+    response = client.get(
+        "https://openapi.naver.com/v1/search/news.json",
+        headers={
+            "X-Naver-Client-Id": settings.NAVER_CLIENT_ID,
+            "X-Naver-Client-Secret": settings.NAVER_CLIENT_SECRET,
+            "Content-Type": "application/json"
+        },
+        params={
+            "query": keyword,
+            "display": 10,
+            "sort": "date"
+        }
+    )
+    items=response.json()["items"]
 
     for item in items:
         url = item["link"]

@@ -1,14 +1,12 @@
-import anthropic
-from anthropic.types import TextBlock
 import json
 
 from sqlalchemy.orm import Session
 
 from app.db import get_session
+from app.clients import gpt
+# from app.clients import claude
 from app.models.collection.market_raw_sources import MarketRawSource, SourceType
 from app.models.collection.market_extracts import MarketExtract, ExtractType
-
-claude = anthropic.Anthropic()
 
 
 def process_market_news(db: Session, raw_news: list[dict]) -> None:
@@ -18,12 +16,11 @@ def process_market_news(db: Session, raw_news: list[dict]) -> None:
     2. Claude로 분류 + 유의미 여부 판단
     3. 유의미하면 MARKET_EXTRACTS 저장
     """
-    with get_session() as db:
-        for article in raw_news:
-            raw_source_id = _save_raw_source(db, article)
-            extraction = _extract_with_ai(article["title"], article["content"])
-            if extraction and extraction.get("is_meaningful"):
-                _save_extract(db, raw_source_id, extraction)
+    for article in raw_news:
+        raw_source_id = _save_raw_source(db, article)
+        extraction = _extract_with_ai(article["title"], article["content"])
+        if extraction and extraction.get("is_meaningful"):
+            _save_extract(db, raw_source_id, extraction)
 
 
 def _save_raw_source(db: Session, article: dict) -> int:
@@ -67,16 +64,20 @@ def _extract_with_ai(title: str, content: str) -> dict | None:
 
 창업자에게 전혀 유용하지 않은 단순 이벤트/사고 기사면 is_meaningful: false로만 반환.
 """
-    response = claude.messages.create(
-        model="claude-sonnet-4-6",
+    # response = claude.messages.create(
+    #     model="claude-sonnet-4-6",
+    #     max_tokens=512,
+    #     messages=[{"role": "user", "content": prompt}],
+    # )
+    # block = response.content[0]
+    # return json.loads(block.text)
+    response = gpt.chat.completions.create(
+        model="gpt-4o-mini",
         max_tokens=512,
         messages=[{"role": "user", "content": prompt}],
     )
     try:
-        block = response.content[0]
-        if not isinstance(block, TextBlock):
-            return None
-        return json.loads(block.text)
+        return json.loads(response.choices[0].message.content)
     except json.JSONDecodeError:
         return None
 

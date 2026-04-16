@@ -15,13 +15,16 @@ def daily_job():
     with get_session() as db:
       # 뉴스들 모두 크롤링
       raw_news = crawl_news()
+      print("crawl_news 종료")
 
       # 크롤링된 데이터에서 뉴스, 정책 변경 등 확인
       process_market_news(db, raw_news)
+      print("process_market_news 종료")
       detect_policy_changes(db, raw_news)
+      print("detect_policy_changes 종료")
 
-    # api를 통해 트렌드 지수 가져오기
-    crawl_trends(db)
+      # api를 통해 트렌드 지수 가져오기
+      crawl_trends(db)
 
-    # 뉴스들 분석 완료 후 최근 정책이 자주 바뀐 뉴스들 올라오는 큐를 통해 경쟁사들 재분석
-    consume_reanalysis_queue(db)
+      # 뉴스들 분석 완료 후 최근 정책이 자주 바뀐 뉴스들 올라오는 큐를 통해 경쟁사들 재분석
+      consume_reanalysis_queue(db)

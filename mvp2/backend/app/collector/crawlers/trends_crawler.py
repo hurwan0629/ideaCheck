@@ -16,12 +16,12 @@ KEYWORDS = {
 def crawl_trends(db: Session) -> None:
     """Google Trends + 네이버 DataLab에서 트렌드 점수 수집 → TRENDS 저장."""
     today = date.today()
-    pytrend = TrendReq(hl="ko", tz=540)  # 커넥션 한 번만 생성
+    # pytrend = TrendReq(hl="ko", tz=540)  # 커넥션 한 번만 생성
     for topic_type, kw_list in KEYWORDS.items():
         for keyword in kw_list:
-            google_score = _fetch_google_trends(keyword, pytrend)
+            # google_score = _fetch_google_trends(keyword, pytrend)
             naver_score = _fetch_naver_datalab(keyword)
-            _save_trend(db, keyword, topic_type, today, google_score, "google_trends")
+            # _save_trend(db, keyword, topic_type, today, google_score, "google_trends")
             _save_trend(db, keyword, topic_type, today, naver_score, "naver_datalab")
 
 

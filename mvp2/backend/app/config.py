@@ -7,6 +7,8 @@ class Settings(BaseSettings):
   DATABASE_URL: str
   NAVER_CLIENT_ID: str
   NAVER_CLIENT_SECRET: str
+  ANTHROPIC_API_KEY: str = ""
+  OPENAI_API_KEY: str
 
 
   # .env 파일 읽기

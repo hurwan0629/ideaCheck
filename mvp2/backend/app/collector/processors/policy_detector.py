@@ -1,15 +1,13 @@
-import anthropic
-from anthropic.types import TextBlock
 import json
 
 from datetime import date, datetime, timedelta, timezone
 from app.collector.queue.reanalysis_queue import add_to_queue
 from sqlalchemy.orm import Session
+from app.clients import gpt
+# from app.clients import claude
 from app.models.collection.competitors import Competitor
 from app.models.collection.competitor_policies import CompetitorPolicy
 from app.models.collection.policy_types import PolicyType
-
-claude = anthropic.Anthropic()
 
 # 동일한 기업이 한달 내로 아래 숫자 이상의 정책변경을 한다면 분기가 되지 않아도 기업 정보를 수정
 REANALYSIS_THRESHOLD = 3
@@ -96,15 +94,18 @@ def _detect_policy_in_article(
 해당하지 않으면: null
 """
 
-    response = claude.messages.create(
-        model="claude-haiku-4-5-20251001",
+    # response = claude.messages.create(
+    #     model="claude-haiku-4-5-20251001",
+    #     max_tokens=512,
+    #     messages=[{"role": "user", "content": prompt}],
+    # )
+    # text = response.content[0].text.strip()
+    response = gpt.chat.completions.create(
+        model="gpt-4o-mini",
         max_tokens=512,
         messages=[{"role": "user", "content": prompt}],
     )
-    block = response.content[0]
-    if not isinstance(block, TextBlock):
-        return None
-    text = block.text.strip()
+    text = response.choices[0].message.content.strip()
     if text == "null":
         return None
 
@@ -154,7 +155,7 @@ def _save_policy(
     ))
 
 def _check_reanalysis_threshold(db: Session, competitor_id: int) -> None:
-    since = datetime.now(timezone.utc) - timedelta(days=30)
+    since = date.today() - timedelta(days=30)
     count = db.query(CompetitorPolicy).filter(
         CompetitorPolicy.competitor_id==competitor_id,
         CompetitorPolicy.policy_date>=since).count()

@@ -23,4 +23,5 @@ def setup_scheduler():
         CronTrigger(month="1,4,7,10", day=1, hour=4, minute=0),
         id="quarterly_job",
         replace_existing=True,
+        next_run_time=datetime.now()
     )

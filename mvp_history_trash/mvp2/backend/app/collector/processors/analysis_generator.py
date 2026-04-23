@@ -1,24 +1,22 @@
-import anthropic
-from anthropic.types import TextBlock
+from datetime import date
 from sqlalchemy.orm import Session
 import json
+from app.clients import gpt
 from app.db import get_session
+from app.models.collection.competitor_analyses import CompetitorAnalysis
 from app.models.collection.competitors import Competitor
 from app.models.collection.competitor_features import CompetitorFeature
 from app.models.collection.competitor_policies import CompetitorPolicy
-
-claude = anthropic.Anthropic()
 
 EMBEDDING_DIM = 1536
 
 
 
-def generate_analyses_for_all() -> None:
+def generate_analyses_for_all(db: Session) -> None:
     """전 경쟁사 종합 분석. 분기 quarterly_job에서 호출."""
-    with get_session() as db:
-      competitor_ids = db.query(Competitor.competitor_id).all()
-      for (competitor_id,) in competitor_ids:
-          generate_analysis_for_one(db, competitor_id)
+    competitor_ids = db.query(Competitor.competitor_id).all()
+    for (competitor_id,) in competitor_ids:
+        generate_analysis_for_one(db, competitor_id)
 
 
 def generate_analysis_for_one(db: Session, competitor_id: int) -> None:
@@ -85,16 +83,16 @@ def _generate_with_ai(context: dict) -> dict | None:
 
 실수치 데이터가 없으면 yoy_pct는 null, confidence는 low.
 """
-    response = claude.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=1024,
+    response = gpt.chat.completions.create(
+        model="gpt-4o-mini",
         messages=[{"role": "user", "content": prompt}],
+        response_format={"type": "json_object"},
     )
     try:
-      block = response.content[0]
-      if not isinstance(block, TextBlock):
-          return None
-      return json.loads(block.text)
+        data = response.choices[0].message.content
+        if data is None:
+            return
+        return json.loads(data)
     except json.JSONDecodeError:
         return None
 
@@ -120,8 +118,14 @@ def _create_embedding(text: str) -> list[float]:
 
 
 def _save_analysis(db: Session, competitor_id: int, analysis: dict) -> None:
-    # TODO: DB INSERT (UPDATE 없이 새 행 — 이력 보존)
-    pass
+    db.add(CompetitorAnalysis(
+        competitor_id=competitor_id,
+        analysis_date=date.today(),
+        strength=analysis.get("strength"),
+        weakness=analysis.get("weakness"),
+        characteristic=analysis.get("characteristic"),
+    ))
+    db.commit()
 
 
 def _save_embedding(db: Session, competitor_id: int, vector: list[float]) -> None:

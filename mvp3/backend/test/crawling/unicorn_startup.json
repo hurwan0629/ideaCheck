@@ -1,0 +1,2489 @@
+[
+  {
+    "name": "OpenAI",
+    "url": "https://en.wikipedia.org/wiki/OpenAI",
+    "valuation": "852",
+    "valuation_date": "March 2026 ( 2026-03 ) [ 21 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "United States",
+    "founders": "Sam Altman , Elon Musk , Greg Brockman , Ilya Sutskever"
+  },
+  {
+    "name": "ByteDance",
+    "url": "https://en.wikipedia.org/wiki/ByteDance",
+    "valuation": "330",
+    "valuation_date": "September 2025 [ 23 ]",
+    "industry": [
+      "Internet"
+    ],
+    "country": "China",
+    "founders": "Zhang Yiming , Liang Rubo"
+  },
+  {
+    "name": "Stripe",
+    "url": "https://en.wikipedia.org/wiki/Stripe_(company)",
+    "valuation": "159",
+    "valuation_date": "February 2026 ( 2026-02 ) [ 24 ]",
+    "industry": [
+      "Financial services"
+    ],
+    "country": "United States and Ireland",
+    "founders": "Patrick and John Collison"
+  },
+  {
+    "name": "Databricks",
+    "url": "https://en.wikipedia.org/wiki/Databricks",
+    "valuation": "134",
+    "valuation_date": "December 2025 ( 2025-12 ) [ 25 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": "Ali Ghodsi"
+  },
+  {
+    "name": "Binance",
+    "url": "https://en.wikipedia.org/wiki/Binance",
+    "valuation": "80–90",
+    "valuation_date": "September 2021 ( 2021-09 ) [ 14 ]",
+    "industry": [
+      "Cryptocurrency"
+    ],
+    "country": "Canada",
+    "founders": "Changpeng Zhao"
+  },
+  {
+    "name": "Revolut",
+    "url": "https://en.wikipedia.org/wiki/Revolut",
+    "valuation": "75",
+    "valuation_date": "November 2025 ( 2025-11 ) [ 26 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United Kingdom",
+    "founders": "Nikolay Storonsky , Vlad Yatsenko"
+  },
+  {
+    "name": "Shein",
+    "url": "https://en.wikipedia.org/wiki/Shein_(company)",
+    "valuation": "66",
+    "valuation_date": "May 2023 ( 2023-05 ) [ 14 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "China",
+    "founders": "Chris Xu"
+  },
+  {
+    "name": "Canva",
+    "url": "https://en.wikipedia.org/wiki/Canva",
+    "valuation": "42",
+    "valuation_date": "October 2024 ( 2024-10 ) [ 27 ]",
+    "industry": [
+      "Graphic design"
+    ],
+    "country": "Australia",
+    "founders": "Melanie Perkins , Cliff Obrecht , Cameron Adams"
+  },
+  {
+    "name": "Figure AI",
+    "url": "https://en.wikipedia.org/wiki/Figure_AI",
+    "valuation": "39",
+    "valuation_date": "September 2025 ( 2025-09 ) [ 28 ]",
+    "industry": [
+      "Humanoid robotics"
+    ],
+    "country": "United States",
+    "founders": "Brett Adcock"
+  },
+  {
+    "name": "Ramp",
+    "url": "https://en.wikipedia.org/wiki/Ramp_(company)",
+    "valuation": "32",
+    "valuation_date": "November 2025 [ 29 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Telegram",
+    "url": "https://en.wikipedia.org/wiki/Telegram_(software)",
+    "valuation": "30",
+    "valuation_date": "January 2021 ( 2021-01 ) [ 34 ]",
+    "industry": [
+      "Internet"
+    ],
+    "country": "United Arab Emirates",
+    "founders": "Nikolai and Pavel Durov"
+  },
+  {
+    "name": "Anysphere",
+    "url": "https://en.wikipedia.org/wiki/Anysphere",
+    "valuation": "29",
+    "valuation_date": "November 2025 ( 2025-11 ) [ 35 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "United States",
+    "founders": "Michael Truell, Sualeh Asif, Arvid Lunnemark and Aman Sanger"
+  },
+  {
+    "name": "Scale AI",
+    "url": "https://en.wikipedia.org/wiki/Scale_AI",
+    "valuation": "29",
+    "valuation_date": "June 2025",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "United States",
+    "founders": "Alexandr Wang , Lucy Guo"
+  },
+  {
+    "name": "Fanatics",
+    "url": "https://en.wikipedia.org/wiki/Fanatics_(sports_retailer)",
+    "valuation": "27",
+    "valuation_date": "June 2022 ( 2022-06 ) [ 14 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "United States",
+    "founders": "Alan Trager, Mitch Trager, Michael Rubin [ 36 ]"
+  },
+  {
+    "name": "Chime",
+    "url": "https://en.wikipedia.org/wiki/Chime_(company)",
+    "valuation": "25",
+    "valuation_date": "June 2025 [ 37 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United States",
+    "founders": "Chris Britt, Ryan King"
+  },
+  {
+    "name": "Groq",
+    "url": "https://en.wikipedia.org/wiki/Groq",
+    "valuation": "20",
+    "valuation_date": "Dec 2025 [ 42 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "United States",
+    "founders": "Jonathan Ross"
+  },
+  {
+    "name": "Miro",
+    "url": "https://en.wikipedia.org/wiki/Miro_(collaboration_platform)",
+    "valuation": "17.5",
+    "valuation_date": "January 2022 ( 2022-01 ) [ 43 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": "Andrey Khusid"
+  },
+  {
+    "name": "Discord",
+    "url": "https://en.wikipedia.org/wiki/Discord_(software)",
+    "valuation": "15",
+    "valuation_date": "September 2021 ( 2021-09 ) [ 46 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": "Jason Citron , Stanislav Vishnevsky"
+  },
+  {
+    "name": "DJI",
+    "url": "https://en.wikipedia.org/wiki/DJI",
+    "valuation": "15",
+    "valuation_date": "September 2016 ( 2016-09 ) [ 1 ]",
+    "industry": [
+      "Technology"
+    ],
+    "country": "China",
+    "founders": "Frank Wang (Wang Tao)"
+  },
+  {
+    "name": "GoPuff",
+    "url": "https://en.wikipedia.org/wiki/GoPuff",
+    "valuation": "15",
+    "valuation_date": "July 2021 ( 2021-07 ) [ 47 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "United States",
+    "founders": "Yakir Gola, Rafael Ilishayev"
+  },
+  {
+    "name": "Xiaohongshu",
+    "url": "https://en.wikipedia.org/wiki/Xiaohongshu",
+    "valuation": "14",
+    "valuation_date": "September 2023 ( 2023-09 ) [ 50 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "China",
+    "founders": "Miranda Qu Fang, Charlwin Mao Wenchao"
+  },
+  {
+    "name": "Skild AI",
+    "url": "https://en.wikipedia.org/w/index.php?title=Skild_AI&action=edit&redlink=1",
+    "valuation": "14",
+    "valuation_date": "January 2026 [ 52 ]",
+    "industry": [
+      "Robotics"
+    ],
+    "country": "United States",
+    "founders": "Deepak Pathak"
+  },
+  {
+    "name": "Plaid",
+    "url": "https://en.wikipedia.org/wiki/Plaid_(company)",
+    "valuation": "13.4",
+    "valuation_date": "April 2021 ( 2021-04 ) [ 53 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United States",
+    "founders": "Zach Perret, William Hockey"
+  },
+  {
+    "name": "OpenSea",
+    "url": "https://en.wikipedia.org/wiki/OpenSea",
+    "valuation": "13.3",
+    "valuation_date": "August 2025 [ 54 ]",
+    "industry": [
+      "Financial Technology"
+    ],
+    "country": "United States",
+    "founders": "Devin Finzer , Chris Maddern"
+  },
+  {
+    "name": "Shield AI",
+    "url": "https://en.wikipedia.org/wiki/Shield_AI",
+    "valuation": "12.6",
+    "valuation_date": "March 2026 [ 58 ]",
+    "industry": [
+      "Defense Technology"
+    ],
+    "country": "United States",
+    "founders": "Brandon Tseng, Ryan Tseng, and Andrew Reiter"
+  },
+  {
+    "name": "Faire",
+    "url": "",
+    "valuation": "12.59",
+    "valuation_date": "November 2021 ( 2021-11 ) [ 60 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "United States",
+    "founders": "Max Rhodes"
+  },
+  {
+    "name": "OpenEvidence",
+    "url": "https://en.wikipedia.org/wiki/OpenEvidence",
+    "valuation": "12",
+    "valuation_date": "January 2026 [ 63 ]",
+    "industry": [
+      "Health Technology"
+    ],
+    "country": "United States",
+    "founders": "Daniel Nadler"
+  },
+  {
+    "name": "Thinking Machines Lab",
+    "url": "https://en.wikipedia.org/wiki/Thinking_Machines_Lab",
+    "valuation": "12",
+    "valuation_date": "July 2025 [ 64 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "United States",
+    "founders": "Mira Murati"
+  },
+  {
+    "name": "Bitmain",
+    "url": "https://en.wikipedia.org/wiki/Bitmain",
+    "valuation": "12",
+    "valuation_date": "June 2018",
+    "industry": [
+      "Cryptocurrency"
+    ],
+    "country": "China",
+    "founders": "Jihan Wu"
+  },
+  {
+    "name": "GoodLeap",
+    "url": "https://en.wikipedia.org/wiki/GoodLeap",
+    "valuation": "12",
+    "valuation_date": "October 2021 [ 66 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United States",
+    "founders": "Hayes Barnard , Jason Walker, Matt Dawson"
+  },
+  {
+    "name": "Checkout.com",
+    "url": "https://en.wikipedia.org/wiki/Checkout.com",
+    "valuation": "12",
+    "valuation_date": "September 2025 [ 67 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United Kingdom",
+    "founders": "Guillaume Pousaz"
+  },
+  {
+    "name": "Celonis",
+    "url": "https://en.wikipedia.org/wiki/Celonis",
+    "valuation": "11",
+    "valuation_date": "June 2021 [ 70 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "Germany",
+    "founders": "Alex Rinke, Bastian Nominacher, Martin Klenk"
+  },
+  {
+    "name": "Harvey",
+    "url": "https://en.wikipedia.org/wiki/Harvey_(software)",
+    "valuation": "11",
+    "valuation_date": "March 2026 [ 72 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "United States",
+    "founders": "Winston Weinberg, Gabriel Pereyra"
+  },
+  {
+    "name": "Bilt Rewards",
+    "url": "https://en.wikipedia.org/wiki/Bilt_Rewards",
+    "valuation": "10.75",
+    "valuation_date": "July 2025",
+    "industry": [
+      "Financial Technology"
+    ],
+    "country": "United States",
+    "founders": "Ankur Jain"
+  },
+  {
+    "name": "Gusto",
+    "url": "https://en.wikipedia.org/wiki/Gusto_(software)",
+    "valuation": "10",
+    "valuation_date": "August 2021 [ 82 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": "Joshua Reeves and Edward Kim"
+  },
+  {
+    "name": "KuCoin",
+    "url": "https://en.wikipedia.org/wiki/KuCoin",
+    "valuation": "10",
+    "valuation_date": "May 2022 [ 83 ]",
+    "industry": [
+      "Cryptocurrency"
+    ],
+    "country": "Seychelles",
+    "founders": ""
+  },
+  {
+    "name": "Ripple",
+    "url": "https://en.wikipedia.org/wiki/Ripple_Labs",
+    "valuation": "10",
+    "valuation_date": "December 2019 [ 88 ]",
+    "industry": [
+      "Cryptocurrency"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Rapyd",
+    "url": "https://en.wikipedia.org/w/index.php?title=Rapyd&action=edit&redlink=1",
+    "valuation": "8.7",
+    "valuation_date": "August 2021 [ 99 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United Kingdom",
+    "founders": ""
+  },
+  {
+    "name": "Nuro",
+    "url": "https://en.wikipedia.org/wiki/Nuro",
+    "valuation": "8.6",
+    "valuation_date": "November 2021 [ 100 ]",
+    "industry": [
+      "Robotics"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Airwallex",
+    "url": "https://en.wikipedia.org/wiki/Airwallex",
+    "valuation": "8",
+    "valuation_date": "December 2025 [ 105 ]",
+    "industry": [
+      "Financial services"
+    ],
+    "country": "Australia / Hong Kong",
+    "founders": ""
+  },
+  {
+    "name": "Razorpay",
+    "url": "",
+    "valuation": "7.5",
+    "valuation_date": "December 2021 [ 109 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "India",
+    "founders": "Harshil Mathur, Shashank Kumar"
+  },
+  {
+    "name": "Carta",
+    "url": "https://en.wikipedia.org/wiki/Carta_(software_company)",
+    "valuation": "7.4",
+    "valuation_date": "August 2021 [ 110 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": "Henry Ward"
+  },
+  {
+    "name": "Cohere",
+    "url": "https://en.wikipedia.org/wiki/Cohere",
+    "valuation": "6.8",
+    "valuation_date": "August 2025 [ 118 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "Canada",
+    "founders": "Aidan Gomez , Ivan Zhang, Nick Frosst"
+  },
+  {
+    "name": "Lovable",
+    "url": "https://en.wikipedia.org/wiki/Lovable_(company)",
+    "valuation": "6.6",
+    "valuation_date": "December 2025 [ 121 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "Sweden",
+    "founders": "Anton Osika, Fabian Hedin"
+  },
+  {
+    "name": "Mollie",
+    "url": "",
+    "valuation": "6.5",
+    "valuation_date": "June 2021 [ 122 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Netherlands",
+    "founders": ""
+  },
+  {
+    "name": "CRED",
+    "url": "https://en.wikipedia.org/wiki/CRED",
+    "valuation": "6.4",
+    "valuation_date": "June 2022 [ 123 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "India",
+    "founders": "Kunal Shah"
+  },
+  {
+    "name": "DataRobot",
+    "url": "",
+    "valuation": "6.3",
+    "valuation_date": "July 2021 [ 124 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Personio",
+    "url": "https://en.wikipedia.org/wiki/Personio",
+    "valuation": "6.3",
+    "valuation_date": "October 2021 [ 125 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "Germany",
+    "founders": ""
+  },
+  {
+    "name": "iCapital",
+    "url": "https://en.wikipedia.org/wiki/ICapital",
+    "valuation": "6",
+    "valuation_date": "2022 [ 127 ]",
+    "industry": [
+      "Financial services"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "PhonePe",
+    "url": "https://en.wikipedia.org/wiki/PhonePe",
+    "valuation": "5.5",
+    "valuation_date": "December 2020 [ 134 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "India",
+    "founders": "Sameer Nigam, Rahul Chari"
+  },
+  {
+    "name": "Viva Republica (Toss)",
+    "url": "https://en.wikipedia.org/wiki/Viva_Republica",
+    "valuation": "5.48",
+    "valuation_date": "June 2021 [ 135 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "South Korea",
+    "founders": ""
+  },
+  {
+    "name": "Trade Republic",
+    "url": "https://en.wikipedia.org/wiki/Trade_Republic",
+    "valuation": "5.3",
+    "valuation_date": "May 2021 [ 137 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Germany",
+    "founders": ""
+  },
+  {
+    "name": "Blockchain.com",
+    "url": "https://en.wikipedia.org/wiki/Blockchain.com",
+    "valuation": "5.2",
+    "valuation_date": "March 2021 [ 140 ]",
+    "industry": [
+      "Cryptocurrency"
+    ],
+    "country": "United Kingdom",
+    "founders": ""
+  },
+  {
+    "name": "SambaNova",
+    "url": "",
+    "valuation": "5.1",
+    "valuation_date": "April 2021 [ 142 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Zepz",
+    "url": "https://en.wikipedia.org/wiki/WorldRemit",
+    "valuation": "5",
+    "valuation_date": "August 2021 [ 149 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United Kingdom",
+    "founders": ""
+  },
+  {
+    "name": "Pleo",
+    "url": "",
+    "valuation": "4.7",
+    "valuation_date": "December 2021 [ 152 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Denmark",
+    "founders": ""
+  },
+  {
+    "name": "Dataiku",
+    "url": "https://en.wikipedia.org/wiki/Dataiku",
+    "valuation": "4.6",
+    "valuation_date": "August 2021 [ 154 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "France / United States",
+    "founders": ""
+  },
+  {
+    "name": "Bitpanda",
+    "url": "https://en.wikipedia.org/wiki/Bitpanda",
+    "valuation": "4.1",
+    "valuation_date": "August 2021 [ 162 ]",
+    "industry": [
+      "Cryptocurrency"
+    ],
+    "country": "Austria",
+    "founders": ""
+  },
+  {
+    "name": "AlphaSense",
+    "url": "",
+    "valuation": "4",
+    "valuation_date": "June 2024 [ 166 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "Finland, United States",
+    "founders": "Jaakko Kokko, Raj Neervannan"
+  },
+  {
+    "name": "BrowserStack",
+    "url": "https://en.wikipedia.org/wiki/BrowserStack",
+    "valuation": "4",
+    "valuation_date": "June 2021 [ 168 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "India",
+    "founders": "Ritesh Arora, Nakul Aggarwal"
+  },
+  {
+    "name": "Megvii",
+    "url": "https://en.wikipedia.org/wiki/Megvii",
+    "valuation": "4",
+    "valuation_date": "May 2019 [ 171 ]",
+    "industry": [
+      "Technology"
+    ],
+    "country": "China",
+    "founders": ""
+  },
+  {
+    "name": "Melio",
+    "url": "",
+    "valuation": "4",
+    "valuation_date": "September 2021 [ 172 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Israel",
+    "founders": ""
+  },
+  {
+    "name": "PointClickCare",
+    "url": "",
+    "valuation": "4",
+    "valuation_date": "January 2021 [ 174 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "Canada",
+    "founders": ""
+  },
+  {
+    "name": "StockX",
+    "url": "https://en.wikipedia.org/wiki/StockX",
+    "valuation": "3.8",
+    "valuation_date": "April 2021 [ 177 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Cohesity",
+    "url": "https://en.wikipedia.org/wiki/Cohesity",
+    "valuation": "3.7",
+    "valuation_date": "March 2021 [ 179 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "N26",
+    "url": "https://en.wikipedia.org/wiki/N26",
+    "valuation": "3.5",
+    "valuation_date": "July 2019 [ 189 ]",
+    "industry": [
+      "Financial services"
+    ],
+    "country": "Germany",
+    "founders": ""
+  },
+  {
+    "name": "Preferred Networks",
+    "url": "https://en.wikipedia.org/wiki/Preferred_Networks",
+    "valuation": "3.33",
+    "valuation_date": "September 2019 [ 190 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "Japan",
+    "founders": ""
+  },
+  {
+    "name": "Kurly",
+    "url": "",
+    "valuation": "3.3",
+    "valuation_date": "July 2021 [ 192 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "South Korea",
+    "founders": ""
+  },
+  {
+    "name": "MoonPay",
+    "url": "https://en.wikipedia.org/wiki/MoonPay",
+    "valuation": "3.4",
+    "valuation_date": "November 2021 [ 194 ]",
+    "industry": [
+      "Cryptocurrency"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Upstox",
+    "url": "",
+    "valuation": "3.4",
+    "valuation_date": "November 2021 [ 195 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "India",
+    "founders": "Ravi Kumar, Kavitha Subramanian, Shrini Viswanath"
+  },
+  {
+    "name": "Thumbtack",
+    "url": "https://en.wikipedia.org/wiki/Thumbtack_(website)",
+    "valuation": "3.2",
+    "valuation_date": "June 2021 [ 199 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": "Marco Zappacosta"
+  },
+  {
+    "name": "SpotOn",
+    "url": "",
+    "valuation": "3.15",
+    "valuation_date": "September 2021 [ 205 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "TiendaNube",
+    "url": "",
+    "valuation": "3.1",
+    "valuation_date": "August 2021 [ 206 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "Argentina",
+    "founders": ""
+  },
+  {
+    "name": "CMR Surgical",
+    "url": "https://en.wikipedia.org/wiki/CMR_Surgical",
+    "valuation": "3",
+    "valuation_date": "January 2021 [ 210 ]",
+    "industry": [
+      "Robotics"
+    ],
+    "country": "United Kingdom",
+    "founders": ""
+  },
+  {
+    "name": "Automattic",
+    "url": "https://en.wikipedia.org/wiki/Automattic",
+    "valuation": "3",
+    "valuation_date": "September 2019 [ 214 ]",
+    "industry": [
+      "Internet"
+    ],
+    "country": "United States",
+    "founders": "Matt Mullenweg"
+  },
+  {
+    "name": "Calendly",
+    "url": "https://en.wikipedia.org/wiki/Calendly",
+    "valuation": "3",
+    "valuation_date": "January 2021 [ 215 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": "Tope Awotona [ 216 ]"
+  },
+  {
+    "name": "Forter",
+    "url": "https://en.wikipedia.org/wiki/Forter",
+    "valuation": "3",
+    "valuation_date": "May 2021 [ 218 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "Israel / United States",
+    "founders": ""
+  },
+  {
+    "name": "Grafana Labs",
+    "url": "https://en.wikipedia.org/wiki/Grafana",
+    "valuation": "3",
+    "valuation_date": "August 2021 [ 219 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Lucid Software",
+    "url": "https://en.wikipedia.org/wiki/Lucidchart",
+    "valuation": "3",
+    "valuation_date": "June 2021 [ 220 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Seismic",
+    "url": "",
+    "valuation": "3",
+    "valuation_date": "August 2021 [ 222 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "VANCL",
+    "url": "",
+    "valuation": "3",
+    "valuation_date": "February 2014 [ 5 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "China",
+    "founders": ""
+  },
+  {
+    "name": "Veepee",
+    "url": "https://en.wikipedia.org/wiki/Veepee",
+    "valuation": "3",
+    "valuation_date": "August 2022 [ 126 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "France",
+    "founders": ""
+  },
+  {
+    "name": "DriveWealth",
+    "url": "https://en.wikipedia.org/w/index.php?title=DriveWealth&action=edit&redlink=1",
+    "valuation": "2.85",
+    "valuation_date": "August 2021 [ 230 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "BharatPe",
+    "url": "https://en.wikipedia.org/wiki/BharatPe",
+    "valuation": "2.8",
+    "valuation_date": "August 2021 [ 231 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "India",
+    "founders": "Ashneer Grover"
+  },
+  {
+    "name": "Icertis",
+    "url": "https://en.wikipedia.org/wiki/Icertis",
+    "valuation": "2.8",
+    "valuation_date": "March 2021 [ 232 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "India / United States",
+    "founders": "Samir Bodas, Monish Darda."
+  },
+  {
+    "name": "Daangn Market",
+    "url": "",
+    "valuation": "2.7",
+    "valuation_date": "August 2021 [ 238 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "South Korea",
+    "founders": ""
+  },
+  {
+    "name": "Nextiva",
+    "url": "https://en.wikipedia.org/wiki/Nextiva",
+    "valuation": "2.7",
+    "valuation_date": "September 2021 [ 240 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Tradeshift",
+    "url": "https://en.wikipedia.org/wiki/Tradeshift",
+    "valuation": "2.7",
+    "valuation_date": "March 2021 [ 241 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "ManoMano",
+    "url": "",
+    "valuation": "2.6",
+    "valuation_date": "July 2021 [ 244 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "France",
+    "founders": ""
+  },
+  {
+    "name": "Pendo",
+    "url": "",
+    "valuation": "2.6",
+    "valuation_date": "July 2021 [ 245 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Jumpcloud",
+    "url": "",
+    "valuation": "2.56",
+    "valuation_date": "September 2021 [ 247 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "EasyA",
+    "url": "https://en.wikipedia.org/wiki/EasyA",
+    "valuation": "2.5",
+    "valuation_date": "May 2024 [ 249 ]",
+    "industry": [
+      "Technology"
+    ],
+    "country": "United Kingdom",
+    "founders": "Phil Kwok, Dom Kwok"
+  },
+  {
+    "name": "Monzo",
+    "url": "https://en.wikipedia.org/wiki/Monzo_(bank)",
+    "valuation": "2.5",
+    "valuation_date": "June 2019 [ 253 ]",
+    "industry": [
+      "Financial services"
+    ],
+    "country": "United Kingdom",
+    "founders": ""
+  },
+  {
+    "name": "HoneyBook",
+    "url": "https://en.wikipedia.org/wiki/HoneyBook",
+    "valuation": "2.4",
+    "valuation_date": "November 2021 [ 254 ]",
+    "industry": [
+      "Financial services"
+    ],
+    "country": "Israel / United States",
+    "founders": ""
+  },
+  {
+    "name": "Paxos",
+    "url": "https://en.wikipedia.org/wiki/Paxos_Trust_Company",
+    "valuation": "2.4",
+    "valuation_date": "April 2021 [ 257 ]",
+    "industry": [
+      "Cryptocurrency"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Mozido",
+    "url": "https://en.wikipedia.org/wiki/Mozido",
+    "valuation": "2.39",
+    "valuation_date": "October 2014 [ 5 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Algolia",
+    "url": "https://en.wikipedia.org/wiki/Algolia",
+    "valuation": "2.25",
+    "valuation_date": "June 2021 [ 262 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "France / United States",
+    "founders": ""
+  },
+  {
+    "name": "Acorns",
+    "url": "https://en.wikipedia.org/wiki/Acorns_(company)",
+    "valuation": "2.2",
+    "valuation_date": "May 2021 [ 264 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Bitso",
+    "url": "",
+    "valuation": "2.2",
+    "valuation_date": "May 2021 [ 265 ]",
+    "industry": [
+      "Cryptocurrency"
+    ],
+    "country": "Mexico",
+    "founders": ""
+  },
+  {
+    "name": "Addepar",
+    "url": "https://en.wikipedia.org/wiki/Addepar",
+    "valuation": "2.17",
+    "valuation_date": "June 2021 [ 268 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Eightfold.ai",
+    "url": "",
+    "valuation": "2.1+",
+    "valuation_date": "June 2021 [ 269 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Gamma",
+    "url": "",
+    "valuation": "2.1",
+    "valuation_date": "November 2025 [ 270 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "United States",
+    "founders": "Grant Lee"
+  },
+  {
+    "name": "PayFit",
+    "url": "",
+    "valuation": "2.1",
+    "valuation_date": "January 2022 ( 2022-01 ) [ 271 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "France",
+    "founders": "Ghislain de Fontenay, Firmin Zoccchetto, Florian Fournier"
+  },
+  {
+    "name": "6sense",
+    "url": "",
+    "valuation": "2.1",
+    "valuation_date": "March 2021 [ 272 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "C6 Bank",
+    "url": "",
+    "valuation": "2.1",
+    "valuation_date": "December 2020 [ 273 ]",
+    "industry": [
+      "Financial services"
+    ],
+    "country": "Brazil",
+    "founders": ""
+  },
+  {
+    "name": "Mambu",
+    "url": "https://en.wikipedia.org/wiki/Mambu_(company)",
+    "valuation": "2.1",
+    "valuation_date": "January 2021 [ 274 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Germany",
+    "founders": ""
+  },
+  {
+    "name": "Tipalti",
+    "url": "https://en.wikipedia.org/wiki/Tipalti",
+    "valuation": "2+",
+    "valuation_date": "October 2020",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United States / Israel",
+    "founders": ""
+  },
+  {
+    "name": "Figure AI",
+    "url": "https://en.wikipedia.org/wiki/Figure_AI",
+    "valuation": "2",
+    "valuation_date": "February 2024 [ 280 ]",
+    "industry": [
+      "Humanoid robotics"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Hive",
+    "url": "https://en.wikipedia.org/wiki/Hive_(artificial_intelligence_company)",
+    "valuation": "2",
+    "valuation_date": "April 2021 [ 281 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "United States",
+    "founders": "Kevin Guo, Dmitriy Karpman"
+  },
+  {
+    "name": "Mural",
+    "url": "",
+    "valuation": "2",
+    "valuation_date": "July 2021 [ 282 ]",
+    "industry": [
+      "Technology"
+    ],
+    "country": "Argentina / United States",
+    "founders": "Patricio Jutard"
+  },
+  {
+    "name": "Clip",
+    "url": "",
+    "valuation": "2",
+    "valuation_date": "June 2021 [ 287 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Mexico",
+    "founders": ""
+  },
+  {
+    "name": "Exotec",
+    "url": "",
+    "valuation": "2",
+    "valuation_date": "August 2022 [ 126 ]",
+    "industry": [
+      "Robotics"
+    ],
+    "country": "France",
+    "founders": ""
+  },
+  {
+    "name": "Firstp2p",
+    "url": "",
+    "valuation": "2",
+    "valuation_date": "September 2016 [ 5 ]",
+    "industry": [
+      "Financial services"
+    ],
+    "country": "China",
+    "founders": ""
+  },
+  {
+    "name": "Meicai.cn",
+    "url": "",
+    "valuation": "2",
+    "valuation_date": "June 2016 [ 184 ]",
+    "industry": [
+      "Agriculture",
+      "E-commerce"
+    ],
+    "country": "China",
+    "founders": ""
+  },
+  {
+    "name": "Mynt",
+    "url": "",
+    "valuation": "2",
+    "valuation_date": "November 2021 [ 295 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Philippines",
+    "founders": ""
+  },
+  {
+    "name": "OPay",
+    "url": "",
+    "valuation": "2",
+    "valuation_date": "August 2021 [ 296 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Nigeria",
+    "founders": ""
+  },
+  {
+    "name": "Zerodha",
+    "url": "https://en.wikipedia.org/wiki/Zerodha",
+    "valuation": "2",
+    "valuation_date": "May 2021 [ 300 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "India",
+    "founders": ""
+  },
+  {
+    "name": "Instabase",
+    "url": "https://en.wikipedia.org/wiki/Instabase",
+    "valuation": "2",
+    "valuation_date": "June 2023 [ 301 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": "Anant Bhardwaj"
+  },
+  {
+    "name": "Zilch",
+    "url": "https://en.wikipedia.org/wiki/Zilch_(company)",
+    "valuation": "2",
+    "valuation_date": "November 2021 [ 302 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United Kingdom",
+    "founders": ""
+  },
+  {
+    "name": "Akulaku",
+    "url": "https://en.wikipedia.org/wiki/Akulaku",
+    "valuation": "2",
+    "valuation_date": "February 2022 [ 303 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Indonesia",
+    "founders": ""
+  },
+  {
+    "name": "Bunq",
+    "url": "https://en.wikipedia.org/wiki/Bunq",
+    "valuation": "1.9",
+    "valuation_date": "July 2021 [ 307 ]",
+    "industry": [
+      "Financial services"
+    ],
+    "country": "Netherlands",
+    "founders": ""
+  },
+  {
+    "name": "CoinSwitch Kuber",
+    "url": "",
+    "valuation": "1.9",
+    "valuation_date": "October 2021 [ 308 ]",
+    "industry": [
+      "Cryptocurrency"
+    ],
+    "country": "India",
+    "founders": "Ashish Singhal, Vimal Sagar Tiwari, Govind Soni"
+  },
+  {
+    "name": "Prosper Marketplace",
+    "url": "https://en.wikipedia.org/wiki/Prosper_Marketplace",
+    "valuation": "1.9",
+    "valuation_date": "August 2015 [ 5 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Creditas",
+    "url": "",
+    "valuation": "1.75",
+    "valuation_date": "December 2020",
+    "industry": [
+      "Financial services"
+    ],
+    "country": "Brazil",
+    "founders": ""
+  },
+  {
+    "name": "ADVASA",
+    "url": "",
+    "valuation": "1.7",
+    "valuation_date": "January 2023 [ 320 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "Japan",
+    "founders": ""
+  },
+  {
+    "name": "GVE",
+    "url": "",
+    "valuation": "1.7",
+    "valuation_date": "January 2023 [ 320 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "Japan",
+    "founders": ""
+  },
+  {
+    "name": "Harness",
+    "url": "",
+    "valuation": "1.7",
+    "valuation_date": "June 2021 [ 324 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": "Jyoti Bansal"
+  },
+  {
+    "name": "Workato",
+    "url": "https://en.wikipedia.org/wiki/Workato",
+    "valuation": "1.7",
+    "valuation_date": "December 2020",
+    "industry": [
+      "Technology"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Solarisbank",
+    "url": "https://en.wikipedia.org/wiki/Solarisbank",
+    "valuation": "1.65",
+    "valuation_date": "July 2021 [ 330 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Germany",
+    "founders": ""
+  },
+  {
+    "name": "Wayflyer",
+    "url": "https://en.wikipedia.org/wiki/Wayflyer",
+    "valuation": "1.6",
+    "valuation_date": "Feb 2022 [ 331 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Ireland",
+    "founders": ""
+  },
+  {
+    "name": "Cresta",
+    "url": "",
+    "valuation": "1.6",
+    "valuation_date": "March 2022 [ 4 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "United States",
+    "founders": "Sebastian Thrun , Tim Shi, Zayd Enam"
+  },
+  {
+    "name": "Clari",
+    "url": "",
+    "valuation": "1.6",
+    "valuation_date": "March 2021 [ 332 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Cognite",
+    "url": "https://en.wikipedia.org/wiki/Cognite",
+    "valuation": "1.6",
+    "valuation_date": "May 2021",
+    "industry": [
+      "Software"
+    ],
+    "country": "Norway",
+    "founders": ""
+  },
+  {
+    "name": "SafetyCulture",
+    "url": "",
+    "valuation": "1.6",
+    "valuation_date": "May 2021 [ 336 ]",
+    "industry": [
+      "Technology"
+    ],
+    "country": "Australia",
+    "founders": "Luke Anear"
+  },
+  {
+    "name": "KreditBee",
+    "url": "",
+    "valuation": "1.5",
+    "valuation_date": "April 2026 ( 2026-04 ) [ 342 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "India",
+    "founders": "Madhusudan Ekambaram"
+  },
+  {
+    "name": "Airbyte",
+    "url": "https://en.wikipedia.org/w/index.php?title=Airbyte&action=edit&redlink=1",
+    "valuation": "1.5",
+    "valuation_date": "December 2021 [ 343 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": "Michel Tricot, John Lafleur"
+  },
+  {
+    "name": "Culture Amp",
+    "url": "https://en.wikipedia.org/wiki/Culture_Amp",
+    "valuation": "1.5",
+    "valuation_date": "July 2021 [ 345 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "Australia",
+    "founders": ""
+  },
+  {
+    "name": "Devo, Inc.",
+    "url": "",
+    "valuation": "1.5",
+    "valuation_date": "October 2021 [ 346 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "Spain",
+    "founders": ""
+  },
+  {
+    "name": "Granola",
+    "url": "",
+    "valuation": "1.5",
+    "valuation_date": "March 2026 [ 347 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United Kingdom",
+    "founders": "Christopher Pedregal, Sam Stephenson"
+  },
+  {
+    "name": "Ledger",
+    "url": "",
+    "valuation": "1.5",
+    "valuation_date": "June 2021 [ 349 ]",
+    "industry": [
+      "Cryptocurrency"
+    ],
+    "country": "France",
+    "founders": ""
+  },
+  {
+    "name": "NextSilicon",
+    "url": "",
+    "valuation": "1.5",
+    "valuation_date": "June 2021 [ 354 ]",
+    "industry": [
+      "Semiconductors"
+    ],
+    "country": "Israel",
+    "founders": ""
+  },
+  {
+    "name": "Podium",
+    "url": "https://en.wikipedia.org/wiki/Podium_(company)",
+    "valuation": "1.5",
+    "valuation_date": "August 2019 [ 356 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Remote",
+    "url": "",
+    "valuation": "1.5",
+    "valuation_date": "July 2021 [ 357 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "Portugal [ 358 ] / United States [ 93 ]",
+    "founders": "Marcelo Lebre, Job van der Voort"
+  },
+  {
+    "name": "Starling Bank",
+    "url": "https://en.wikipedia.org/wiki/Starling_Bank",
+    "valuation": "1.5",
+    "valuation_date": "March 2021 [ 360 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United Kingdom",
+    "founders": ""
+  },
+  {
+    "name": "5ire",
+    "url": "",
+    "valuation": "1.5+",
+    "valuation_date": "July 2022 [ 361 ]",
+    "industry": [
+      "Technology"
+    ],
+    "country": "India",
+    "founders": "Pratik Gauri"
+  },
+  {
+    "name": "Ascend Money",
+    "url": "https://en.wikipedia.org/wiki/Ascend_Group#Ascend_Money",
+    "valuation": "1.5",
+    "valuation_date": "September 2021 [ 364 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Thailand",
+    "founders": ""
+  },
+  {
+    "name": "M1 Finance",
+    "url": "https://en.wikipedia.org/wiki/M1_Finance",
+    "valuation": "1.45",
+    "valuation_date": "July 2021 [ 365 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Zeta",
+    "url": "https://en.wikipedia.org/wiki/Zeta_(company)",
+    "valuation": "1.45",
+    "valuation_date": "May 2021 [ 366 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "India",
+    "founders": "Bhavin Turakhia , Ramki Gaddipati"
+  },
+  {
+    "name": "Einride",
+    "url": "https://en.wikipedia.org/wiki/Einride",
+    "valuation": "1.44",
+    "valuation_date": "April 2022 [ 93 ]",
+    "industry": [
+      "Technology"
+    ],
+    "country": "Sweden",
+    "founders": ""
+  },
+  {
+    "name": "OneCard",
+    "url": "",
+    "valuation": "1.4+",
+    "valuation_date": "July 2022 [ 371 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "India",
+    "founders": "Anurag Sinha, Rupesh Kumar, Vaibhav Hathi"
+  },
+  {
+    "name": "Chargebee",
+    "url": "",
+    "valuation": "1.4",
+    "valuation_date": "April 2021 [ 374 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "India / United States",
+    "founders": ""
+  },
+  {
+    "name": "Five Star Finance",
+    "url": "",
+    "valuation": "1.4",
+    "valuation_date": "March 2021 [ 376 ]",
+    "industry": [
+      "Financial services"
+    ],
+    "country": "India",
+    "founders": ""
+  },
+  {
+    "name": "NetDocuments",
+    "url": "https://en.wikipedia.org/wiki/NetDocuments",
+    "valuation": "1.4",
+    "valuation_date": "May 2021 [ 378 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Stash",
+    "url": "https://en.wikipedia.org/wiki/Stash_(company)",
+    "valuation": "1.4",
+    "valuation_date": "February 2021 [ 382 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Symphony",
+    "url": "https://en.wikipedia.org/wiki/Symphony_Communication",
+    "valuation": "1.4",
+    "valuation_date": "June 2019 [ 383 ] [ 384 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Voyager",
+    "url": "",
+    "valuation": "1.4",
+    "valuation_date": "April 2022 [ 385 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Philippines",
+    "founders": ""
+  },
+  {
+    "name": "RIDI",
+    "url": "",
+    "valuation": "1.33",
+    "valuation_date": "August 2021 [ 387 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "South Korea",
+    "founders": ""
+  },
+  {
+    "name": "Feedzai",
+    "url": "https://en.wikipedia.org/wiki/Feedzai",
+    "valuation": "1.3",
+    "valuation_date": "March 2021 [ 390 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "Portugal / United States",
+    "founders": "Nuno Sebastião"
+  },
+  {
+    "name": "G2",
+    "url": "https://en.wikipedia.org/wiki/G2_Crowd",
+    "valuation": "1.3",
+    "valuation_date": "June 2021 [ 391 ]",
+    "industry": [
+      "Technology"
+    ],
+    "country": "United States",
+    "founders": "Tim Handorf, Godard Abel, Matt Gorniak, Mark Myers, Mike Wheeler"
+  },
+  {
+    "name": "Konfio",
+    "url": "",
+    "valuation": "1.3",
+    "valuation_date": "September 2021 [ 393 ]",
+    "industry": [
+      "Financial services"
+    ],
+    "country": "Mexico",
+    "founders": ""
+  },
+  {
+    "name": "Incode",
+    "url": "",
+    "valuation": "1.25",
+    "valuation_date": "December 2021 [ 397 ]",
+    "industry": [
+      "Technology"
+    ],
+    "country": "Mexico",
+    "founders": ""
+  },
+  {
+    "name": "Applied Intuition",
+    "url": "",
+    "valuation": "1.25",
+    "valuation_date": "October 2020 [ 398 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Merama",
+    "url": "",
+    "valuation": "1.2",
+    "valuation_date": "December 2021 [ 406 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "Mexico",
+    "founders": ""
+  },
+  {
+    "name": "Ada",
+    "url": "",
+    "valuation": "1.2",
+    "valuation_date": "May 2021 [ 407 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "Canada",
+    "founders": ""
+  },
+  {
+    "name": "Alation",
+    "url": "https://en.wikipedia.org/wiki/Alation",
+    "valuation": "1.2",
+    "valuation_date": "June 2021 [ 408 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": "Satyen Sangani, Aaron Kalb, Feng Niu, and Venky Ganti"
+  },
+  {
+    "name": "Copado",
+    "url": "",
+    "valuation": "1.2",
+    "valuation_date": "September 2021",
+    "industry": [
+      "Software"
+    ],
+    "country": "Spain / United States",
+    "founders": ""
+  },
+  {
+    "name": "FloQast",
+    "url": "https://en.wikipedia.org/wiki/FloQast",
+    "valuation": "1.2",
+    "valuation_date": "July 2021 [ 414 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Forto",
+    "url": "",
+    "valuation": "1.2",
+    "valuation_date": "June 2021 [ 415 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "Germany",
+    "founders": ""
+  },
+  {
+    "name": "Intercom",
+    "url": "https://en.wikipedia.org/wiki/Intercom_(company)",
+    "valuation": "1.2",
+    "valuation_date": "March 2018 [ 416 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "MyGlamm",
+    "url": "",
+    "valuation": "1.2",
+    "valuation_date": "November 2021 [ 419 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "India",
+    "founders": ""
+  },
+  {
+    "name": "Workhuman",
+    "url": "https://en.wikipedia.org/wiki/Workhuman",
+    "valuation": "1.2",
+    "valuation_date": "June 2020 [ 422 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "Ireland",
+    "founders": ""
+  },
+  {
+    "name": "CoinDCX",
+    "url": "",
+    "valuation": "1.1",
+    "valuation_date": "August 2021 [ 429 ]",
+    "industry": [
+      "Cryptocurrency"
+    ],
+    "country": "India",
+    "founders": "Sumit Gupta , Neeraj Khandelwal"
+  },
+  {
+    "name": "Nexthink",
+    "url": "",
+    "valuation": "1.1",
+    "valuation_date": "February 2021 [ 432 ]",
+    "industry": [
+      "Technology"
+    ],
+    "country": "Switzerland",
+    "founders": ""
+  },
+  {
+    "name": "YouniteD",
+    "url": "",
+    "valuation": "1.1",
+    "valuation_date": "December 2022 [ 439 ]",
+    "industry": [
+      "Financial services"
+    ],
+    "country": "France",
+    "founders": "Charles Égly, Geoffroy Guigou"
+  },
+  {
+    "name": "Emplifi",
+    "url": "https://en.wikipedia.org/wiki/Emplifi",
+    "valuation": "1+",
+    "valuation_date": "March 2022 [ 447 ]",
+    "industry": [
+      "Technology"
+    ],
+    "country": "United States, United Kingdom and Europe",
+    "founders": ""
+  },
+  {
+    "name": "Clara",
+    "url": "https://en.wikipedia.org/wiki/Clara_(company)",
+    "valuation": "1+",
+    "valuation_date": "December 2021 [ 450 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Mexico",
+    "founders": ""
+  },
+  {
+    "name": "Acronis",
+    "url": "https://en.wikipedia.org/wiki/Acronis",
+    "valuation": "1+",
+    "valuation_date": "September 2019 [ 452 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "Singapore / Switzerland",
+    "founders": ""
+  },
+  {
+    "name": "Ajaib",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "October 2021 [ 454 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Indonesia",
+    "founders": ""
+  },
+  {
+    "name": "Amber Group",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "June 2021 [ 455 ]",
+    "industry": [
+      "Cryptocurrency"
+    ],
+    "country": "Hong Kong",
+    "founders": ""
+  },
+  {
+    "name": "Beibei",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "June 2016 [ 184 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "China",
+    "founders": ""
+  },
+  {
+    "name": "Back Market",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "October 2021 [ 461 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "France",
+    "founders": ""
+  },
+  {
+    "name": "Bluecore",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "August 2021 [ 462 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Dunamu",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "Jul 2021 [ 466 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "South Korea",
+    "founders": ""
+  },
+  {
+    "name": "Earnix",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "February 2021 [ 467 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Israel",
+    "founders": ""
+  },
+  {
+    "name": "Ebanx",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "October 2019 [ 468 ]",
+    "industry": [
+      "Financial services"
+    ],
+    "country": "Brazil",
+    "founders": ""
+  },
+  {
+    "name": "Flutterwave",
+    "url": "https://en.wikipedia.org/wiki/Flutterwave",
+    "valuation": "1+",
+    "valuation_date": "March 2021 [ 474 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Nigeria / United States",
+    "founders": ""
+  },
+  {
+    "name": "Glance",
+    "url": "https://en.wikipedia.org/wiki/Glance_(company)",
+    "valuation": "1+",
+    "valuation_date": "December 2020 [ 479 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "India",
+    "founders": ""
+  },
+  {
+    "name": "Grover",
+    "url": "https://www.grover.com/",
+    "valuation": "1+",
+    "valuation_date": "April 2022 [ 481 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "Germany",
+    "founders": "Michael Cassau"
+  },
+  {
+    "name": "Flo Health",
+    "url": "https://en.wikipedia.org/wiki/Flo_(app)",
+    "valuation": "1+",
+    "valuation_date": "July 2024 [ 7 ]",
+    "industry": [
+      "Health Technology"
+    ],
+    "country": "Lithuania, Belarus",
+    "founders": "Dmitry Gurski, Yuri Gurski"
+  },
+  {
+    "name": "Injective",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "April 2021 [ 488 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United States",
+    "founders": "Eric Chen, Albert Chon"
+  },
+  {
+    "name": "InMobi",
+    "url": "https://en.wikipedia.org/wiki/InMobi",
+    "valuation": "1+",
+    "valuation_date": "May 2017 [ 489 ]",
+    "industry": [
+      "Internet"
+    ],
+    "country": "India",
+    "founders": "Naveen Tewari, Mohit Saxena, Amit Gupta and Abhay Singhal"
+  },
+  {
+    "name": "LMAX Group",
+    "url": "https://en.wikipedia.org/wiki/LMAX_Group",
+    "valuation": "1+",
+    "valuation_date": "July 2021 [ 498 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United Kingdom",
+    "founders": ""
+  },
+  {
+    "name": "Locus Robotics",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "February 2021 [ 499 ]",
+    "industry": [
+      "Robotics"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Lunar",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "July 2021 [ 501 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Denmark",
+    "founders": ""
+  },
+  {
+    "name": "Masterworks",
+    "url": "https://en.wikipedia.org/wiki/Masterworks_Advisers_LLC",
+    "valuation": "1+",
+    "valuation_date": "November 2025 [ 505 ]",
+    "industry": [
+      "Financial Technology"
+    ],
+    "country": "United States",
+    "founders": "Scott Lynn"
+  },
+  {
+    "name": "Matrixport",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "August 2021 [ 506 ]",
+    "industry": [
+      "Cryptocurrency"
+    ],
+    "country": "Singapore",
+    "founders": ""
+  },
+  {
+    "name": "Meero",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "June 2019 [ 507 ]",
+    "industry": [
+      "Internet"
+    ],
+    "country": "France",
+    "founders": ""
+  },
+  {
+    "name": "Mensa Brands",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "November 2021 [ 508 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "India",
+    "founders": ""
+  },
+  {
+    "name": "MobileCoin",
+    "url": "https://en.wikipedia.org/wiki/MobileCoin",
+    "valuation": "1+",
+    "valuation_date": "August 2021 [ 510 ]",
+    "industry": [
+      "Cryptocurrency"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Moglix",
+    "url": "https://en.wikipedia.org/wiki/Moglix",
+    "valuation": "1+",
+    "valuation_date": "May 2021 [ 511 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "India / Singapore",
+    "founders": "Rahul Garg"
+  },
+  {
+    "name": "Nium",
+    "url": "https://en.wikipedia.org/wiki/Nium",
+    "valuation": "1+",
+    "valuation_date": "July 2021 [ 515 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Singapore",
+    "founders": ""
+  },
+  {
+    "name": "Kredivo",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "January 2022",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Indonesia",
+    "founders": ""
+  },
+  {
+    "name": "Opn (Synqa)",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "May 2022 [ 518 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Japan",
+    "founders": "Jun Hasegawa, Ezra Don Harinsut"
+  },
+  {
+    "name": "Picsart",
+    "url": "https://en.wikipedia.org/wiki/Picsart",
+    "valuation": "1+",
+    "valuation_date": "August 2021 [ 523 ]",
+    "industry": [
+      "Graphic design"
+    ],
+    "country": "Armenia / United States",
+    "founders": "Hovhannes Avoyan , Artavazd Mehrabyan, Mikayel Vardanyan"
+  },
+  {
+    "name": "Redis Labs",
+    "url": "https://en.wikipedia.org/wiki/Redis_Labs",
+    "valuation": "1+",
+    "valuation_date": "August 2020 [ 525 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "Israel / United States",
+    "founders": ""
+  },
+  {
+    "name": "Shift Technology",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "May 2021 [ 530 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "France",
+    "founders": ""
+  },
+  {
+    "name": "Slice",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "November 2021 [ 533 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "India",
+    "founders": ""
+  },
+  {
+    "name": "SmartAsset",
+    "url": "https://en.wikipedia.org/wiki/SmartAsset",
+    "valuation": "1+",
+    "valuation_date": "June 2021 [ 534 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "SmartMore",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "June 2021 [ 535 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "China",
+    "founders": ""
+  },
+  {
+    "name": "Snapdeal",
+    "url": "https://en.wikipedia.org/wiki/Snapdeal",
+    "valuation": "1+",
+    "valuation_date": "May 2017 [ 5 ]",
+    "industry": [
+      "E-commerce"
+    ],
+    "country": "India",
+    "founders": "Rohit Bansal, Kunal Bahl"
+  },
+  {
+    "name": "Splashtop",
+    "url": "https://en.wikipedia.org/wiki/Splashtop",
+    "valuation": "1+",
+    "valuation_date": "January 2021 [ 536 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "United States",
+    "founders": ""
+  },
+  {
+    "name": "Swile",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "October 2021 [ 538 ]",
+    "industry": [
+      "Financial services"
+    ],
+    "country": "France",
+    "founders": ""
+  },
+  {
+    "name": "Synthesia",
+    "url": "https://en.wikipedia.org/wiki/Synthesia_(company)",
+    "valuation": "1+",
+    "valuation_date": "June 2023 [ 539 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "United Kingdom",
+    "founders": "Lourdes Agapito , Matthias Niessner , Victor Riparbelli, Steffen Tjerrild"
+  },
+  {
+    "name": "Tenstorrent",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "May 2021 [ 543 ]",
+    "industry": [
+      "Semiconductors"
+    ],
+    "country": "Canada",
+    "founders": ""
+  },
+  {
+    "name": "Tezign",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "October 2021 [ 544 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "China",
+    "founders": ""
+  },
+  {
+    "name": "Tractable",
+    "url": "https://en.wikipedia.org/wiki/Tractable_(company)",
+    "valuation": "1+",
+    "valuation_date": "June 2021 [ 545 ]",
+    "industry": [
+      "Artificial intelligence"
+    ],
+    "country": "United Kingdom",
+    "founders": ""
+  },
+  {
+    "name": "TrueLayer",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "September 2021 [ 547 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "United Kingdom",
+    "founders": ""
+  },
+  {
+    "name": "Trustly",
+    "url": "https://en.wikipedia.org/wiki/Trustly",
+    "valuation": "1+",
+    "valuation_date": "June 2020 [ 548 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Sweden",
+    "founders": ""
+  },
+  {
+    "name": "VerSe Innovation",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "December 2020 [ 551 ]",
+    "industry": [
+      "Technology"
+    ],
+    "country": "India",
+    "founders": "Virendra Gupta"
+  },
+  {
+    "name": "Visier",
+    "url": "https://en.wikipedia.org/wiki/John_G._Schwarz#Life",
+    "valuation": "1+",
+    "valuation_date": "June 2021 [ 552 ]",
+    "industry": [
+      "Technology"
+    ],
+    "country": "Canada",
+    "founders": ""
+  },
+  {
+    "name": "WeLab",
+    "url": "https://en.wikipedia.org/wiki/WeLab",
+    "valuation": "1+",
+    "valuation_date": "December 2019 [ 556 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Hong Kong",
+    "founders": ""
+  },
+  {
+    "name": "Xendit",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "September 2021 [ 557 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Indonesia",
+    "founders": ""
+  },
+  {
+    "name": "DANA",
+    "url": "",
+    "valuation": "1+",
+    "valuation_date": "September 2022",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Indonesia",
+    "founders": ""
+  },
+  {
+    "name": "Scandit",
+    "url": "https://en.wikipedia.org/wiki/Scandit",
+    "valuation": "1",
+    "valuation_date": "February 2022 [ 563 ]",
+    "industry": [
+      "Software"
+    ],
+    "country": "Switzerland",
+    "founders": "Samuel Mueller, Christian Floerkemeier, Christof Roduner"
+  },
+  {
+    "name": "Payhawk",
+    "url": "https://en.wikipedia.org/w/index.php?title=Payhawk&action=edit&redlink=1",
+    "valuation": "1+",
+    "valuation_date": "March 2022 [ 565 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Bulgaria",
+    "founders": ""
+  },
+  {
+    "name": "Neo Financial",
+    "url": "",
+    "valuation": "1",
+    "valuation_date": "May 2022 [ 566 ]",
+    "industry": [
+      "Financial technology"
+    ],
+    "country": "Canada",
+    "founders": "Andrew Chau, Jeff Adamson, Kris Read"
+  }
+]

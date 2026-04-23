@@ -10,7 +10,9 @@ from app.models.collection.competitors import Competitor
 
 # 경쟁사 서비스 유형 카테고리 (type 컬럼 값 후보)
 # AI가 자유 텍스트로 쓰면 매번 달라지므로 고정 목록을 프롬프트에 명시
-COMPETITOR_TYPES = ["핀테크", "이커머스", "SaaS", "헬스케어", "에듀테크", "물류", "기타"]
+COMPETITOR_TYPES = [
+    "핀테크", "이커머스", "SaaS", "헬스케어", "에듀테크", "물류", "기타"
+  ]
 
 _AI_SYSTEM_PROMPT = f"""
 웹사이트 텍스트를 분석해서 아래 JSON 형식으로만 응답해. 다른 텍스트는 절대 포함하지 마.
@@ -36,15 +38,24 @@ def crawl_competitors(db: Session) -> None:
       3. BeautifulSoup으로 파싱한 결과를 AI에게 넘겨 구조화된 데이터 추출
     """
     competitors = db.query(Competitor).all()
-
+    if competitors is None:
+      return
     for competitor in competitors:
-        soup = _fetch_with_httpx(competitor.website)
+        if competitor.website == None:
+            print("competitor_crawler.py - crawl_competitors()")
+            print(f"{competitor.competitor_id}: {competitor.name}의 website 속성이 None입니다.")
+            continue
+        
+        try:
+            soup = _fetch_with_httpx(competitor.website)
 
-        if _needs_js(soup):
-            soup = _fetch_with_playwright(competitor.website)
+            if _needs_js(soup):
+                soup = _fetch_with_playwright(competitor.website)
 
-        data = _extract_with_ai(soup)
-        _update_competitor(db, competitor.competitor_id, data)
+            data = _extract_with_ai(soup)
+            _update_competitor(db, competitor.competitor_id, data)
+        except Exception as e:
+            print(f"crawl_competitors - {competitor.name} 크롤링 실패 (건너뜀): {e}")
 
 
 def _fetch_with_httpx(url: str) -> BeautifulSoup:
@@ -65,8 +76,8 @@ def _fetch_with_playwright(url: str) -> BeautifulSoup:
             "User-Agent": browser_client.headers["User-Agent"],
             "Accept-Language": browser_client.headers["Accept-Language"],
         })
-        page.goto(url)
-        page.wait_for_load_state("networkidle")
+        page.goto(url, wait_until="load")
+        page.wait_for_load_state("load")
         html = page.content()
         browser.close()
     return BeautifulSoup(html, "html.parser")
@@ -102,7 +113,9 @@ def _extract_with_ai(soup: BeautifulSoup) -> dict:
         ],
         response_format={"type": "json_object"},
     )
-
+    if(response.choices[0].message.content == None):
+        print("competitor_crawler.py _extract_with_ai() - response.choices[0].message.content==None")
+        return {}
     result = json.loads(response.choices[0].message.content)
     return {
         "description": result.get("description", ""),

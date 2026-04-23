@@ -1,0 +1,143 @@
+// SearchYourIdea MVP database draft
+// This file is a beginner-friendly DBML summary of the current MVP schema.
+//
+// Goal:
+// - A user submits an idea
+// - The system analyzes the idea using crawled competitor/news data
+// - The result is stored and shown later
+//
+// Current design choice:
+// - No separate users table in MVP
+// - Writer info is stored directly in ideas
+// - Analysis result details are grouped into JSON fields
+// - Competitor/news references used during analysis are also stored as JSON lists
+//
+// Why JSON is used here:
+// - The exact shape may change during MVP iteration
+// - We do not want extra relation tables yet
+// - We mainly want to store "analysis snapshots" for later display
+
+Project SearchYourIdeaMVP {
+  database_type: "PostgreSQL"
+  Note: '''
+  This schema is intentionally simple.
+  It is optimized for MVP speed, not for full normalization.
+  '''
+}
+
+Table ideas {
+  idea_id bigint [pk, increment, note: 'Primary key for one submitted idea']
+  nickname varchar(50) [not null, note: 'Nickname entered by the submitter']
+  email varchar(100) [note: 'Optional contact email']
+  title varchar(255) [not null, note: 'Short title of the idea']
+  problem text [not null, note: 'What problem this idea tries to solve']
+  target_user text [note: 'Main target users or customer group']
+  solution_summary text [not null, note: 'Short explanation of the proposed solution']
+  raw_input_json jsonb [note: 'Original extra form values that do not fit fixed columns']
+  created_at timestamp [not null, note: 'When this idea was created']
+  updated_at timestamp [not null, note: 'When this idea was last updated']
+
+  Note: '''
+  ideas is both:
+  1. the submitted idea itself
+  2. the lightweight submitter record for MVP
+
+  raw_input_json example:
+  {
+    "idea_background": "",
+    "expected_users": [],
+    "pain_points": [],
+    "reference_services": [],
+    "additional_notes": ""
+  }
+  '''
+}
+
+Table analysis_results {
+  result_id bigint [pk, increment, note: 'Primary key for one analysis result']
+  idea_id bigint [not null, ref: > ideas.idea_id, note: 'Which idea this result belongs to']
+  market_potential varchar(20) [not null, note: 'Simple marketability label such as high/medium/low']
+  result_json jsonb [not null, note: 'Structured final analysis result']
+  related_competitors_json jsonb [note: 'Competitor IDs and reasons used during analysis']
+  related_news_json jsonb [note: 'News IDs and reasons used during analysis']
+  raw_llm_response text [not null, note: 'Original model output before cleanup']
+  created_at timestamp [not null, note: 'When this analysis result was created']
+
+  Note: '''
+  One idea can have multiple analysis results.
+  This allows re-analysis later with different prompts or fresher data.
+
+  result_json example:
+  {
+    "strengths": [],
+    "weaknesses": [],
+    "differentiation": [],
+    "risks": [],
+    "recommended_actions": [],
+    "summary": ""
+  }
+
+  related_competitors_json example:
+  [
+    {
+      "competitor_id": 0,
+      "reason": ""
+    }
+  ]
+
+  related_news_json example:
+  [
+    {
+      "news_id": 0,
+      "reason": ""
+    }
+  ]
+  '''
+}
+
+Table competitors {
+  competitor_id bigint [pk, increment, note: 'Primary key for one competitor']
+  name varchar(255) [not null, note: 'Competitor service or company name']
+  category varchar(100) [not null, note: 'High-level category such as AI tool, education, SaaS']
+  summary text [note: 'Short description of what the competitor does']
+  homepage_url varchar(255) [note: 'Official homepage URL']
+  business_model varchar(100) [note: 'Examples: B2B, B2C, SaaS, Marketplace']
+  target_market varchar(255) [note: 'Main market or customer segment the competitor targets']
+  feature_json jsonb [note: 'Flexible competitor details such as strengths, weaknesses, features']
+  source_url varchar(255) [note: 'Source page used when collecting competitor data']
+  collected_at timestamp [not null, note: 'When this competitor data was collected']
+  updated_at timestamp [not null, note: 'When this competitor row was last updated']
+
+  Note: '''
+  competitors is a reference table used by the analyzer.
+
+  feature_json example:
+  {
+    "strengths": [],
+    "weaknesses": [],
+    "features": [],
+    "notes": ""
+  }
+  '''
+}
+
+Table collected_news {
+  news_id bigint [pk, increment, note: 'Primary key for one collected news item']
+  title varchar(255) [not null, note: 'News title']
+  source_name varchar(100) [not null, note: 'Publisher or media name']
+  url varchar(255) [not null, unique, note: 'Original news URL']
+  published_at timestamp [not null, note: 'Original publication time']
+  summary text [note: 'Short summary used for analysis']
+  content text [not null, note: 'Stored article text or extracted body']
+  category varchar(100) [note: 'Optional topic category']
+  collected_at timestamp [not null, note: 'When this news item was collected']
+
+  Note: '''
+  collected_news is also a reference table used by the analyzer.
+
+  summary is not a full analysis result.
+  It is a compact form of the article so the system can reuse it more easily.
+  '''
+}
+
+Ref: analysis_results.idea_id > ideas.idea_id

@@ -3,13 +3,7 @@ import json
 import httpx
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
-
-
-WIKIPEDIA_HEADERS = {
-  "User-Agent": "IdeaCheckBot/0.1 (contact: your-email@example.com)",
-  "Accept": "text/html, application/xhtml+xml",
-  "Accept-Language": "en-US,en;q=0.9",
-}
+from headers import WIKIPEDIA_HEADERS
 
 
 def fetch_html(url: str) -> str:
@@ -87,11 +81,15 @@ def crawl_wiki_list_of_unicorn_startup_companies() -> list[dict[str, str]]:
       if href is not None:
         href = urljoin("https://en.wikipedia.org", str(href))
 
+    valuation: str = _extract_text(cells[1]).replace("+","")
+    print(valuation.split("–"))
+    num_valuation = [float(each) for each in valuation.split("–")]
+    num = int(sum(num_valuation)/len(num_valuation) * 1_000_000_000)
 
     item = {
       "name": _extract_text(cells[0]),
       "url": href,
-      "valuation": _extract_text(cells[1]),
+      "valuation (dollar)": num,
       "valuation_date": _extract_text(cells[2]),
       "industry":industry_list,
       "country": _extract_text(cells[4]),

@@ -2,7 +2,7 @@
   {
     "name": "OpenAI",
     "url": "https://en.wikipedia.org/wiki/OpenAI",
-    "valuation": "852",
+    "valuation (dollar)": 852000000000,
     "valuation_date": "March 2026 ( 2026-03 ) [ 21 ]",
     "industry": [
       "Artificial intelligence"
@@ -13,7 +13,7 @@
   {
     "name": "ByteDance",
     "url": "https://en.wikipedia.org/wiki/ByteDance",
-    "valuation": "330",
+    "valuation (dollar)": 330000000000,
     "valuation_date": "September 2025 [ 23 ]",
     "industry": [
       "Internet"
@@ -24,7 +24,7 @@
   {
     "name": "Stripe",
     "url": "https://en.wikipedia.org/wiki/Stripe_(company)",
-    "valuation": "159",
+    "valuation (dollar)": 159000000000,
     "valuation_date": "February 2026 ( 2026-02 ) [ 24 ]",
     "industry": [
       "Financial services"
@@ -35,7 +35,7 @@
   {
     "name": "Databricks",
     "url": "https://en.wikipedia.org/wiki/Databricks",
-    "valuation": "134",
+    "valuation (dollar)": 134000000000,
     "valuation_date": "December 2025 ( 2025-12 ) [ 25 ]",
     "industry": [
       "Software"
@@ -46,7 +46,7 @@
   {
     "name": "Binance",
     "url": "https://en.wikipedia.org/wiki/Binance",
-    "valuation": "80–90",
+    "valuation (dollar)": 85000000000,
     "valuation_date": "September 2021 ( 2021-09 ) [ 14 ]",
     "industry": [
       "Cryptocurrency"
@@ -57,7 +57,7 @@
   {
     "name": "Revolut",
     "url": "https://en.wikipedia.org/wiki/Revolut",
-    "valuation": "75",
+    "valuation (dollar)": 75000000000,
     "valuation_date": "November 2025 ( 2025-11 ) [ 26 ]",
     "industry": [
       "Financial technology"
@@ -68,7 +68,7 @@
   {
     "name": "Shein",
     "url": "https://en.wikipedia.org/wiki/Shein_(company)",
-    "valuation": "66",
+    "valuation (dollar)": 66000000000,
     "valuation_date": "May 2023 ( 2023-05 ) [ 14 ]",
     "industry": [
       "E-commerce"
@@ -79,7 +79,7 @@
   {
     "name": "Canva",
     "url": "https://en.wikipedia.org/wiki/Canva",
-    "valuation": "42",
+    "valuation (dollar)": 42000000000,
     "valuation_date": "October 2024 ( 2024-10 ) [ 27 ]",
     "industry": [
       "Graphic design"
@@ -90,7 +90,7 @@
   {
     "name": "Figure AI",
     "url": "https://en.wikipedia.org/wiki/Figure_AI",
-    "valuation": "39",
+    "valuation (dollar)": 39000000000,
     "valuation_date": "September 2025 ( 2025-09 ) [ 28 ]",
     "industry": [
       "Humanoid robotics"
@@ -101,7 +101,7 @@
   {
     "name": "Ramp",
     "url": "https://en.wikipedia.org/wiki/Ramp_(company)",
-    "valuation": "32",
+    "valuation (dollar)": 32000000000,
     "valuation_date": "November 2025 [ 29 ]",
     "industry": [
       "Financial technology"
@@ -112,7 +112,7 @@
   {
     "name": "Telegram",
     "url": "https://en.wikipedia.org/wiki/Telegram_(software)",
-    "valuation": "30",
+    "valuation (dollar)": 30000000000,
     "valuation_date": "January 2021 ( 2021-01 ) [ 34 ]",
     "industry": [
       "Internet"
@@ -123,7 +123,7 @@
   {
     "name": "Anysphere",
     "url": "https://en.wikipedia.org/wiki/Anysphere",
-    "valuation": "29",
+    "valuation (dollar)": 29000000000,
     "valuation_date": "November 2025 ( 2025-11 ) [ 35 ]",
     "industry": [
       "Artificial intelligence"
@@ -134,7 +134,7 @@
   {
     "name": "Scale AI",
     "url": "https://en.wikipedia.org/wiki/Scale_AI",
-    "valuation": "29",
+    "valuation (dollar)": 29000000000,
     "valuation_date": "June 2025",
     "industry": [
       "Artificial intelligence"
@@ -145,7 +145,7 @@
   {
     "name": "Fanatics",
     "url": "https://en.wikipedia.org/wiki/Fanatics_(sports_retailer)",
-    "valuation": "27",
+    "valuation (dollar)": 27000000000,
     "valuation_date": "June 2022 ( 2022-06 ) [ 14 ]",
     "industry": [
       "E-commerce"
@@ -156,7 +156,7 @@
   {
     "name": "Chime",
     "url": "https://en.wikipedia.org/wiki/Chime_(company)",
-    "valuation": "25",
+    "valuation (dollar)": 25000000000,
     "valuation_date": "June 2025 [ 37 ]",
     "industry": [
       "Financial technology"
@@ -167,7 +167,7 @@
   {
     "name": "Groq",
     "url": "https://en.wikipedia.org/wiki/Groq",
-    "valuation": "20",
+    "valuation (dollar)": 20000000000,
     "valuation_date": "Dec 2025 [ 42 ]",
     "industry": [
       "Artificial intelligence"
@@ -178,7 +178,7 @@
   {
     "name": "Miro",
     "url": "https://en.wikipedia.org/wiki/Miro_(collaboration_platform)",
-    "valuation": "17.5",
+    "valuation (dollar)": 17500000000,
     "valuation_date": "January 2022 ( 2022-01 ) [ 43 ]",
     "industry": [
       "Software"
@@ -189,7 +189,7 @@
   {
     "name": "Discord",
     "url": "https://en.wikipedia.org/wiki/Discord_(software)",
-    "valuation": "15",
+    "valuation (dollar)": 15000000000,
     "valuation_date": "September 2021 ( 2021-09 ) [ 46 ]",
     "industry": [
       "Software"
@@ -200,7 +200,7 @@
   {
     "name": "DJI",
     "url": "https://en.wikipedia.org/wiki/DJI",
-    "valuation": "15",
+    "valuation (dollar)": 15000000000,
     "valuation_date": "September 2016 ( 2016-09 ) [ 1 ]",
     "industry": [
       "Technology"
@@ -211,7 +211,7 @@
   {
     "name": "GoPuff",
     "url": "https://en.wikipedia.org/wiki/GoPuff",
-    "valuation": "15",
+    "valuation (dollar)": 15000000000,
     "valuation_date": "July 2021 ( 2021-07 ) [ 47 ]",
     "industry": [
       "E-commerce"
@@ -222,7 +222,7 @@
   {
     "name": "Xiaohongshu",
     "url": "https://en.wikipedia.org/wiki/Xiaohongshu",
-    "valuation": "14",
+    "valuation (dollar)": 14000000000,
     "valuation_date": "September 2023 ( 2023-09 ) [ 50 ]",
     "industry": [
       "E-commerce"
@@ -233,7 +233,7 @@
   {
     "name": "Skild AI",
     "url": "https://en.wikipedia.org/w/index.php?title=Skild_AI&action=edit&redlink=1",
-    "valuation": "14",
+    "valuation (dollar)": 14000000000,
     "valuation_date": "January 2026 [ 52 ]",
     "industry": [
       "Robotics"
@@ -244,7 +244,7 @@
   {
     "name": "Plaid",
     "url": "https://en.wikipedia.org/wiki/Plaid_(company)",
-    "valuation": "13.4",
+    "valuation (dollar)": 13400000000,
     "valuation_date": "April 2021 ( 2021-04 ) [ 53 ]",
     "industry": [
       "Financial technology"
@@ -255,7 +255,7 @@
   {
     "name": "OpenSea",
     "url": "https://en.wikipedia.org/wiki/OpenSea",
-    "valuation": "13.3",
+    "valuation (dollar)": 13300000000,
     "valuation_date": "August 2025 [ 54 ]",
     "industry": [
       "Financial Technology"
@@ -266,7 +266,7 @@
   {
     "name": "Shield AI",
     "url": "https://en.wikipedia.org/wiki/Shield_AI",
-    "valuation": "12.6",
+    "valuation (dollar)": 12600000000,
     "valuation_date": "March 2026 [ 58 ]",
     "industry": [
       "Defense Technology"
@@ -277,7 +277,7 @@
   {
     "name": "Faire",
     "url": "",
-    "valuation": "12.59",
+    "valuation (dollar)": 12590000000,
     "valuation_date": "November 2021 ( 2021-11 ) [ 60 ]",
     "industry": [
       "E-commerce"
@@ -288,7 +288,7 @@
   {
     "name": "OpenEvidence",
     "url": "https://en.wikipedia.org/wiki/OpenEvidence",
-    "valuation": "12",
+    "valuation (dollar)": 12000000000,
     "valuation_date": "January 2026 [ 63 ]",
     "industry": [
       "Health Technology"
@@ -299,7 +299,7 @@
   {
     "name": "Thinking Machines Lab",
     "url": "https://en.wikipedia.org/wiki/Thinking_Machines_Lab",
-    "valuation": "12",
+    "valuation (dollar)": 12000000000,
     "valuation_date": "July 2025 [ 64 ]",
     "industry": [
       "Artificial intelligence"
@@ -310,7 +310,7 @@
   {
     "name": "Bitmain",
     "url": "https://en.wikipedia.org/wiki/Bitmain",
-    "valuation": "12",
+    "valuation (dollar)": 12000000000,
     "valuation_date": "June 2018",
     "industry": [
       "Cryptocurrency"
@@ -321,7 +321,7 @@
   {
     "name": "GoodLeap",
     "url": "https://en.wikipedia.org/wiki/GoodLeap",
-    "valuation": "12",
+    "valuation (dollar)": 12000000000,
     "valuation_date": "October 2021 [ 66 ]",
     "industry": [
       "Financial technology"
@@ -332,7 +332,7 @@
   {
     "name": "Checkout.com",
     "url": "https://en.wikipedia.org/wiki/Checkout.com",
-    "valuation": "12",
+    "valuation (dollar)": 12000000000,
     "valuation_date": "September 2025 [ 67 ]",
     "industry": [
       "Financial technology"
@@ -343,7 +343,7 @@
   {
     "name": "Celonis",
     "url": "https://en.wikipedia.org/wiki/Celonis",
-    "valuation": "11",
+    "valuation (dollar)": 11000000000,
     "valuation_date": "June 2021 [ 70 ]",
     "industry": [
       "Software"
@@ -354,7 +354,7 @@
   {
     "name": "Harvey",
     "url": "https://en.wikipedia.org/wiki/Harvey_(software)",
-    "valuation": "11",
+    "valuation (dollar)": 11000000000,
     "valuation_date": "March 2026 [ 72 ]",
     "industry": [
       "Artificial intelligence"
@@ -365,7 +365,7 @@
   {
     "name": "Bilt Rewards",
     "url": "https://en.wikipedia.org/wiki/Bilt_Rewards",
-    "valuation": "10.75",
+    "valuation (dollar)": 10750000000,
     "valuation_date": "July 2025",
     "industry": [
       "Financial Technology"
@@ -376,7 +376,7 @@
   {
     "name": "Gusto",
     "url": "https://en.wikipedia.org/wiki/Gusto_(software)",
-    "valuation": "10",
+    "valuation (dollar)": 10000000000,
     "valuation_date": "August 2021 [ 82 ]",
     "industry": [
       "Software"
@@ -387,7 +387,7 @@
   {
     "name": "KuCoin",
     "url": "https://en.wikipedia.org/wiki/KuCoin",
-    "valuation": "10",
+    "valuation (dollar)": 10000000000,
     "valuation_date": "May 2022 [ 83 ]",
     "industry": [
       "Cryptocurrency"
@@ -398,7 +398,7 @@
   {
     "name": "Ripple",
     "url": "https://en.wikipedia.org/wiki/Ripple_Labs",
-    "valuation": "10",
+    "valuation (dollar)": 10000000000,
     "valuation_date": "December 2019 [ 88 ]",
     "industry": [
       "Cryptocurrency"
@@ -409,7 +409,7 @@
   {
     "name": "Rapyd",
     "url": "https://en.wikipedia.org/w/index.php?title=Rapyd&action=edit&redlink=1",
-    "valuation": "8.7",
+    "valuation (dollar)": 8700000000,
     "valuation_date": "August 2021 [ 99 ]",
     "industry": [
       "Financial technology"
@@ -420,7 +420,7 @@
   {
     "name": "Nuro",
     "url": "https://en.wikipedia.org/wiki/Nuro",
-    "valuation": "8.6",
+    "valuation (dollar)": 8600000000,
     "valuation_date": "November 2021 [ 100 ]",
     "industry": [
       "Robotics"
@@ -431,7 +431,7 @@
   {
     "name": "Airwallex",
     "url": "https://en.wikipedia.org/wiki/Airwallex",
-    "valuation": "8",
+    "valuation (dollar)": 8000000000,
     "valuation_date": "December 2025 [ 105 ]",
     "industry": [
       "Financial services"
@@ -442,7 +442,7 @@
   {
     "name": "Razorpay",
     "url": "",
-    "valuation": "7.5",
+    "valuation (dollar)": 7500000000,
     "valuation_date": "December 2021 [ 109 ]",
     "industry": [
       "Financial technology"
@@ -453,7 +453,7 @@
   {
     "name": "Carta",
     "url": "https://en.wikipedia.org/wiki/Carta_(software_company)",
-    "valuation": "7.4",
+    "valuation (dollar)": 7400000000,
     "valuation_date": "August 2021 [ 110 ]",
     "industry": [
       "Software"
@@ -464,7 +464,7 @@
   {
     "name": "Cohere",
     "url": "https://en.wikipedia.org/wiki/Cohere",
-    "valuation": "6.8",
+    "valuation (dollar)": 6800000000,
     "valuation_date": "August 2025 [ 118 ]",
     "industry": [
       "Artificial intelligence"
@@ -475,7 +475,7 @@
   {
     "name": "Lovable",
     "url": "https://en.wikipedia.org/wiki/Lovable_(company)",
-    "valuation": "6.6",
+    "valuation (dollar)": 6600000000,
     "valuation_date": "December 2025 [ 121 ]",
     "industry": [
       "Artificial intelligence"
@@ -486,7 +486,7 @@
   {
     "name": "Mollie",
     "url": "",
-    "valuation": "6.5",
+    "valuation (dollar)": 6500000000,
     "valuation_date": "June 2021 [ 122 ]",
     "industry": [
       "Financial technology"
@@ -497,7 +497,7 @@
   {
     "name": "CRED",
     "url": "https://en.wikipedia.org/wiki/CRED",
-    "valuation": "6.4",
+    "valuation (dollar)": 6400000000,
     "valuation_date": "June 2022 [ 123 ]",
     "industry": [
       "Financial technology"
@@ -508,7 +508,7 @@
   {
     "name": "DataRobot",
     "url": "",
-    "valuation": "6.3",
+    "valuation (dollar)": 6300000000,
     "valuation_date": "July 2021 [ 124 ]",
     "industry": [
       "Artificial intelligence"
@@ -519,7 +519,7 @@
   {
     "name": "Personio",
     "url": "https://en.wikipedia.org/wiki/Personio",
-    "valuation": "6.3",
+    "valuation (dollar)": 6300000000,
     "valuation_date": "October 2021 [ 125 ]",
     "industry": [
       "Software"
@@ -530,7 +530,7 @@
   {
     "name": "iCapital",
     "url": "https://en.wikipedia.org/wiki/ICapital",
-    "valuation": "6",
+    "valuation (dollar)": 6000000000,
     "valuation_date": "2022 [ 127 ]",
     "industry": [
       "Financial services"
@@ -541,7 +541,7 @@
   {
     "name": "PhonePe",
     "url": "https://en.wikipedia.org/wiki/PhonePe",
-    "valuation": "5.5",
+    "valuation (dollar)": 5500000000,
     "valuation_date": "December 2020 [ 134 ]",
     "industry": [
       "Financial technology"
@@ -552,7 +552,7 @@
   {
     "name": "Viva Republica (Toss)",
     "url": "https://en.wikipedia.org/wiki/Viva_Republica",
-    "valuation": "5.48",
+    "valuation (dollar)": 5480000000,
     "valuation_date": "June 2021 [ 135 ]",
     "industry": [
       "Financial technology"
@@ -563,7 +563,7 @@
   {
     "name": "Trade Republic",
     "url": "https://en.wikipedia.org/wiki/Trade_Republic",
-    "valuation": "5.3",
+    "valuation (dollar)": 5300000000,
     "valuation_date": "May 2021 [ 137 ]",
     "industry": [
       "Financial technology"
@@ -574,7 +574,7 @@
   {
     "name": "Blockchain.com",
     "url": "https://en.wikipedia.org/wiki/Blockchain.com",
-    "valuation": "5.2",
+    "valuation (dollar)": 5200000000,
     "valuation_date": "March 2021 [ 140 ]",
     "industry": [
       "Cryptocurrency"
@@ -585,7 +585,7 @@
   {
     "name": "SambaNova",
     "url": "",
-    "valuation": "5.1",
+    "valuation (dollar)": 5100000000,
     "valuation_date": "April 2021 [ 142 ]",
     "industry": [
       "Artificial intelligence"
@@ -596,7 +596,7 @@
   {
     "name": "Zepz",
     "url": "https://en.wikipedia.org/wiki/WorldRemit",
-    "valuation": "5",
+    "valuation (dollar)": 5000000000,
     "valuation_date": "August 2021 [ 149 ]",
     "industry": [
       "Financial technology"
@@ -607,7 +607,7 @@
   {
     "name": "Pleo",
     "url": "",
-    "valuation": "4.7",
+    "valuation (dollar)": 4700000000,
     "valuation_date": "December 2021 [ 152 ]",
     "industry": [
       "Financial technology"
@@ -618,7 +618,7 @@
   {
     "name": "Dataiku",
     "url": "https://en.wikipedia.org/wiki/Dataiku",
-    "valuation": "4.6",
+    "valuation (dollar)": 4600000000,
     "valuation_date": "August 2021 [ 154 ]",
     "industry": [
       "Artificial intelligence"
@@ -629,7 +629,7 @@
   {
     "name": "Bitpanda",
     "url": "https://en.wikipedia.org/wiki/Bitpanda",
-    "valuation": "4.1",
+    "valuation (dollar)": 4099999999,
     "valuation_date": "August 2021 [ 162 ]",
     "industry": [
       "Cryptocurrency"
@@ -640,7 +640,7 @@
   {
     "name": "AlphaSense",
     "url": "",
-    "valuation": "4",
+    "valuation (dollar)": 4000000000,
     "valuation_date": "June 2024 [ 166 ]",
     "industry": [
       "Software"
@@ -651,7 +651,7 @@
   {
     "name": "BrowserStack",
     "url": "https://en.wikipedia.org/wiki/BrowserStack",
-    "valuation": "4",
+    "valuation (dollar)": 4000000000,
     "valuation_date": "June 2021 [ 168 ]",
     "industry": [
       "Software"
@@ -662,7 +662,7 @@
   {
     "name": "Megvii",
     "url": "https://en.wikipedia.org/wiki/Megvii",
-    "valuation": "4",
+    "valuation (dollar)": 4000000000,
     "valuation_date": "May 2019 [ 171 ]",
     "industry": [
       "Technology"
@@ -673,7 +673,7 @@
   {
     "name": "Melio",
     "url": "",
-    "valuation": "4",
+    "valuation (dollar)": 4000000000,
     "valuation_date": "September 2021 [ 172 ]",
     "industry": [
       "Financial technology"
@@ -684,7 +684,7 @@
   {
     "name": "PointClickCare",
     "url": "",
-    "valuation": "4",
+    "valuation (dollar)": 4000000000,
     "valuation_date": "January 2021 [ 174 ]",
     "industry": [
       "Software"
@@ -695,7 +695,7 @@
   {
     "name": "StockX",
     "url": "https://en.wikipedia.org/wiki/StockX",
-    "valuation": "3.8",
+    "valuation (dollar)": 3800000000,
     "valuation_date": "April 2021 [ 177 ]",
     "industry": [
       "E-commerce"
@@ -706,7 +706,7 @@
   {
     "name": "Cohesity",
     "url": "https://en.wikipedia.org/wiki/Cohesity",
-    "valuation": "3.7",
+    "valuation (dollar)": 3700000000,
     "valuation_date": "March 2021 [ 179 ]",
     "industry": [
       "Software"
@@ -717,7 +717,7 @@
   {
     "name": "N26",
     "url": "https://en.wikipedia.org/wiki/N26",
-    "valuation": "3.5",
+    "valuation (dollar)": 3500000000,
     "valuation_date": "July 2019 [ 189 ]",
     "industry": [
       "Financial services"
@@ -728,7 +728,7 @@
   {
     "name": "Preferred Networks",
     "url": "https://en.wikipedia.org/wiki/Preferred_Networks",
-    "valuation": "3.33",
+    "valuation (dollar)": 3330000000,
     "valuation_date": "September 2019 [ 190 ]",
     "industry": [
       "Artificial intelligence"
@@ -739,7 +739,7 @@
   {
     "name": "Kurly",
     "url": "",
-    "valuation": "3.3",
+    "valuation (dollar)": 3300000000,
     "valuation_date": "July 2021 [ 192 ]",
     "industry": [
       "E-commerce"
@@ -750,7 +750,7 @@
   {
     "name": "MoonPay",
     "url": "https://en.wikipedia.org/wiki/MoonPay",
-    "valuation": "3.4",
+    "valuation (dollar)": 3400000000,
     "valuation_date": "November 2021 [ 194 ]",
     "industry": [
       "Cryptocurrency"
@@ -761,7 +761,7 @@
   {
     "name": "Upstox",
     "url": "",
-    "valuation": "3.4",
+    "valuation (dollar)": 3400000000,
     "valuation_date": "November 2021 [ 195 ]",
     "industry": [
       "Financial technology"
@@ -772,7 +772,7 @@
   {
     "name": "Thumbtack",
     "url": "https://en.wikipedia.org/wiki/Thumbtack_(website)",
-    "valuation": "3.2",
+    "valuation (dollar)": 3200000000,
     "valuation_date": "June 2021 [ 199 ]",
     "industry": [
       "Software"
@@ -783,7 +783,7 @@
   {
     "name": "SpotOn",
     "url": "",
-    "valuation": "3.15",
+    "valuation (dollar)": 3150000000,
     "valuation_date": "September 2021 [ 205 ]",
     "industry": [
       "Financial technology"
@@ -794,7 +794,7 @@
   {
     "name": "TiendaNube",
     "url": "",
-    "valuation": "3.1",
+    "valuation (dollar)": 3100000000,
     "valuation_date": "August 2021 [ 206 ]",
     "industry": [
       "E-commerce"
@@ -805,7 +805,7 @@
   {
     "name": "CMR Surgical",
     "url": "https://en.wikipedia.org/wiki/CMR_Surgical",
-    "valuation": "3",
+    "valuation (dollar)": 3000000000,
     "valuation_date": "January 2021 [ 210 ]",
     "industry": [
       "Robotics"
@@ -816,7 +816,7 @@
   {
     "name": "Automattic",
     "url": "https://en.wikipedia.org/wiki/Automattic",
-    "valuation": "3",
+    "valuation (dollar)": 3000000000,
     "valuation_date": "September 2019 [ 214 ]",
     "industry": [
       "Internet"
@@ -827,7 +827,7 @@
   {
     "name": "Calendly",
     "url": "https://en.wikipedia.org/wiki/Calendly",
-    "valuation": "3",
+    "valuation (dollar)": 3000000000,
     "valuation_date": "January 2021 [ 215 ]",
     "industry": [
       "Software"
@@ -838,7 +838,7 @@
   {
     "name": "Forter",
     "url": "https://en.wikipedia.org/wiki/Forter",
-    "valuation": "3",
+    "valuation (dollar)": 3000000000,
     "valuation_date": "May 2021 [ 218 ]",
     "industry": [
       "Software"
@@ -849,7 +849,7 @@
   {
     "name": "Grafana Labs",
     "url": "https://en.wikipedia.org/wiki/Grafana",
-    "valuation": "3",
+    "valuation (dollar)": 3000000000,
     "valuation_date": "August 2021 [ 219 ]",
     "industry": [
       "Software"
@@ -860,7 +860,7 @@
   {
     "name": "Lucid Software",
     "url": "https://en.wikipedia.org/wiki/Lucidchart",
-    "valuation": "3",
+    "valuation (dollar)": 3000000000,
     "valuation_date": "June 2021 [ 220 ]",
     "industry": [
       "Software"
@@ -871,7 +871,7 @@
   {
     "name": "Seismic",
     "url": "",
-    "valuation": "3",
+    "valuation (dollar)": 3000000000,
     "valuation_date": "August 2021 [ 222 ]",
     "industry": [
       "Software"
@@ -882,7 +882,7 @@
   {
     "name": "VANCL",
     "url": "",
-    "valuation": "3",
+    "valuation (dollar)": 3000000000,
     "valuation_date": "February 2014 [ 5 ]",
     "industry": [
       "E-commerce"
@@ -893,7 +893,7 @@
   {
     "name": "Veepee",
     "url": "https://en.wikipedia.org/wiki/Veepee",
-    "valuation": "3",
+    "valuation (dollar)": 3000000000,
     "valuation_date": "August 2022 [ 126 ]",
     "industry": [
       "E-commerce"
@@ -904,7 +904,7 @@
   {
     "name": "DriveWealth",
     "url": "https://en.wikipedia.org/w/index.php?title=DriveWealth&action=edit&redlink=1",
-    "valuation": "2.85",
+    "valuation (dollar)": 2850000000,
     "valuation_date": "August 2021 [ 230 ]",
     "industry": [
       "Financial technology"
@@ -915,7 +915,7 @@
   {
     "name": "BharatPe",
     "url": "https://en.wikipedia.org/wiki/BharatPe",
-    "valuation": "2.8",
+    "valuation (dollar)": 2800000000,
     "valuation_date": "August 2021 [ 231 ]",
     "industry": [
       "Financial technology"
@@ -926,7 +926,7 @@
   {
     "name": "Icertis",
     "url": "https://en.wikipedia.org/wiki/Icertis",
-    "valuation": "2.8",
+    "valuation (dollar)": 2800000000,
     "valuation_date": "March 2021 [ 232 ]",
     "industry": [
       "Software"
@@ -937,7 +937,7 @@
   {
     "name": "Daangn Market",
     "url": "",
-    "valuation": "2.7",
+    "valuation (dollar)": 2700000000,
     "valuation_date": "August 2021 [ 238 ]",
     "industry": [
       "E-commerce"
@@ -948,7 +948,7 @@
   {
     "name": "Nextiva",
     "url": "https://en.wikipedia.org/wiki/Nextiva",
-    "valuation": "2.7",
+    "valuation (dollar)": 2700000000,
     "valuation_date": "September 2021 [ 240 ]",
     "industry": [
       "Software"
@@ -959,7 +959,7 @@
   {
     "name": "Tradeshift",
     "url": "https://en.wikipedia.org/wiki/Tradeshift",
-    "valuation": "2.7",
+    "valuation (dollar)": 2700000000,
     "valuation_date": "March 2021 [ 241 ]",
     "industry": [
       "Financial technology"
@@ -970,7 +970,7 @@
   {
     "name": "ManoMano",
     "url": "",
-    "valuation": "2.6",
+    "valuation (dollar)": 2600000000,
     "valuation_date": "July 2021 [ 244 ]",
     "industry": [
       "E-commerce"
@@ -981,7 +981,7 @@
   {
     "name": "Pendo",
     "url": "",
-    "valuation": "2.6",
+    "valuation (dollar)": 2600000000,
     "valuation_date": "July 2021 [ 245 ]",
     "industry": [
       "Software"
@@ -992,7 +992,7 @@
   {
     "name": "Jumpcloud",
     "url": "",
-    "valuation": "2.56",
+    "valuation (dollar)": 2560000000,
     "valuation_date": "September 2021 [ 247 ]",
     "industry": [
       "Software"
@@ -1003,7 +1003,7 @@
   {
     "name": "EasyA",
     "url": "https://en.wikipedia.org/wiki/EasyA",
-    "valuation": "2.5",
+    "valuation (dollar)": 2500000000,
     "valuation_date": "May 2024 [ 249 ]",
     "industry": [
       "Technology"
@@ -1014,7 +1014,7 @@
   {
     "name": "Monzo",
     "url": "https://en.wikipedia.org/wiki/Monzo_(bank)",
-    "valuation": "2.5",
+    "valuation (dollar)": 2500000000,
     "valuation_date": "June 2019 [ 253 ]",
     "industry": [
       "Financial services"
@@ -1025,7 +1025,7 @@
   {
     "name": "HoneyBook",
     "url": "https://en.wikipedia.org/wiki/HoneyBook",
-    "valuation": "2.4",
+    "valuation (dollar)": 2400000000,
     "valuation_date": "November 2021 [ 254 ]",
     "industry": [
       "Financial services"
@@ -1036,7 +1036,7 @@
   {
     "name": "Paxos",
     "url": "https://en.wikipedia.org/wiki/Paxos_Trust_Company",
-    "valuation": "2.4",
+    "valuation (dollar)": 2400000000,
     "valuation_date": "April 2021 [ 257 ]",
     "industry": [
       "Cryptocurrency"
@@ -1047,7 +1047,7 @@
   {
     "name": "Mozido",
     "url": "https://en.wikipedia.org/wiki/Mozido",
-    "valuation": "2.39",
+    "valuation (dollar)": 2390000000,
     "valuation_date": "October 2014 [ 5 ]",
     "industry": [
       "E-commerce"
@@ -1058,7 +1058,7 @@
   {
     "name": "Algolia",
     "url": "https://en.wikipedia.org/wiki/Algolia",
-    "valuation": "2.25",
+    "valuation (dollar)": 2250000000,
     "valuation_date": "June 2021 [ 262 ]",
     "industry": [
       "Software"
@@ -1069,7 +1069,7 @@
   {
     "name": "Acorns",
     "url": "https://en.wikipedia.org/wiki/Acorns_(company)",
-    "valuation": "2.2",
+    "valuation (dollar)": 2200000000,
     "valuation_date": "May 2021 [ 264 ]",
     "industry": [
       "Financial technology"
@@ -1080,7 +1080,7 @@
   {
     "name": "Bitso",
     "url": "",
-    "valuation": "2.2",
+    "valuation (dollar)": 2200000000,
     "valuation_date": "May 2021 [ 265 ]",
     "industry": [
       "Cryptocurrency"
@@ -1091,7 +1091,7 @@
   {
     "name": "Addepar",
     "url": "https://en.wikipedia.org/wiki/Addepar",
-    "valuation": "2.17",
+    "valuation (dollar)": 2170000000,
     "valuation_date": "June 2021 [ 268 ]",
     "industry": [
       "Financial technology"
@@ -1102,7 +1102,7 @@
   {
     "name": "Eightfold.ai",
     "url": "",
-    "valuation": "2.1+",
+    "valuation (dollar)": 2100000000,
     "valuation_date": "June 2021 [ 269 ]",
     "industry": [
       "Artificial intelligence"
@@ -1113,7 +1113,7 @@
   {
     "name": "Gamma",
     "url": "",
-    "valuation": "2.1",
+    "valuation (dollar)": 2100000000,
     "valuation_date": "November 2025 [ 270 ]",
     "industry": [
       "Artificial intelligence"
@@ -1124,7 +1124,7 @@
   {
     "name": "PayFit",
     "url": "",
-    "valuation": "2.1",
+    "valuation (dollar)": 2100000000,
     "valuation_date": "January 2022 ( 2022-01 ) [ 271 ]",
     "industry": [
       "Software"
@@ -1135,7 +1135,7 @@
   {
     "name": "6sense",
     "url": "",
-    "valuation": "2.1",
+    "valuation (dollar)": 2100000000,
     "valuation_date": "March 2021 [ 272 ]",
     "industry": [
       "Artificial intelligence"
@@ -1146,7 +1146,7 @@
   {
     "name": "C6 Bank",
     "url": "",
-    "valuation": "2.1",
+    "valuation (dollar)": 2100000000,
     "valuation_date": "December 2020 [ 273 ]",
     "industry": [
       "Financial services"
@@ -1157,7 +1157,7 @@
   {
     "name": "Mambu",
     "url": "https://en.wikipedia.org/wiki/Mambu_(company)",
-    "valuation": "2.1",
+    "valuation (dollar)": 2100000000,
     "valuation_date": "January 2021 [ 274 ]",
     "industry": [
       "Financial technology"
@@ -1168,7 +1168,7 @@
   {
     "name": "Tipalti",
     "url": "https://en.wikipedia.org/wiki/Tipalti",
-    "valuation": "2+",
+    "valuation (dollar)": 2000000000,
     "valuation_date": "October 2020",
     "industry": [
       "Financial technology"
@@ -1179,7 +1179,7 @@
   {
     "name": "Figure AI",
     "url": "https://en.wikipedia.org/wiki/Figure_AI",
-    "valuation": "2",
+    "valuation (dollar)": 2000000000,
     "valuation_date": "February 2024 [ 280 ]",
     "industry": [
       "Humanoid robotics"
@@ -1190,7 +1190,7 @@
   {
     "name": "Hive",
     "url": "https://en.wikipedia.org/wiki/Hive_(artificial_intelligence_company)",
-    "valuation": "2",
+    "valuation (dollar)": 2000000000,
     "valuation_date": "April 2021 [ 281 ]",
     "industry": [
       "Artificial intelligence"
@@ -1201,7 +1201,7 @@
   {
     "name": "Mural",
     "url": "",
-    "valuation": "2",
+    "valuation (dollar)": 2000000000,
     "valuation_date": "July 2021 [ 282 ]",
     "industry": [
       "Technology"
@@ -1212,7 +1212,7 @@
   {
     "name": "Clip",
     "url": "",
-    "valuation": "2",
+    "valuation (dollar)": 2000000000,
     "valuation_date": "June 2021 [ 287 ]",
     "industry": [
       "Financial technology"
@@ -1223,7 +1223,7 @@
   {
     "name": "Exotec",
     "url": "",
-    "valuation": "2",
+    "valuation (dollar)": 2000000000,
     "valuation_date": "August 2022 [ 126 ]",
     "industry": [
       "Robotics"
@@ -1234,7 +1234,7 @@
   {
     "name": "Firstp2p",
     "url": "",
-    "valuation": "2",
+    "valuation (dollar)": 2000000000,
     "valuation_date": "September 2016 [ 5 ]",
     "industry": [
       "Financial services"
@@ -1245,7 +1245,7 @@
   {
     "name": "Meicai.cn",
     "url": "",
-    "valuation": "2",
+    "valuation (dollar)": 2000000000,
     "valuation_date": "June 2016 [ 184 ]",
     "industry": [
       "Agriculture",
@@ -1257,7 +1257,7 @@
   {
     "name": "Mynt",
     "url": "",
-    "valuation": "2",
+    "valuation (dollar)": 2000000000,
     "valuation_date": "November 2021 [ 295 ]",
     "industry": [
       "Financial technology"
@@ -1268,7 +1268,7 @@
   {
     "name": "OPay",
     "url": "",
-    "valuation": "2",
+    "valuation (dollar)": 2000000000,
     "valuation_date": "August 2021 [ 296 ]",
     "industry": [
       "Financial technology"
@@ -1279,7 +1279,7 @@
   {
     "name": "Zerodha",
     "url": "https://en.wikipedia.org/wiki/Zerodha",
-    "valuation": "2",
+    "valuation (dollar)": 2000000000,
     "valuation_date": "May 2021 [ 300 ]",
     "industry": [
       "Financial technology"
@@ -1290,7 +1290,7 @@
   {
     "name": "Instabase",
     "url": "https://en.wikipedia.org/wiki/Instabase",
-    "valuation": "2",
+    "valuation (dollar)": 2000000000,
     "valuation_date": "June 2023 [ 301 ]",
     "industry": [
       "Software"
@@ -1301,7 +1301,7 @@
   {
     "name": "Zilch",
     "url": "https://en.wikipedia.org/wiki/Zilch_(company)",
-    "valuation": "2",
+    "valuation (dollar)": 2000000000,
     "valuation_date": "November 2021 [ 302 ]",
     "industry": [
       "Financial technology"
@@ -1312,7 +1312,7 @@
   {
     "name": "Akulaku",
     "url": "https://en.wikipedia.org/wiki/Akulaku",
-    "valuation": "2",
+    "valuation (dollar)": 2000000000,
     "valuation_date": "February 2022 [ 303 ]",
     "industry": [
       "Financial technology"
@@ -1323,7 +1323,7 @@
   {
     "name": "Bunq",
     "url": "https://en.wikipedia.org/wiki/Bunq",
-    "valuation": "1.9",
+    "valuation (dollar)": 1900000000,
     "valuation_date": "July 2021 [ 307 ]",
     "industry": [
       "Financial services"
@@ -1334,7 +1334,7 @@
   {
     "name": "CoinSwitch Kuber",
     "url": "",
-    "valuation": "1.9",
+    "valuation (dollar)": 1900000000,
     "valuation_date": "October 2021 [ 308 ]",
     "industry": [
       "Cryptocurrency"
@@ -1345,7 +1345,7 @@
   {
     "name": "Prosper Marketplace",
     "url": "https://en.wikipedia.org/wiki/Prosper_Marketplace",
-    "valuation": "1.9",
+    "valuation (dollar)": 1900000000,
     "valuation_date": "August 2015 [ 5 ]",
     "industry": [
       "Financial technology"
@@ -1356,7 +1356,7 @@
   {
     "name": "Creditas",
     "url": "",
-    "valuation": "1.75",
+    "valuation (dollar)": 1750000000,
     "valuation_date": "December 2020",
     "industry": [
       "Financial services"
@@ -1367,7 +1367,7 @@
   {
     "name": "ADVASA",
     "url": "",
-    "valuation": "1.7",
+    "valuation (dollar)": 1700000000,
     "valuation_date": "January 2023 [ 320 ]",
     "industry": [
       "Software"
@@ -1378,7 +1378,7 @@
   {
     "name": "GVE",
     "url": "",
-    "valuation": "1.7",
+    "valuation (dollar)": 1700000000,
     "valuation_date": "January 2023 [ 320 ]",
     "industry": [
       "Software"
@@ -1389,7 +1389,7 @@
   {
     "name": "Harness",
     "url": "",
-    "valuation": "1.7",
+    "valuation (dollar)": 1700000000,
     "valuation_date": "June 2021 [ 324 ]",
     "industry": [
       "Software"
@@ -1400,7 +1400,7 @@
   {
     "name": "Workato",
     "url": "https://en.wikipedia.org/wiki/Workato",
-    "valuation": "1.7",
+    "valuation (dollar)": 1700000000,
     "valuation_date": "December 2020",
     "industry": [
       "Technology"
@@ -1411,7 +1411,7 @@
   {
     "name": "Solarisbank",
     "url": "https://en.wikipedia.org/wiki/Solarisbank",
-    "valuation": "1.65",
+    "valuation (dollar)": 1650000000,
     "valuation_date": "July 2021 [ 330 ]",
     "industry": [
       "Financial technology"
@@ -1422,7 +1422,7 @@
   {
     "name": "Wayflyer",
     "url": "https://en.wikipedia.org/wiki/Wayflyer",
-    "valuation": "1.6",
+    "valuation (dollar)": 1600000000,
     "valuation_date": "Feb 2022 [ 331 ]",
     "industry": [
       "Financial technology"
@@ -1433,7 +1433,7 @@
   {
     "name": "Cresta",
     "url": "",
-    "valuation": "1.6",
+    "valuation (dollar)": 1600000000,
     "valuation_date": "March 2022 [ 4 ]",
     "industry": [
       "Artificial intelligence"
@@ -1444,7 +1444,7 @@
   {
     "name": "Clari",
     "url": "",
-    "valuation": "1.6",
+    "valuation (dollar)": 1600000000,
     "valuation_date": "March 2021 [ 332 ]",
     "industry": [
       "Software"
@@ -1455,7 +1455,7 @@
   {
     "name": "Cognite",
     "url": "https://en.wikipedia.org/wiki/Cognite",
-    "valuation": "1.6",
+    "valuation (dollar)": 1600000000,
     "valuation_date": "May 2021",
     "industry": [
       "Software"
@@ -1466,7 +1466,7 @@
   {
     "name": "SafetyCulture",
     "url": "",
-    "valuation": "1.6",
+    "valuation (dollar)": 1600000000,
     "valuation_date": "May 2021 [ 336 ]",
     "industry": [
       "Technology"
@@ -1477,7 +1477,7 @@
   {
     "name": "KreditBee",
     "url": "",
-    "valuation": "1.5",
+    "valuation (dollar)": 1500000000,
     "valuation_date": "April 2026 ( 2026-04 ) [ 342 ]",
     "industry": [
       "Financial technology"
@@ -1488,7 +1488,7 @@
   {
     "name": "Airbyte",
     "url": "https://en.wikipedia.org/w/index.php?title=Airbyte&action=edit&redlink=1",
-    "valuation": "1.5",
+    "valuation (dollar)": 1500000000,
     "valuation_date": "December 2021 [ 343 ]",
     "industry": [
       "Software"
@@ -1499,7 +1499,7 @@
   {
     "name": "Culture Amp",
     "url": "https://en.wikipedia.org/wiki/Culture_Amp",
-    "valuation": "1.5",
+    "valuation (dollar)": 1500000000,
     "valuation_date": "July 2021 [ 345 ]",
     "industry": [
       "Software"
@@ -1510,7 +1510,7 @@
   {
     "name": "Devo, Inc.",
     "url": "",
-    "valuation": "1.5",
+    "valuation (dollar)": 1500000000,
     "valuation_date": "October 2021 [ 346 ]",
     "industry": [
       "Software"
@@ -1521,7 +1521,7 @@
   {
     "name": "Granola",
     "url": "",
-    "valuation": "1.5",
+    "valuation (dollar)": 1500000000,
     "valuation_date": "March 2026 [ 347 ]",
     "industry": [
       "Software"
@@ -1532,7 +1532,7 @@
   {
     "name": "Ledger",
     "url": "",
-    "valuation": "1.5",
+    "valuation (dollar)": 1500000000,
     "valuation_date": "June 2021 [ 349 ]",
     "industry": [
       "Cryptocurrency"
@@ -1543,7 +1543,7 @@
   {
     "name": "NextSilicon",
     "url": "",
-    "valuation": "1.5",
+    "valuation (dollar)": 1500000000,
     "valuation_date": "June 2021 [ 354 ]",
     "industry": [
       "Semiconductors"
@@ -1554,7 +1554,7 @@
   {
     "name": "Podium",
     "url": "https://en.wikipedia.org/wiki/Podium_(company)",
-    "valuation": "1.5",
+    "valuation (dollar)": 1500000000,
     "valuation_date": "August 2019 [ 356 ]",
     "industry": [
       "Software"
@@ -1565,7 +1565,7 @@
   {
     "name": "Remote",
     "url": "",
-    "valuation": "1.5",
+    "valuation (dollar)": 1500000000,
     "valuation_date": "July 2021 [ 357 ]",
     "industry": [
       "Software"
@@ -1576,7 +1576,7 @@
   {
     "name": "Starling Bank",
     "url": "https://en.wikipedia.org/wiki/Starling_Bank",
-    "valuation": "1.5",
+    "valuation (dollar)": 1500000000,
     "valuation_date": "March 2021 [ 360 ]",
     "industry": [
       "Financial technology"
@@ -1587,7 +1587,7 @@
   {
     "name": "5ire",
     "url": "",
-    "valuation": "1.5+",
+    "valuation (dollar)": 1500000000,
     "valuation_date": "July 2022 [ 361 ]",
     "industry": [
       "Technology"
@@ -1598,7 +1598,7 @@
   {
     "name": "Ascend Money",
     "url": "https://en.wikipedia.org/wiki/Ascend_Group#Ascend_Money",
-    "valuation": "1.5",
+    "valuation (dollar)": 1500000000,
     "valuation_date": "September 2021 [ 364 ]",
     "industry": [
       "Financial technology"
@@ -1609,7 +1609,7 @@
   {
     "name": "M1 Finance",
     "url": "https://en.wikipedia.org/wiki/M1_Finance",
-    "valuation": "1.45",
+    "valuation (dollar)": 1450000000,
     "valuation_date": "July 2021 [ 365 ]",
     "industry": [
       "Financial technology"
@@ -1620,7 +1620,7 @@
   {
     "name": "Zeta",
     "url": "https://en.wikipedia.org/wiki/Zeta_(company)",
-    "valuation": "1.45",
+    "valuation (dollar)": 1450000000,
     "valuation_date": "May 2021 [ 366 ]",
     "industry": [
       "Financial technology"
@@ -1631,7 +1631,7 @@
   {
     "name": "Einride",
     "url": "https://en.wikipedia.org/wiki/Einride",
-    "valuation": "1.44",
+    "valuation (dollar)": 1440000000,
     "valuation_date": "April 2022 [ 93 ]",
     "industry": [
       "Technology"
@@ -1642,7 +1642,7 @@
   {
     "name": "OneCard",
     "url": "",
-    "valuation": "1.4+",
+    "valuation (dollar)": 1400000000,
     "valuation_date": "July 2022 [ 371 ]",
     "industry": [
       "Financial technology"
@@ -1653,7 +1653,7 @@
   {
     "name": "Chargebee",
     "url": "",
-    "valuation": "1.4",
+    "valuation (dollar)": 1400000000,
     "valuation_date": "April 2021 [ 374 ]",
     "industry": [
       "Financial technology"
@@ -1664,7 +1664,7 @@
   {
     "name": "Five Star Finance",
     "url": "",
-    "valuation": "1.4",
+    "valuation (dollar)": 1400000000,
     "valuation_date": "March 2021 [ 376 ]",
     "industry": [
       "Financial services"
@@ -1675,7 +1675,7 @@
   {
     "name": "NetDocuments",
     "url": "https://en.wikipedia.org/wiki/NetDocuments",
-    "valuation": "1.4",
+    "valuation (dollar)": 1400000000,
     "valuation_date": "May 2021 [ 378 ]",
     "industry": [
       "Software"
@@ -1686,7 +1686,7 @@
   {
     "name": "Stash",
     "url": "https://en.wikipedia.org/wiki/Stash_(company)",
-    "valuation": "1.4",
+    "valuation (dollar)": 1400000000,
     "valuation_date": "February 2021 [ 382 ]",
     "industry": [
       "Financial technology"
@@ -1697,7 +1697,7 @@
   {
     "name": "Symphony",
     "url": "https://en.wikipedia.org/wiki/Symphony_Communication",
-    "valuation": "1.4",
+    "valuation (dollar)": 1400000000,
     "valuation_date": "June 2019 [ 383 ] [ 384 ]",
     "industry": [
       "Software"
@@ -1708,7 +1708,7 @@
   {
     "name": "Voyager",
     "url": "",
-    "valuation": "1.4",
+    "valuation (dollar)": 1400000000,
     "valuation_date": "April 2022 [ 385 ]",
     "industry": [
       "Financial technology"
@@ -1719,7 +1719,7 @@
   {
     "name": "RIDI",
     "url": "",
-    "valuation": "1.33",
+    "valuation (dollar)": 1330000000,
     "valuation_date": "August 2021 [ 387 ]",
     "industry": [
       "E-commerce"
@@ -1730,7 +1730,7 @@
   {
     "name": "Feedzai",
     "url": "https://en.wikipedia.org/wiki/Feedzai",
-    "valuation": "1.3",
+    "valuation (dollar)": 1300000000,
     "valuation_date": "March 2021 [ 390 ]",
     "industry": [
       "Artificial intelligence"
@@ -1741,7 +1741,7 @@
   {
     "name": "G2",
     "url": "https://en.wikipedia.org/wiki/G2_Crowd",
-    "valuation": "1.3",
+    "valuation (dollar)": 1300000000,
     "valuation_date": "June 2021 [ 391 ]",
     "industry": [
       "Technology"
@@ -1752,7 +1752,7 @@
   {
     "name": "Konfio",
     "url": "",
-    "valuation": "1.3",
+    "valuation (dollar)": 1300000000,
     "valuation_date": "September 2021 [ 393 ]",
     "industry": [
       "Financial services"
@@ -1763,7 +1763,7 @@
   {
     "name": "Incode",
     "url": "",
-    "valuation": "1.25",
+    "valuation (dollar)": 1250000000,
     "valuation_date": "December 2021 [ 397 ]",
     "industry": [
       "Technology"
@@ -1774,7 +1774,7 @@
   {
     "name": "Applied Intuition",
     "url": "",
-    "valuation": "1.25",
+    "valuation (dollar)": 1250000000,
     "valuation_date": "October 2020 [ 398 ]",
     "industry": [
       "Software"
@@ -1785,7 +1785,7 @@
   {
     "name": "Merama",
     "url": "",
-    "valuation": "1.2",
+    "valuation (dollar)": 1200000000,
     "valuation_date": "December 2021 [ 406 ]",
     "industry": [
       "E-commerce"
@@ -1796,7 +1796,7 @@
   {
     "name": "Ada",
     "url": "",
-    "valuation": "1.2",
+    "valuation (dollar)": 1200000000,
     "valuation_date": "May 2021 [ 407 ]",
     "industry": [
       "Software"
@@ -1807,7 +1807,7 @@
   {
     "name": "Alation",
     "url": "https://en.wikipedia.org/wiki/Alation",
-    "valuation": "1.2",
+    "valuation (dollar)": 1200000000,
     "valuation_date": "June 2021 [ 408 ]",
     "industry": [
       "Software"
@@ -1818,7 +1818,7 @@
   {
     "name": "Copado",
     "url": "",
-    "valuation": "1.2",
+    "valuation (dollar)": 1200000000,
     "valuation_date": "September 2021",
     "industry": [
       "Software"
@@ -1829,7 +1829,7 @@
   {
     "name": "FloQast",
     "url": "https://en.wikipedia.org/wiki/FloQast",
-    "valuation": "1.2",
+    "valuation (dollar)": 1200000000,
     "valuation_date": "July 2021 [ 414 ]",
     "industry": [
       "Software"
@@ -1840,7 +1840,7 @@
   {
     "name": "Forto",
     "url": "",
-    "valuation": "1.2",
+    "valuation (dollar)": 1200000000,
     "valuation_date": "June 2021 [ 415 ]",
     "industry": [
       "Software"
@@ -1851,7 +1851,7 @@
   {
     "name": "Intercom",
     "url": "https://en.wikipedia.org/wiki/Intercom_(company)",
-    "valuation": "1.2",
+    "valuation (dollar)": 1200000000,
     "valuation_date": "March 2018 [ 416 ]",
     "industry": [
       "Software"
@@ -1862,7 +1862,7 @@
   {
     "name": "MyGlamm",
     "url": "",
-    "valuation": "1.2",
+    "valuation (dollar)": 1200000000,
     "valuation_date": "November 2021 [ 419 ]",
     "industry": [
       "E-commerce"
@@ -1873,7 +1873,7 @@
   {
     "name": "Workhuman",
     "url": "https://en.wikipedia.org/wiki/Workhuman",
-    "valuation": "1.2",
+    "valuation (dollar)": 1200000000,
     "valuation_date": "June 2020 [ 422 ]",
     "industry": [
       "Software"
@@ -1884,7 +1884,7 @@
   {
     "name": "CoinDCX",
     "url": "",
-    "valuation": "1.1",
+    "valuation (dollar)": 1100000000,
     "valuation_date": "August 2021 [ 429 ]",
     "industry": [
       "Cryptocurrency"
@@ -1895,7 +1895,7 @@
   {
     "name": "Nexthink",
     "url": "",
-    "valuation": "1.1",
+    "valuation (dollar)": 1100000000,
     "valuation_date": "February 2021 [ 432 ]",
     "industry": [
       "Technology"
@@ -1906,7 +1906,7 @@
   {
     "name": "YouniteD",
     "url": "",
-    "valuation": "1.1",
+    "valuation (dollar)": 1100000000,
     "valuation_date": "December 2022 [ 439 ]",
     "industry": [
       "Financial services"
@@ -1917,7 +1917,7 @@
   {
     "name": "Emplifi",
     "url": "https://en.wikipedia.org/wiki/Emplifi",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "March 2022 [ 447 ]",
     "industry": [
       "Technology"
@@ -1928,7 +1928,7 @@
   {
     "name": "Clara",
     "url": "https://en.wikipedia.org/wiki/Clara_(company)",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "December 2021 [ 450 ]",
     "industry": [
       "Financial technology"
@@ -1939,7 +1939,7 @@
   {
     "name": "Acronis",
     "url": "https://en.wikipedia.org/wiki/Acronis",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "September 2019 [ 452 ]",
     "industry": [
       "Software"
@@ -1950,7 +1950,7 @@
   {
     "name": "Ajaib",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "October 2021 [ 454 ]",
     "industry": [
       "Financial technology"
@@ -1961,7 +1961,7 @@
   {
     "name": "Amber Group",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "June 2021 [ 455 ]",
     "industry": [
       "Cryptocurrency"
@@ -1972,7 +1972,7 @@
   {
     "name": "Beibei",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "June 2016 [ 184 ]",
     "industry": [
       "E-commerce"
@@ -1983,7 +1983,7 @@
   {
     "name": "Back Market",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "October 2021 [ 461 ]",
     "industry": [
       "E-commerce"
@@ -1994,7 +1994,7 @@
   {
     "name": "Bluecore",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "August 2021 [ 462 ]",
     "industry": [
       "E-commerce"
@@ -2005,7 +2005,7 @@
   {
     "name": "Dunamu",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "Jul 2021 [ 466 ]",
     "industry": [
       "Financial technology"
@@ -2016,7 +2016,7 @@
   {
     "name": "Earnix",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "February 2021 [ 467 ]",
     "industry": [
       "Financial technology"
@@ -2027,7 +2027,7 @@
   {
     "name": "Ebanx",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "October 2019 [ 468 ]",
     "industry": [
       "Financial services"
@@ -2038,7 +2038,7 @@
   {
     "name": "Flutterwave",
     "url": "https://en.wikipedia.org/wiki/Flutterwave",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "March 2021 [ 474 ]",
     "industry": [
       "Financial technology"
@@ -2049,7 +2049,7 @@
   {
     "name": "Glance",
     "url": "https://en.wikipedia.org/wiki/Glance_(company)",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "December 2020 [ 479 ]",
     "industry": [
       "Artificial intelligence"
@@ -2060,7 +2060,7 @@
   {
     "name": "Grover",
     "url": "https://www.grover.com/",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "April 2022 [ 481 ]",
     "industry": [
       "E-commerce"
@@ -2071,7 +2071,7 @@
   {
     "name": "Flo Health",
     "url": "https://en.wikipedia.org/wiki/Flo_(app)",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "July 2024 [ 7 ]",
     "industry": [
       "Health Technology"
@@ -2082,7 +2082,7 @@
   {
     "name": "Injective",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "April 2021 [ 488 ]",
     "industry": [
       "Financial technology"
@@ -2093,7 +2093,7 @@
   {
     "name": "InMobi",
     "url": "https://en.wikipedia.org/wiki/InMobi",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "May 2017 [ 489 ]",
     "industry": [
       "Internet"
@@ -2104,7 +2104,7 @@
   {
     "name": "LMAX Group",
     "url": "https://en.wikipedia.org/wiki/LMAX_Group",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "July 2021 [ 498 ]",
     "industry": [
       "Financial technology"
@@ -2115,7 +2115,7 @@
   {
     "name": "Locus Robotics",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "February 2021 [ 499 ]",
     "industry": [
       "Robotics"
@@ -2126,7 +2126,7 @@
   {
     "name": "Lunar",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "July 2021 [ 501 ]",
     "industry": [
       "Financial technology"
@@ -2137,7 +2137,7 @@
   {
     "name": "Masterworks",
     "url": "https://en.wikipedia.org/wiki/Masterworks_Advisers_LLC",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "November 2025 [ 505 ]",
     "industry": [
       "Financial Technology"
@@ -2148,7 +2148,7 @@
   {
     "name": "Matrixport",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "August 2021 [ 506 ]",
     "industry": [
       "Cryptocurrency"
@@ -2159,7 +2159,7 @@
   {
     "name": "Meero",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "June 2019 [ 507 ]",
     "industry": [
       "Internet"
@@ -2170,7 +2170,7 @@
   {
     "name": "Mensa Brands",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "November 2021 [ 508 ]",
     "industry": [
       "E-commerce"
@@ -2181,7 +2181,7 @@
   {
     "name": "MobileCoin",
     "url": "https://en.wikipedia.org/wiki/MobileCoin",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "August 2021 [ 510 ]",
     "industry": [
       "Cryptocurrency"
@@ -2192,7 +2192,7 @@
   {
     "name": "Moglix",
     "url": "https://en.wikipedia.org/wiki/Moglix",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "May 2021 [ 511 ]",
     "industry": [
       "E-commerce"
@@ -2203,7 +2203,7 @@
   {
     "name": "Nium",
     "url": "https://en.wikipedia.org/wiki/Nium",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "July 2021 [ 515 ]",
     "industry": [
       "Financial technology"
@@ -2214,7 +2214,7 @@
   {
     "name": "Kredivo",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "January 2022",
     "industry": [
       "Financial technology"
@@ -2225,7 +2225,7 @@
   {
     "name": "Opn (Synqa)",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "May 2022 [ 518 ]",
     "industry": [
       "Financial technology"
@@ -2236,7 +2236,7 @@
   {
     "name": "Picsart",
     "url": "https://en.wikipedia.org/wiki/Picsart",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "August 2021 [ 523 ]",
     "industry": [
       "Graphic design"
@@ -2247,7 +2247,7 @@
   {
     "name": "Redis Labs",
     "url": "https://en.wikipedia.org/wiki/Redis_Labs",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "August 2020 [ 525 ]",
     "industry": [
       "Software"
@@ -2258,7 +2258,7 @@
   {
     "name": "Shift Technology",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "May 2021 [ 530 ]",
     "industry": [
       "Artificial intelligence"
@@ -2269,7 +2269,7 @@
   {
     "name": "Slice",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "November 2021 [ 533 ]",
     "industry": [
       "Financial technology"
@@ -2280,7 +2280,7 @@
   {
     "name": "SmartAsset",
     "url": "https://en.wikipedia.org/wiki/SmartAsset",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "June 2021 [ 534 ]",
     "industry": [
       "Financial technology"
@@ -2291,7 +2291,7 @@
   {
     "name": "SmartMore",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "June 2021 [ 535 ]",
     "industry": [
       "Artificial intelligence"
@@ -2302,7 +2302,7 @@
   {
     "name": "Snapdeal",
     "url": "https://en.wikipedia.org/wiki/Snapdeal",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "May 2017 [ 5 ]",
     "industry": [
       "E-commerce"
@@ -2313,7 +2313,7 @@
   {
     "name": "Splashtop",
     "url": "https://en.wikipedia.org/wiki/Splashtop",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "January 2021 [ 536 ]",
     "industry": [
       "Software"
@@ -2324,7 +2324,7 @@
   {
     "name": "Swile",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "October 2021 [ 538 ]",
     "industry": [
       "Financial services"
@@ -2335,7 +2335,7 @@
   {
     "name": "Synthesia",
     "url": "https://en.wikipedia.org/wiki/Synthesia_(company)",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "June 2023 [ 539 ]",
     "industry": [
       "Artificial intelligence"
@@ -2346,7 +2346,7 @@
   {
     "name": "Tenstorrent",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "May 2021 [ 543 ]",
     "industry": [
       "Semiconductors"
@@ -2357,7 +2357,7 @@
   {
     "name": "Tezign",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "October 2021 [ 544 ]",
     "industry": [
       "Software"
@@ -2368,7 +2368,7 @@
   {
     "name": "Tractable",
     "url": "https://en.wikipedia.org/wiki/Tractable_(company)",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "June 2021 [ 545 ]",
     "industry": [
       "Artificial intelligence"
@@ -2379,7 +2379,7 @@
   {
     "name": "TrueLayer",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "September 2021 [ 547 ]",
     "industry": [
       "Financial technology"
@@ -2390,7 +2390,7 @@
   {
     "name": "Trustly",
     "url": "https://en.wikipedia.org/wiki/Trustly",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "June 2020 [ 548 ]",
     "industry": [
       "Financial technology"
@@ -2401,7 +2401,7 @@
   {
     "name": "VerSe Innovation",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "December 2020 [ 551 ]",
     "industry": [
       "Technology"
@@ -2412,7 +2412,7 @@
   {
     "name": "Visier",
     "url": "https://en.wikipedia.org/wiki/John_G._Schwarz#Life",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "June 2021 [ 552 ]",
     "industry": [
       "Technology"
@@ -2423,7 +2423,7 @@
   {
     "name": "WeLab",
     "url": "https://en.wikipedia.org/wiki/WeLab",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "December 2019 [ 556 ]",
     "industry": [
       "Financial technology"
@@ -2434,7 +2434,7 @@
   {
     "name": "Xendit",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "September 2021 [ 557 ]",
     "industry": [
       "Financial technology"
@@ -2445,7 +2445,7 @@
   {
     "name": "DANA",
     "url": "",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "September 2022",
     "industry": [
       "Financial technology"
@@ -2456,7 +2456,7 @@
   {
     "name": "Scandit",
     "url": "https://en.wikipedia.org/wiki/Scandit",
-    "valuation": "1",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "February 2022 [ 563 ]",
     "industry": [
       "Software"
@@ -2467,7 +2467,7 @@
   {
     "name": "Payhawk",
     "url": "https://en.wikipedia.org/w/index.php?title=Payhawk&action=edit&redlink=1",
-    "valuation": "1+",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "March 2022 [ 565 ]",
     "industry": [
       "Financial technology"
@@ -2478,7 +2478,7 @@
   {
     "name": "Neo Financial",
     "url": "",
-    "valuation": "1",
+    "valuation (dollar)": 1000000000,
     "valuation_date": "May 2022 [ 566 ]",
     "industry": [
       "Financial technology"

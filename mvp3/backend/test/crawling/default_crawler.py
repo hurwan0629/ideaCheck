@@ -1,7 +1,7 @@
 from typing import Any
 import httpx
 from bs4 import BeautifulSoup, Tag
-
+from headers import WIKIPEDIA_HEADERS
 
 SKIP_SECTION_TITLES = {
   "contents",
@@ -46,8 +46,8 @@ def _should_skip_node(tag: Tag) -> bool:
 
   return False
 
-def crawl_url(url: str, agent: dict[str, Any] | list[Any]):
-  if url is None:
+def crawl_wiki(url: str, agent: dict[str, Any]  | list[Any] = WIKIPEDIA_HEADERS) -> str | None:
+  if url is None or len(url) < 20:
     print("url is None")
     return
   response = httpx.get(
@@ -56,7 +56,9 @@ def crawl_url(url: str, agent: dict[str, Any] | list[Any]):
     timeout=10.0,
     follow_redirects=True
   )
-  print(f"status: {response.raise_for_status()}")
+  # print(f"status: {response.raise_for_status()}")
+  if response.status_code == 404:
+    return None
   return response.text
 
 def distract_text_from_company_html(text: str) -> dict[str, Any]:

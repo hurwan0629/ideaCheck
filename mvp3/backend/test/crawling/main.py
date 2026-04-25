@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 from companylist_url import crawl_wiki_list_of_unicorn_startup_companies
-from default_crawler import crawl_url, distract_text_from_company_html
+from default_crawler import crawl_wiki, distract_text_from_company_html
 from headers import WIKIPEDIA_HEADERS
 from analyzier import analyze_company
 
@@ -52,18 +52,32 @@ if __name__ == "__main__":
     company_list = json.load(f)
   # print(company_list)
 
-  for company in company_list[:1]:
-    print(company.get("name"))
-    print(company.keys())
-    html = crawl_url(company.get("url"), WIKIPEDIA_HEADERS)
+  flag: bool = False
+  for company in company_list:
+    print()
+    company_name = company.get("name", "unknown")
+    print(company_name + " 작업 시작")
+    if company_name == "Faire":
+      flag=True
+    if not flag:
+      print(company_name + " 패스 (이미 존재)")
+      continue
+    # print(company.keys())
+    html = crawl_wiki(company.get("url"))
+    if html is None:
+      print(company_name + " url 존재하지 않음")
+      print()
+      continue
     info = distract_text_from_company_html(html)
     with (Path(__file__).resolve().parent / "companies" / "html" / "openai.html").open("w", encoding="utf-8") as f:
       f.write(html)
 
     ai_company_analyze = analyze_company(company.get("name", "unknown"), info)
-    with (Path(__file__).resolve().parent / "companies" / "analyze" / "openai.json").open("w", encoding="utf-8") as f:
+    with (Path(__file__).resolve().parent / "companies" / "analyze" / f"{company_name}.json").open("w", encoding="utf-8") as f:
       f.write(ai_company_analyze)
-    print(ai_company_analyze)
+    # print(ai_company_analyze)
+    print(company.get("name") + " 작업 끝")
+    print()
     
 
   # company_analyses_list = Path(__file__).resolve().parent / "data" / "company_analyses_list.json"

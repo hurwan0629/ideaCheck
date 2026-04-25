@@ -1,0 +1,28 @@
+{
+  "name": "Acronis",
+  "category": "기술 회사",
+  "business_model": [
+    "사이버 보안",
+    "데이터 보호 소프트웨어 개발",
+    "백업",
+    "재해 복구",
+    "엔드포인트 관리",
+    "사이버 보안 솔루션 제공"
+  ],
+  "features": [
+    "다양한 플랫폼 지원 (Microsoft 365, Google Workspace, AWS, Azure)",
+    "Acronis Active Protection (행동 기반 안티 랜섬웨어 보호)",
+    "Acronis Notary (블록체인 기반 파일 공증)"
+  ],
+  "strengths": [
+    "광범위한 클라우드 데이터 센터 네트워크",
+    "20,000개 이상의 서비스 제공업체 지원",
+    "750,000개 이상의 기업 보호",
+    "지속적인 인수 및 플랫폼 통합으로 시장 확장",
+    "PC World와 Time Magazine 등의 권위 있는 인정"
+  ],
+  "weaknesses": [
+    "미국 정보 커뮤니티에서의 제품 및 서비스 제외 명령",
+    "정보 커뮤니티와 민감한 시스템에서 제품 사용 제한"
+  ]
+}

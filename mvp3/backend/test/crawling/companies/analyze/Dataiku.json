@@ -1,0 +1,22 @@
+{
+  "name": "Dataiku",
+  "category": "인공지능 및 머신러닝 기업",
+  "business_model": [
+    "기술 개발 및 솔루션 제공",
+    "기업용 소프트웨어 판매"
+  ],
+  "features": [
+    "Dataiku Data Science Studio (Dataiku DSS)",
+    "예측 모델링 지원",
+    "Dataiku Online: 중소기업 대상 관리 버전"
+  ],
+  "strengths": [
+    "글로벌 오피스 네트워크(뉴욕, 파리, 런던 등)",
+    "다양한 투자자 지원 포함(Alphabet Inc. 지원)",
+    "유니콘 기업으로 높은 재정적 가치 보유"
+  ],
+  "weaknesses": [
+    "높은 경쟁 시장에서의 생존 필요성",
+    "계속적인 제품 및 기술 업데이트 필요"
+  ]
+}

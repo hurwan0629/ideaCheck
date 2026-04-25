@@ -1,0 +1,27 @@
+{
+  "name": "Nextiva",
+  "category": "고객 경험 관리 (CXM)",
+  "business_model": [
+    "구독 기반 서비스",
+    "클라우드 기반 통신"
+  ],
+  "features": [
+    "통합 커뮤니케이션 플랫폼 NextOS",
+    "클라우드 기반 통신",
+    "CRM",
+    "화상 회의",
+    "메일 서비스",
+    "분석",
+    "화면 공유",
+    "AI 및 머신 러닝 기능",
+    "Outlook, Google Cloud, QuickBooks, DropBox, ZenDesk와의 통합"
+  ],
+  "strengths": [
+    "빠른 성장률 (2014년 1548%)",
+    "다양한 플랫폼 지원 (Windows, MacOS, Android, iOS)",
+    "150,000개 이상의 기업에서 사용"
+  ],
+  "weaknesses": [
+    "2022년 직원 14% 해고"
+  ]
+}

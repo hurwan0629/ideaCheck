@@ -1,0 +1,19 @@
+{
+  "name": "FloQast",
+  "category": "회계 소프트웨어",
+  "business_model": ["SaaS"],
+  "features": [
+    "클로즈 관리 소프트웨어",
+    "엑셀 연동 체크리스트 및 타이아웃",
+    "ERP 시스템 자동화",
+    "인공지능 기반 AutoRec 툴"
+  ],
+  "strengths": [
+    "회계팀을 위해 특화된 소프트웨어 제공",
+    "Amplify.LA 등 다양한 투자자 및 펀딩 이력",
+    "다수의 상 수상, 업계 인정 받음"
+  ],
+  "weaknesses": [
+    "블랙라인, Numeric, Workiva와 같은 경쟁업체 존재"
+  ]
+}

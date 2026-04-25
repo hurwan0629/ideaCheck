@@ -1,0 +1,20 @@
+{
+  "name": "Thinking Machines Lab",
+  "category": "인공지능 스타트업",
+  "business_model": [
+    "퍼블릭 베네핏 코퍼레이션 구조",
+    "주요 투자자 포함 (Andreessen Horowitz, Nvidia, AMD 등)"
+  ],
+  "features": [
+    "AI 모델을 위한 API (Tinker) 발표",
+    "내부 클러스터와 훈련 인프라 활용"
+  ],
+  "strengths": [
+    "OpenAI 및 기타 경쟁사 출신의 유능한 팀 멤버",
+    "초기 투자금 20억 달러 유치",
+    "NVIDIA와의 전략적 파트너십"
+  ],
+  "weaknesses": [
+    "몇몇 주요 인재의 퇴사 (Barret Zoph 등)"
+  ]
+}

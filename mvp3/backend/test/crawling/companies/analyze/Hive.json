@@ -1,0 +1,22 @@
+{
+  "name": "Hive",
+  "category": "인공지능 기업",
+  "business_model": [
+    "머신러닝 모델을 API를 통해 엔터프라이즈 고객에게 제공",
+    "Hive Work 앱을 통해 약 700,000명의 기그 워커를 사용하여 데이터 교육"
+  ],
+  "features": [
+    "자동화된 콘텐츠 조절 서비스 제공",
+    "딥페이크 및 AI 생성 예술 작품 감지 API 제공",
+    "AI 생성 텍스트 감지 무료 데모 텍스트 분류기 출시"
+  ],
+  "strengths": [
+    "콘텐츠 조절 모델이 높은 비용의 사람 기반 조절을 대신하여 널리 활용됨",
+    "콘텐츠 조절 서비스는 Reddit, Giphy, BeReal, Truth Social, Parler 등이 사용",
+    "슈퍼볼, March Madness, NBC Universal, Vevo에서 모델 사용",
+    "AI 텍스트 분류기가 OpenAI의 분류기보다 신뢰성이 높음"
+  ],
+  "weaknesses": [
+    "구체적인 약점 정보 부재"
+  ]
+}

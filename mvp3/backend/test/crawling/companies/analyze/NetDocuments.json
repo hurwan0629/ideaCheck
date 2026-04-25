@@ -1,0 +1,23 @@
+{
+  "name": "NetDocuments",
+  "category": "클라우드 기반 문서 및 이메일 관리 서비스",
+  "business_model": [
+    "SaaS (Software as a Service)"
+  ],
+  "features": [
+    "웹 브라우저를 통한 액세스",
+    "Salesforce.com과의 통합",
+    "Microsoft Office 365와의 통합",
+    "PatternBuilder라는 무코드 문서 및 워크플로우 자동화 도구"
+  ],
+  "strengths": [
+    "1999년부터 운영된 오랜 업력",
+    "클라우드 기반 솔루션 제공",
+    "중요한 파트너십 (예: Microsoft, Salesforce)",
+    "다양한 인수 및 통합을 통해 기능 확장"
+  ],
+  "weaknesses": [
+    "LexisNexis와의 파트너십 종료",
+    "시장 경쟁 심화"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Preferred Networks",
+  "category": "일본 스타트업",
+  "business_model": [
+    "딥러닝 연구 및 개발",
+    "IoT 응용",
+    "자율주행",
+    "의료기술"
+  ],
+  "features": [
+    "엣지 헤비 컴퓨팅",
+    "교통 시스템, 제조, 바이오 헬스케어 분야 집중",
+    "오픈소스 딥러닝 프레임워크 Chainer 개발"
+  ],
+  "strengths": [
+    "다양한 기업과의 협력 (토요타, FANUC 등)",
+    "큰 투자 유치 능력 (토요타, FANUC, 미즈호 은행 등)",
+    "탁월한 기술 개발 능력 (MN-Core, MN-3)"
+  ],
+  "weaknesses": [
+    "Chainer 개발 중단",
+    "파이토치로의 전환 필요"
+  ]
+}

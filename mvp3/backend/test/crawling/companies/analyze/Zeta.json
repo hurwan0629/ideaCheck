@@ -1,0 +1,24 @@
+{
+  "name": "Zeta",
+  "category": "Banking software company",
+  "business_model": [
+    "신용 및 직불 카드 발급 처리",
+    "BNPL",
+    "코어 뱅킹",
+    "모바일 경험 제공"
+  ],
+  "features": [
+    "국제 활동: 북미, 영국, 브라질, 필리핀, 이탈리아, 스페인, 베트남",
+    "San Francisco에 본사, 인도 및 두바이에 사무소",
+    "Zeta Tachyon: 신용 카드 발급 및 코어 결제 플랫폼"
+  ],
+  "strengths": [
+    "2021년 유니콘 지위 달성",
+    "Sodexo, SoftBank Vision Fund 2, Mastercard 투자 유치",
+    "다양한 시장으로의 확장 및 클라이언트 유치"
+  ],
+  "weaknesses": [
+    "초기에 MasterCard 네트워크에만 의존",
+    "진입 초기 시장에서의 경쟁"
+  ]
+}

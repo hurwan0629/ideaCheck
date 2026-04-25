@@ -1,0 +1,27 @@
+{
+  "name": "Discord",
+  "category": "Instant Messaging and VoIP Social Platform",
+  "business_model": ["Free basic usage", "Discord Nitro subscriptions", "Server Boost subscriptions", "Game distribution fees"],
+  "features": [
+    "Voice and video calls",
+    "Text messaging",
+    "Persistent chat rooms",
+    "Integrations with gaming services",
+    "Private and community-oriented 'servers'",
+    "Stage Channels",
+    "Threads and Forum Channels"
+  ],
+  "strengths": [
+    "Cross-platform compatibility",
+    "Strong user base with 150 million monthly active users",
+    "Strong community management tools",
+    "Appeal beyond gaming communities over time",
+    "Flexible server and channel creation"
+  ],
+  "weaknesses": [
+    "Challenges with moderation and controlling harmful content",
+    "Privacy and data protection issues",
+    "Past backlash on feature changes and monetization",
+    "User criticism on age verification and other policies"
+  ]
+}
